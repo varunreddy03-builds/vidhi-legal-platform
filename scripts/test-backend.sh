@@ -47,6 +47,7 @@ export DEFECT_CHECK_ENABLED="true"
 export OLD_CODE_CHECK_ENABLED="true"
 export DEADLINE_ENGINE_ENABLED="true"
 export DATE_LIST_ENABLED="true"
+export RECOVERY_ENABLED="true" RECOVERY_FULL_FLOW="true"   # Legal Recovery is OFF by default; the tests keep covering it (tests/test_recovery_off.py covers the default). Same as scripts/test-backend.ps1
 export AUTHORITY_CHECK_ENABLED="true"       # the Authority Check routes exist in tests
 export AUTHORITY_SOURCE_DISABLED="true"     # tests never call the paid case source, whatever tokens backend/.env holds
 export UPLOAD_MAX_DAYS="30"                 # the upload-expiry tests run against a 30-day ceiling

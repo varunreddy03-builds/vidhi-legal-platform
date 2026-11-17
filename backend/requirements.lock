@@ -16,7 +16,7 @@ charset-normalizer==3.5.2
 click==8.5.0
 cryptography==50.0.2
 distro==1.9.0
-dnspython==2.9.0
+dnspython==2.9.2
 docstring-parser==0.18.0
 email-validator==2.3.0
 fastapi==0.148.0
@@ -41,7 +41,7 @@ motor==3.7.1
 multidict==7.1.0
 numpy==2.4.6
 onnxruntime==1.31.1
-opentelemetry-api==1.45.1
+opentelemetry-api==1.45.2
 pillow==13.0.0
 propcache==0.5.4
 protobuf==7.36.2

@@ -8,7 +8,7 @@ useDefault = true
 description = "Public test vectors and throwaway test-only values (RFC 8291 push example key, RFC 6238 two-step test secret, a made-up test password, the test runner's throwaway file-encryption key)"
 condition = "AND"
 targetRules = ["generic-api-key"]
-paths = ['''^backend/tests/''', '''^scripts/test-backend\.(ps1|sh)$''', '''^scripts/dev-backend\.ps1$''']   # dev-backend.ps1 uses the same throwaway key as the test runner (checked equal)
+paths = ['''^backend/tests/''', '''^scripts/test-backend\.(ps1|sh)$''', '''^scripts/dev-backend\.ps1$''', '''^frontend/playwright\.config\.ts$''', '''^backend/scripts/lawyer_eval\.py$''']   # these use the same throwaway key as the test runner (checked equal); the value must still start as listed below
 regexes = ['''^(BNcRdreALRFXTkOOUHK1|tBHItJI5svbpez7K|GEZDGNBVGY3TQOJQ|Legacy-Pass-12345|ChEY)''']
 
 [[allowlists]]
