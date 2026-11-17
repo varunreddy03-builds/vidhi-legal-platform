@@ -38,7 +38,10 @@ test("a matter's PDF opens in the page, can be searched, bookmarked and turned p
   await expect(reader.getByRole("img", { name: "Page 2 of 2" })).toBeVisible();
 
   // a note on page 2 is saved with the document, shows on that page only, and can be removed
-  // pick a passage on the page itself (the page has a selectable text layer), use it for the note, and see it marked in blue afterwards
+  // pick a passage on the page itself (the page has a selectable text layer), use it for the note, and see it marked in blue afterwards.
+  // The text layer is redrawn after the page picture changes: wait until it shows PAGE 2's own words, or a slow machine picks a sentence of page 1 and loses the selection when the layer redraws.
+  await expect(reader.getByTestId("pdf-text-layer")).toContainText("agreement", { timeout: 15_000 });
+  await expect(reader.getByTestId("pdf-text-layer")).not.toContainText("Page one has only ordinary words");
   const picked = await reader.getByTestId("pdf-text-layer").evaluate((layer) => {
     const span = Array.from(layer.querySelectorAll("span")).find((el) => /\S{4,}/.test(el.textContent ?? ""));
     if (!span) return "";
