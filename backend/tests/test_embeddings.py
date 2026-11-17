@@ -253,25 +253,30 @@ def test_search_marks_a_reranked_result_and_only_reorders_it(admin, user_a, monk
     monkeypatch.setattr(embeddings, "semantic_provision_ids", fake)
     plain = run(legal_search.search(q, limit=50))
     assert "reranked" not in plain
-    ids = {v["id"] for v in plain["text"]}  # the limit is above the number of matches: with a smaller one, equal keyword scores are cut at an arbitrary place; equal scores may also come in any order, so sets are compared, not positions
+    # The other tests run in parallel against the same database and load similar Acts, so two separate searches may return different slices of unrelated matches. Nothing here compares
+    # one search with another except for the two provisions this test made; everything else is checked against what the re-ranker itself was given in the SAME search.
     given = {}
 
     async def flip(question, cands):
         given["ids"] = [c[0] for c in cands]
-        assert set(given["ids"]) == ids and all(c[1] for c in cands)
+        assert all(c[1] for c in cands) and {kept, other} <= set(given["ids"])  # every candidate came with its text, and both provisions this test made are among them
         return list(reversed(given["ids"]))
 
     monkeypatch.setattr(embeddings, "rerank", flip)
     on = run(legal_search.search(q, limit=50))
-    assert on["reranked"] is True and [v["id"] for v in on["text"]] == list(reversed(given["ids"]))
-    assert {v["id"]: v for v in on["text"]} == {v["id"]: v for v in plain["text"]}  # the very same views, including how each was found
+    assert on["reranked"] is True and [v["id"] for v in on["text"]] == list(reversed(given["ids"]))  # exactly the re-ranker's order, and no result added or lost
+    on_view = next(v for v in on["text"] if v["id"] == kept)
+    plain_view = next(v for v in plain["text"] if v["id"] == kept)
+    assert on_view == plain_view  # the provision itself is exactly what it was without re-ranking, including how it was found
 
     async def invent(question, cands):
-        return [c[0] for c in cands] + ["not-a-provision"]  # a different set is never accepted
+        given["invent"] = [c[0] for c in cands]
+        return given["invent"] + ["not-a-provision"]  # a different set is never accepted
 
     monkeypatch.setattr(embeddings, "rerank", invent)
     refused = run(legal_search.search(q, limit=50))
-    assert "reranked" not in refused and {v["id"] for v in refused["text"]} == ids
+    refused_ids = [v["id"] for v in refused["text"]]
+    assert "reranked" not in refused and refused_ids == given["invent"] and "not-a-provision" not in refused_ids  # the fused order is kept, nothing invented is shown
 
 
 def test_the_new_code_makes_no_network_call_and_sends_no_client_text_anywhere():

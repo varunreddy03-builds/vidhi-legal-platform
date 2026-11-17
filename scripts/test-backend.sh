@@ -47,6 +47,8 @@ export DEFECT_CHECK_ENABLED="true"
 export OLD_CODE_CHECK_ENABLED="true"
 export DEADLINE_ENGINE_ENABLED="true"
 export DATE_LIST_ENABLED="true"
+export PLANS_FILE="$ROOT/backend/tests/fixtures/plans_test.json"   # the shipped plans, except that the firm plan allows only 3 people, so a test can fill it (same as scripts/test-backend.ps1)
+export JUDGMENT_INDEX_DIR="${TMPDIR:-/tmp}/vidhi-no-judgment-index"   # an empty place: the tests never use a real judgment search index (same as scripts/test-backend.ps1)
 export RECOVERY_ENABLED="true" RECOVERY_FULL_FLOW="true"   # Legal Recovery is OFF by default; the tests keep covering it (tests/test_recovery_off.py covers the default). Same as scripts/test-backend.ps1
 export AUTHORITY_CHECK_ENABLED="true"       # the Authority Check routes exist in tests
 export AUTHORITY_SOURCE_DISABLED="true"     # tests never call the paid case source, whatever tokens backend/.env holds
