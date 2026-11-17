@@ -1,0 +1,298 @@
+{
+ "retrieved_on": "2026-11-13",
+ "high_courts": {
+  "source": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+  "items": [
+   {
+    "name": "Allahabad High Court",
+    "url": "http://allahabadhighcourt.in/"
+   },
+   {
+    "name": "Andhra Pradesh High Court",
+    "url": "https://aphc.gov.in/"
+   },
+   {
+    "name": "Bombay High Court",
+    "url": "http://bombayhighcourt.nic.in/"
+   },
+   {
+    "name": "Calcutta High Court",
+    "url": "https://www.calcuttahighcourt.gov.in/"
+   },
+   {
+    "name": "Chhattisgarh High Court",
+    "url": "http://highcourt.cg.gov.in/"
+   },
+   {
+    "name": "Delhi High Court",
+    "url": "http://delhihighcourt.nic.in/"
+   },
+   {
+    "name": "Gauhati High Court",
+    "url": "http://ghconline.gov.in/"
+   },
+   {
+    "name": "Gujarat High Court",
+    "url": "http://gujarathighcourt.nic.in/"
+   },
+   {
+    "name": "High Court of Orissa",
+    "url": "http://www.orissahighcourt.nic.in/"
+   },
+   {
+    "name": "Himachal Pradesh High Court",
+    "url": "http://hphighcourt.nic.in/"
+   },
+   {
+    "name": "Jammu & Kashmir High Court",
+    "url": "http://jkhighcourt.nic.in/"
+   },
+   {
+    "name": "Jharkhand High Court",
+    "url": "http://jharkhandhighcourt.nic.in/"
+   },
+   {
+    "name": "Karnataka High Court",
+    "url": "https://judiciary.karnataka.gov.in/"
+   },
+   {
+    "name": "Kerala High Court",
+    "url": "https://highcourt.kerala.gov.in/"
+   },
+   {
+    "name": "Madhya Pradesh High Court",
+    "url": "http://mphc.gov.in/"
+   },
+   {
+    "name": "Madras High Court",
+    "url": "http://hcmadras.tn.gov.in/"
+   },
+   {
+    "name": "Manipur High Court",
+    "url": "http://hcmimphal.nic.in/"
+   },
+   {
+    "name": "Meghalaya High Court",
+    "url": "http://meghalayahighcourt.nic.in/"
+   },
+   {
+    "name": "Patna High Court",
+    "url": "http://patnahighcourt.gov.in/"
+   },
+   {
+    "name": "Punjab & Haryana High Court",
+    "url": "http://highcourtchd.gov.in/"
+   },
+   {
+    "name": "Rajasthan High Court",
+    "url": "http://hcraj.nic.in/"
+   },
+   {
+    "name": "Sikkim High Court",
+    "url": "http://hcs.gov.in/"
+   },
+   {
+    "name": "Telangana High Court",
+    "url": "http://tshc.gov.in"
+   },
+   {
+    "name": "Tripura High Court",
+    "url": "http://tsu.trp.nic.in/highcourt/page/index.aspx"
+   },
+   {
+    "name": "Uttarakhand High Court",
+    "url": "http://highcourtofuttarakhand.gov.in/"
+   }
+  ]
+ },
+ "state_legal_services": {
+  "source": "https://nalsa.gov.in/directory/",
+  "items": [
+   {
+    "state": "Andhra Pradesh",
+    "website": "https://andhrapradesh.nalsa.gov.in/",
+    "office_phone": "0863-2341401"
+   },
+   {
+    "state": "Arunachal Pradesh",
+    "website": "http://arunachalpradesh.nalsa.gov.in",
+    "office_phone": "0360-2911149"
+   },
+   {
+    "state": "Assam",
+    "website": "https://assam.nalsa.gov.in/",
+    "office_phone": "0361-2601843/2516367"
+   },
+   {
+    "state": "Bihar",
+    "website": "http://www.patnahighcourt.gov.in/bslsa",
+    "office_phone": "0612-2508943, 2508390"
+   },
+   {
+    "state": "Chhattisgarh",
+    "website": "http://chhattisgarh.nalsa.gov.in",
+    "office_phone": "07752-410210"
+   },
+   {
+    "state": "Goa",
+    "website": "http://goa.nalsa.gov.in",
+    "office_phone": "0832-2492614, 2492664"
+   },
+   {
+    "state": "Gujarat",
+    "website": "http://gujarat.nalsa.gov.in",
+    "office_phone": "079-27664964/27665296"
+   },
+   {
+    "state": "Haryana",
+    "website": "http://haryana.nalsa.gov.in",
+    "office_phone": "0172-2583309/2586309"
+   },
+   {
+    "state": "Himachal Pradesh",
+    "website": "http://himachalpradesh.nalsa.gov.in",
+    "office_phone": "0177- 2623862"
+   },
+   {
+    "state": "Jammu and Kashmir",
+    "website": "http://jammukashmir.nalsa.gov.in",
+    "office_phone": "0191-2539962, 2539679"
+   },
+   {
+    "state": "Jharkhand",
+    "website": "http://www.jhalsa.org/",
+    "office_phone": "0651-2481520, 2482392"
+   },
+   {
+    "state": "Karnataka",
+    "website": "https://karnataka.nalsa.gov.in/",
+    "office_phone": "080-22111875, 22111714"
+   },
+   {
+    "state": "Kerala",
+    "website": "https://kerala.nalsa.gov.in/",
+    "office_phone": "0484-2396717, 2562919"
+   },
+   {
+    "state": "Madhya Pradesh",
+    "website": "http://madhyapradesh.nalsa.gov.in",
+    "office_phone": "0761-2678352, 2627370"
+   },
+   {
+    "state": "Maharashtra",
+    "website": "https://maharashtra.nalsa.gov.in/",
+    "office_phone": "022-22691395, 22691358"
+   },
+   {
+    "state": "Manipur",
+    "website": "https://manipur.nalsa.gov.in/",
+    "office_phone": "9436239666"
+   },
+   {
+    "state": "Meghalaya",
+    "website": "http://meghalaya.nalsa.gov.in",
+    "office_phone": "0364-2501051"
+   },
+   {
+    "state": "Mizoram",
+    "website": "http://mizoram.nalsa.gov.in",
+    "office_phone": "0389-2336621"
+   },
+   {
+    "state": "Nagaland",
+    "website": "http://nagaland.nalsa.gov.in",
+    "office_phone": "0370-2290153"
+   },
+   {
+    "state": "Odisha",
+    "website": null,
+    "office_phone": "0671-2307678, 2304389, 2307071"
+   },
+   {
+    "state": "Punjab",
+    "website": "https://punjab.nalsa.gov.in/",
+    "office_phone": "0172-2216690, 2216750"
+   },
+   {
+    "state": "Rajasthan",
+    "website": "http://rajasthan.nalsa.gov.in",
+    "office_phone": "0141-2227481"
+   },
+   {
+    "state": "Sikkim",
+    "website": "http://sikkim.nalsa.gov.in",
+    "office_phone": null
+   },
+   {
+    "state": "Telangana",
+    "website": "http://telangana.nalsa.gov.in/",
+    "office_phone": "040-23446725"
+   },
+   {
+    "state": "Tamil Nadu",
+    "website": "http://tamilnadu.nalsa.gov.in",
+    "office_phone": "044-25342834"
+   },
+   {
+    "state": "Tripura",
+    "website": "http://www.slsa.tripura.gov.in/",
+    "office_phone": "0381-2322481"
+   },
+   {
+    "state": "Uttar Pradesh",
+    "website": "http://uttarpradesh.nalsa.gov.in",
+    "office_phone": "0522-2286395, 2287972"
+   },
+   {
+    "state": "Uttarakhand",
+    "website": "http://uttarakhand.nalsa.gov.in",
+    "office_phone": "05942-236762"
+   },
+   {
+    "state": "West Bengal",
+    "website": "http://westbengal.nalsa.gov.in",
+    "office_phone": "033-22483892"
+   },
+   {
+    "state": "Andaman and Nicobar Islands",
+    "website": null,
+    "office_phone": "03192-232835"
+   },
+   {
+    "state": "Chandigarh",
+    "website": "https://chandigarh.nalsa.gov.in/",
+    "office_phone": "0172-2742999"
+   },
+   {
+    "state": "Dadra and Nagar Haveli",
+    "website": "http://dadraandnagarhaveli.nalsa.gov.in",
+    "office_phone": "0260-2641337"
+   },
+   {
+    "state": "Daman and Diu",
+    "website": "http://damananddiu.nalsa.gov.in/",
+    "office_phone": "0260-2230887"
+   },
+   {
+    "state": "Delhi",
+    "website": "http://delhi.nalsa.gov.in",
+    "office_phone": "011-23232781"
+   },
+   {
+    "state": "Ladakh",
+    "website": "http://ladakh.nalsa.gov.in",
+    "office_phone": null
+   },
+   {
+    "state": "Lakshadweep",
+    "website": null,
+    "office_phone": "04896 26 3422"
+   },
+   {
+    "state": "Puducherry",
+    "website": "http://puducherry.nalsa.gov.in",
+    "office_phone": "0413-2338831"
+   }
+  ]
+ }
+}

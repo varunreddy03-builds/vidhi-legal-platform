@@ -1,0 +1,30 @@
+{
+  "_about": "The plans of Legal Intelligence: what each one allows and what it costs. Edit this file (or point PLANS_FILE at another) and the server picks the change up within a few seconds, no restart and no code change. A file with a mistake in it is ignored as a whole and the built-in defaults (the same numbers as below) are used, so a typo can never remove a limit. A price of null means 'not set': the app shows 'price to be announced' and nothing can be bought for it. The Pro price that people actually pay still comes from PRO_PRICE_AMOUNT in the settings file (payments), and no payment for the firm plan exists: the operator puts an organisation on it by hand in the operator console.",
+  "free_platform_ai_per_day": 3000,
+  "plans": {
+    "free": {
+      "label": "Free",
+      "price": {"amount": 0, "currency": "inr", "interval": "month"},
+      "ai_per_day": 5,
+      "context_chars": 12000,
+      "locked_tasks": ["synthesize", "analyze-contract"],
+      "members_max": null
+    },
+    "pro": {
+      "label": "Pro",
+      "price": {"amount": null, "currency": "inr", "interval": "month"},
+      "ai_per_day": 500,
+      "context_chars": null,
+      "locked_tasks": [],
+      "members_max": null
+    },
+    "firm": {
+      "label": "Firm",
+      "price": {"amount": null, "currency": "inr", "interval": "month"},
+      "ai_per_day": 2000,
+      "context_chars": null,
+      "locked_tasks": [],
+      "members_max": 3
+    }
+  }
+}

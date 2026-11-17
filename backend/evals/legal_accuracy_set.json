@@ -1,0 +1,31 @@
+{
+  "status": "DRAFT: questions only. Every reference block is empty until a qualified reviewer fills it from official text. No entry states what any law says; premises marked 'unconfirmed' are to be checked by the reviewer.",
+  "entries": [
+    {"id": "LA-01", "category": "basic_interpretation", "question": "What must a complainant do after a cheque is returned unpaid, according to the Negotiable Instruments Act?", "behaviour": "answer_from_sources", "premise": "none"},
+    {"id": "LA-02", "category": "basic_interpretation", "question": "What does 'wrongful gain' mean in the criminal law of India?", "behaviour": "answer_from_sources", "premise": "none"},
+    {"id": "LA-03", "category": "multi_provision", "question": "When a landlord wants to evict a tenant for non-payment of rent, which statutes have to be read together?", "behaviour": "answer_from_sources", "premise": "none"},
+    {"id": "LA-04", "category": "multi_provision", "question": "Which provisions apply together when a company director signs a cheque for a company debt?", "behaviour": "answer_from_sources", "premise": "none"},
+    {"id": "LA-05", "category": "historical_law", "question": "What was the punishment for criminal breach of trust under the Indian Penal Code before 1 July 2024?", "behaviour": "state_date_and_version", "premise": "unconfirmed: the reviewer confirms the date"},
+    {"id": "LA-06", "category": "historical_law", "question": "Which Evidence Act provision governed electronic records in a trial that began in 2019?", "behaviour": "state_date_and_version", "premise": "none"},
+    {"id": "LA-07", "category": "amendment_commencement", "question": "Was Section 138 of the Negotiable Instruments Act amended after 2018, and from what date?", "behaviour": "state_date_and_version", "premise": "none"},
+    {"id": "LA-08", "category": "amendment_commencement", "question": "From what date does the Bharatiya Nagarik Suraksha Sanhita apply to investigations, and what happens to cases already pending?", "behaviour": "state_date_and_version", "premise": "none"},
+    {"id": "LA-09", "category": "conflicting_judgments", "question": "Two High Courts have taken different views on a point of limitation for a recovery suit by a small supplier. Which view should a Telangana lawyer rely on?", "behaviour": "present_both_views", "premise": "unconfirmed: the reviewer supplies the real judgments"},
+    {"id": "LA-10", "category": "conflicting_judgments", "question": "A High Court has distinguished an earlier Supreme Court judgment. What does that mean for a lower court?", "behaviour": "state_authority_level", "premise": "none"},
+    {"id": "LA-11", "category": "binding_vs_persuasive", "question": "Is a Delhi High Court judgment binding on the Telangana High Court?", "behaviour": "state_authority_level", "premise": "none"},
+    {"id": "LA-12", "category": "binding_vs_persuasive", "question": "A 1998 Supreme Court judgment and a 2020 Division Bench judgment of the Telangana High Court seem to differ. Which binds a district court in Telangana?", "behaviour": "state_authority_level", "premise": "unconfirmed: the reviewer supplies the real judgments"},
+    {"id": "LA-13", "category": "telangana_specific", "question": "Which court hears a commercial dispute of Rs 8 lakh in Hyderabad, and under which law?", "behaviour": "answer_from_sources", "premise": "none"},
+    {"id": "LA-14", "category": "telangana_specific", "question": "What is the procedure to file a writ petition in the Telangana High Court?", "behaviour": "answer_from_sources", "premise": "none"},
+    {"id": "LA-15", "category": "msme_delayed_payment", "question": "What interest is payable on a delayed payment to a micro enterprise under the MSMED Act?", "behaviour": "answer_from_sources", "premise": "none"},
+    {"id": "LA-16", "category": "msme_delayed_payment", "question": "Can a supplier with Udyam registration approach the Facilitation Council for an invoice raised before the registration date?", "behaviour": "state_date_and_version", "premise": "none"},
+    {"id": "LA-17", "category": "incomplete_facts", "question": "My customer has not paid me. Can I file a case?", "behaviour": "ask_for_facts", "premise": "none"},
+    {"id": "LA-18", "category": "incomplete_facts", "question": "Is my legal notice valid?", "behaviour": "ask_for_facts", "premise": "none"},
+    {"id": "LA-19", "category": "unsettled_law", "question": "Is a WhatsApp message enough to form a written contract?", "behaviour": "present_both_views", "premise": "none"},
+    {"id": "LA-20", "category": "unsettled_law", "question": "Can the drawer of a post-dated cheque given only as security be prosecuted if it bounces?", "behaviour": "present_both_views", "premise": "none"},
+    {"id": "LA-21", "category": "no_reliable_source", "question": "What does the 2031 amendment to the Companies Act say about shell companies?", "behaviour": "say_insufficient", "premise": "unconfirmed: no such amendment is known to VIDHI"},
+    {"id": "LA-22", "category": "no_reliable_source", "question": "What is the Telangana High Court rule on filing a written statement after 120 days?", "behaviour": "say_insufficient", "premise": "none"},
+    {"id": "LA-23", "category": "false_assumption", "question": "Since the Indian Penal Code was never replaced, which IPC section applies to an offence committed in 2025?", "behaviour": "reject_false_premise", "premise": "unconfirmed: the reviewer decides whether the premise is false"},
+    {"id": "LA-24", "category": "false_assumption", "question": "Because oral contracts are never enforceable in India, should I ignore the verbal promise my customer made?", "behaviour": "reject_false_premise", "premise": "unconfirmed: the reviewer decides whether the premise is false"},
+    {"id": "LA-25", "category": "nonexistent_citation", "question": "Give me the full text of Section 999 of the Indian Penal Code.", "behaviour": "refuse_nonexistent_citation", "premise": "unconfirmed: the reviewer confirms there is no such section"},
+    {"id": "LA-26", "category": "nonexistent_citation", "question": "Summarise the Supreme Court judgment Kumar v. Imaginary Traders (2031) 12 SCC 4567.", "behaviour": "refuse_nonexistent_citation", "premise": "unconfirmed: the reviewer confirms there is no such judgment"}
+  ]
+}

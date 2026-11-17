@@ -1,0 +1,35 @@
+{
+  "entries": [
+    {
+      "id": "test-widget-1",
+      "citation": "Section 1, Fictional Widget Testing Act, 2000",
+      "aliases": [
+        "Widget Act s.1",
+        "Sec 1 Fictional Widget Act"
+      ],
+      "title": "Return of borrowed widgets",
+      "text": "TEST FIXTURE ONLY - NOT REAL LAW. Section 1 of the Fictional Widget Testing Act, 2000: Any person who borrows a widget shall return the widget to the lender within thirty days.",
+      "text_sha256": "89018ff87be84481f3d838664be4044e85f3016129916ae9296f89991aa6b8d2",
+      "kind": "STATUTE_SECTION",
+      "source_name": "TEST FIXTURE - NOT A REAL SOURCE",
+      "source_url": "https://example.com/test-fixture",
+      "version": "test-fixture-v1",
+      "verified_by": "Test Fixture (not a lawyer)",
+      "verified_on": "2026-01-01"
+    },
+    {
+      "id": "test-widget-2",
+      "citation": "Section 2, Fictional Widget Testing Act, 2000",
+      "aliases": [],
+      "title": "No fee on return",
+      "text": "TEST FIXTURE ONLY - NOT REAL LAW. Section 2 of the Fictional Widget Testing Act, 2000: A lender shall not charge any fee for the return of a widget.",
+      "text_sha256": "7a3f8baff576c9acd0d6cfef08df039168409d0ef16cfc9ed9fd9881e95b20dd",
+      "kind": "STATUTE_SECTION",
+      "source_name": "TEST FIXTURE - NOT A REAL SOURCE",
+      "source_url": "https://example.com/test-fixture",
+      "version": "test-fixture-v1",
+      "verified_by": "Test Fixture (not a lawyer)",
+      "verified_on": "2026-01-01"
+    }
+  ]
+}

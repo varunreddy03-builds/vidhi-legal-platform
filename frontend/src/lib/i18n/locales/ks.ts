@@ -1,0 +1,30 @@
+import type { Catalog } from "../en";
+
+// Core words only (menus, sign-in, home). Everything else shows in English until native speakers have reviewed more.
+export default {
+  "nav.home": "گھر",
+  "nav.ask": "سوال پُچھو",
+  "nav.dashboard": "ڈیش بورڈ",
+  "nav.matters": "معاملہ",
+  "nav.research": "تحقیق",
+  "nav.drafts": "مسودہ",
+  "nav.activity": "سرگرمی",
+  "nav.settings": "سیٹنگ",
+  "div.lawyers": "وکیلن خاطرٕ",
+  "div.everyone": "سۭتۍ خاطرٕ · مفت",
+  "header.search": "لَٹھ ی پُچھ",
+  "header.signOut": "سائن آؤٹ",
+  "set.appearance": "شکل تہٕ زبان",
+  "set.theme": "تھیم",
+  "theme.dark": "گاڑھ",
+  "theme.light": "ہلکہٕ",
+  "set.language": "زبان",
+  "home.signIn": "سائن اِن",
+  "home.start": "شروع کرو",
+  "login.signin.title": "سائن اِن",
+  "login.name": "پورہ ناو",
+  "login.email": "ای میل",
+  "login.password": "پاس ورڈ",
+  "login.btn.signin": "سائن اِن",
+  "start.hello": "خوش آمدید، {name}",
+  "ask.title": "سوال پُچھو",} satisfies Catalog;

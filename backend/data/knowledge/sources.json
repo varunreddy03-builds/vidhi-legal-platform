@@ -1,0 +1,182 @@
+{
+ "loaded_by": "scripts/knowledge_load.py",
+ "approval": "Owner approved in chat on 2026-10-23: 'download the public domain set'.",
+ "works": [
+  {
+   "number": 13,
+   "gutenberg_id": 1497,
+   "source_url": "https://www.gutenberg.org/cache/epub/1497/pg1497.txt",
+   "edition": "The Republic, translated by Benjamin Jowett",
+   "bytes": 1199839,
+   "sha256": "cf423346c20bcba196134e9b6429adcaec28e5481036afaba3031970a18e4876",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 14,
+   "gutenberg_id": 3207,
+   "source_url": "https://www.gutenberg.org/cache/epub/3207/pg3207.txt",
+   "edition": "Leviathan, Thomas Hobbes (1651 text)",
+   "bytes": 1212565,
+   "sha256": "db3cd5f9bf2b0feb3732d6ceb3e255bea9bfdfc5077bf81cb596eb097614bab2",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 15,
+   "gutenberg_id": 2680,
+   "source_url": "https://www.gutenberg.org/cache/epub/2680/pg2680.txt",
+   "edition": "Meditations, Marcus Aurelius, translated by George Long",
+   "bytes": 398682,
+   "sha256": "0770f4e093fd3bb6400ccd90dacf54216c31eec50e8534d834768d7b21cb92e9",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 3,
+   "gutenberg_id": 1232,
+   "source_url": "https://www.gutenberg.org/cache/epub/1232/pg1232.txt",
+   "edition": "The Prince, Machiavelli, translated by W. K. Marriott",
+   "bytes": 283425,
+   "sha256": "fd42f9e36b078646f3825154cf8bd3ea9df1b098f41e3dbe0d666b326b3ef0d0",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 10,
+   "gutenberg_id": 132,
+   "source_url": "https://www.gutenberg.org/cache/epub/132/pg132.txt",
+   "edition": "The Art of War, Sun Tzu, translated by Lionel Giles",
+   "bytes": 315551,
+   "sha256": "a9d93a1604b9f86111ae2fb7d66aff46f69174cfab4756d921f92b951fd9f645",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 19,
+   "gutenberg_id": 1404,
+   "source_url": "https://www.gutenberg.org/cache/epub/1404/pg1404.txt",
+   "edition": "The Federalist Papers",
+   "bytes": 1147614,
+   "sha256": "e78917926e4e16a41df1e0412ed39223cf586e41d36d757ea5514f36b04395d4",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 17,
+   "gutenberg_id": 17150,
+   "source_url": "https://www.gutenberg.org/cache/epub/17150/pg17150.txt",
+   "edition": "The Oldest Code of Laws in the World (Code of Hammurabi), translated by L. W. King",
+   "bytes": 100289,
+   "sha256": "19745eaee55b7762ad08185d1e58aa262fbc7f5052a8f07f37d8be3555975682",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 22,
+   "gutenberg_id": 2388,
+   "source_url": "https://www.gutenberg.org/cache/epub/2388/pg2388.txt",
+   "edition": "The Song Celestial (Bhagavad-Gita), translated by Edwin Arnold",
+   "bytes": 124184,
+   "sha256": "531fb182fbfd9c3363ea335126bb6703b3d9af1ad2cabe8076418ddcd5eb6060",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 27,
+   "gutenberg_id": 10827,
+   "source_url": "https://www.gutenberg.org/cache/epub/10827/pg10827.txt",
+   "edition": "Discourses on the First Decade of Titus Livius, Machiavelli, translated by Ninian Hill Thomson",
+   "bytes": 800733,
+   "sha256": "9f72cdd27951d7c2e9c82cb5a608a39264021c95459d556ab81b1d8c217d7fe7",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 18,
+   "gutenberg_id": 10000,
+   "source_url": "https://www.gutenberg.org/cache/epub/10000/pg10000.txt",
+   "edition": "The Magna Carta (English translation of the 1215 charter)",
+   "bytes": 80501,
+   "sha256": "79c5ef1d60821b8957ac7801c96c9cf8ad3e0c9314ba7f22aca1baf2c365a963",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 11,
+   "gutenberg_id": 4363,
+   "source_url": "https://www.gutenberg.org/cache/epub/4363/pg4363.txt",
+   "edition": "Beyond Good and Evil, Nietzsche, translated by Helen Zimmern",
+   "bytes": 382768,
+   "sha256": "332a1925071b666f8081e797ca35e0603577091cf06d1c8718ea3c316cee90ff",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 12,
+   "gutenberg_id": 2701,
+   "source_url": "https://www.gutenberg.org/cache/epub/2701/pg2701.txt",
+   "edition": "Moby Dick, Herman Melville (a novel: fiction, not an argument or a source of fact)",
+   "bytes": 1234541,
+   "sha256": "6b74a36cf4b629ac137c8832b2ba2be071a02c348f3accde0c026a893a2f30eb",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 7,
+   "gutenberg_id": 66048,
+   "source_url": "https://www.gutenberg.org/cache/epub/66048/pg66048.txt",
+   "edition": "The Interpretation of Dreams, Freud, translated by A. A. Brill (historical psychoanalytic theory, not current neuroscience)",
+   "bytes": 1231448,
+   "sha256": "04f5e27e6b9dbb77df4ffcbe727d509ac55914a783e30c21d833cddad691f128",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 16,
+   "gutenberg_id": 5983,
+   "source_url": "https://www.gutenberg.org/cache/epub/5983/pg5983.txt",
+   "edition": "The Institutes of Justinian, translated by J. B. Moyle (5th ed. 1913). Only the Institutes: the Digest and the Code are NOT included",
+   "bytes": 465879,
+   "sha256": "2696fb402803c1a302963e37fde76557bbdbd8739383762b05932666805f1e08",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 29,
+   "gutenberg_id": 2464,
+   "source_url": "https://www.gutenberg.org/cache/epub/2464/pg2464.txt",
+   "edition": "History of Florence (Florentine Histories), Machiavelli, 1901 English edition",
+   "bytes": 940109,
+   "sha256": "6dc797a6d825dff1e3da12427f6e87b250b1842398e82f45b0091655b4d8bee4",
+   "licence_sentence": "This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public domain in the United States per Project Gutenberg. Status in India not separately verified. Recorded use: private analysis and full-text indexing only."
+  },
+  {
+   "number": 21,
+   "archive_id": "in.ernet.dli.2015.529021",
+   "source_url": "https://archive.org/download/in.ernet.dli.2015.529021/2015.529021.arthasastra-of_djvu.txt",
+   "edition": "Kautilya's Arthashastra, translated by R. Shamasastry (1915); scanned text, so it has OCR errors",
+   "bytes": 1280760,
+   "sha256": "26a153c29ff97f3297562bb6a5ada42de9e30d8d853decbf5feb414dcb227919",
+   "licence_sentence": "Public-domain basis from the source search: Shamasastry died 1940 and Fleet 1917, so the translation is public domain in India and the US (docs/VIDHI_SOURCE_AVAILABILITY.md). This is not a licence quotation.",
+   "retrieved_on": "2026-10-23",
+   "rights_note": "Public-domain basis from the source search: Shamasastry died 1940 and Fleet 1917, so the translation is public domain in India and the US (docs/VIDHI_SOURCE_AVAILABILITY.md). This is not a licence quotation. Recorded use: private analysis and full-text indexing only."
+  }
+ ]
+}

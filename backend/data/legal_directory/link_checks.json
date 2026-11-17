@@ -1,0 +1,851 @@
+{
+ "checked_on": "2026-11-13",
+ "results": {
+  "https://www.sci.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.sci.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://services.ecourts.gov.in/ecourtindia_v6/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://services.ecourts.gov.in/ecourtindia_v6/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://nalsa.gov.in/lok-adalats/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://nalsa.gov.in/lok-adalats/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://nclt.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://nclt.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://nclat.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://nclat.nic.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://itat.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://itat.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://cestat.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cestat.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://cgat.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cgat.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://greentribunal.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.greentribunal.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://sat.gov.in/": {
+   "ok": false,
+   "status": 503,
+   "final_url": "https://sat.gov.in/",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://drt.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://drt.gov.in/",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://tdsat.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://tdsat.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://aptel.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "http://aptel.gov.in/en",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://ncdrc.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://ncdrc.nic.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://njdg.ecourts.gov.in/njdg_v3/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://njdg.ecourts.gov.in/njdg_v3/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://doj.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.doj.gov.in/",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://lawmin.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.lawmin.gov.in/",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://lawcommissionofindia.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://lawcommissionofindia.nic.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://www.india.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.india.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://www.indiacode.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.indiacode.nic.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://legislative.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.legislative.gov.in/",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://egazette.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://egazette.gov.in/(S(4su3i5v3pvq43fdpck1o533o))/default.aspx",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://sansad.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://sansad.in/phistory",
+   "expected_words_found": true,
+   "government_domain": false,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://judgments.ecourts.gov.in/pdfsearch/index.php": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://judgments.ecourts.gov.in/pdfsearch/index.php",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://scr.sci.gov.in/scrsearch/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://scr.sci.gov.in/scrsearch/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://www.sci.gov.in/supreme-court-rules/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.sci.gov.in/supreme-court-rules/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://filing.ecourts.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://filing.ecourts.gov.in/pdedev/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://nalsa.gov.in/handbook-of-formats/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://nalsa.gov.in/handbook-of-formats/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://nalsa15100.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://nalsa15100.in/",
+   "expected_words_found": true,
+   "government_domain": false,
+   "listed_on_official_page": "https://nalsa.gov.in/",
+   "checked_on": "2026-11-13"
+  },
+  "https://scourtapp.nic.in/lsams/nologin/applicationFiling.action?requestLocale=en": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://scourtapp.nic.in/lsams/nologin/applicationFiling.action?requestLocale=en",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://sclsc.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://sclsc.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://nalsa.gov.in/directory/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://nalsa.gov.in/directory/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "https://tele-law.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://tele-law.in/",
+   "expected_words_found": true,
+   "government_domain": false,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-13"
+  },
+  "http://allahabadhighcourt.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://allahabadhighcourt.in/",
+   "expected_words_found": true,
+   "government_domain": false,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "https://aphc.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://aphc.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://bombayhighcourt.nic.in/": {
+   "ok": false,
+   "status": 0,
+   "final_url": "http://bombayhighcourt.nic.in/",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "https://www.calcuttahighcourt.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.calcuttahighcourt.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://highcourt.cg.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "http://highcourt.cg.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://delhihighcourt.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://delhihighcourt.nic.in/web/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://ghconline.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://ghconline.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://gujarathighcourt.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://gujarathighcourt.nic.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://www.orissahighcourt.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://orissahighcourt.nic.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://hphighcourt.nic.in/": {
+   "ok": false,
+   "status": 403,
+   "final_url": "http://hphighcourt.nic.in/",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://jkhighcourt.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://jkhighcourt.nic.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://jharkhandhighcourt.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://jharkhandhighcourt.nic.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "https://judiciary.karnataka.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://judiciary.karnataka.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "https://highcourt.kerala.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://highcourt.kerala.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://mphc.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://mphc.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://hcmadras.tn.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://hcmadras.tn.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://hcmimphal.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://hcmimphal.nic.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://meghalayahighcourt.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://meghalayahighcourt.nic.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://patnahighcourt.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://patnahighcourt.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://highcourtchd.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://highcourtchd.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://hcraj.nic.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "http://hcraj.nic.in/hcraj/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://hcs.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://hcs.gov.in/hcs/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://tshc.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://tshc.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://tsu.trp.nic.in/highcourt/page/index.aspx": {
+   "ok": false,
+   "status": 0,
+   "final_url": "http://tsu.trp.nic.in/highcourt/page/index.aspx",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "http://highcourtofuttarakhand.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://highcourtofuttarakhand.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://ecourts.gov.in/ecourts2.0/?p=about_us/highcourts",
+   "checked_on": "2026-11-13"
+  },
+  "https://andhrapradesh.nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://andhrapradesh.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://arunachalpradesh.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://arunachalpradesh.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "https://assam.nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://assam.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://www.patnahighcourt.gov.in/bslsa": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.patnahighcourt.gov.in/bslsa/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://chhattisgarh.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://chhattisgarh.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://goa.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://goa.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://gujarat.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://gujarat.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://haryana.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://haryana.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://himachalpradesh.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://himachalpradesh.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://jammukashmir.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://jammukashmir.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://www.jhalsa.org/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://www.jhalsa.org/",
+   "expected_words_found": true,
+   "government_domain": false,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "https://karnataka.nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://karnataka.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "https://kerala.nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://kerala.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://madhyapradesh.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://madhyapradesh.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "https://maharashtra.nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://maharashtra.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "https://manipur.nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://manipur.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://meghalaya.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://meghalaya.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://mizoram.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://mizoram.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://nagaland.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://nagaland.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "https://punjab.nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://punjab.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://rajasthan.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://rajasthan.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://sikkim.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://sikkim.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://telangana.nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://telangana.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://tamilnadu.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://tamilnadu.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://www.slsa.tripura.gov.in/": {
+   "ok": false,
+   "status": 0,
+   "final_url": "http://www.slsa.tripura.gov.in/",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://uttarpradesh.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://uttarpradesh.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://uttarakhand.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://uttarakhand.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://westbengal.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://westbengal.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "https://chandigarh.nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://chandigarh.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://dadraandnagarhaveli.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://dadraandnagarhaveli.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://damananddiu.nalsa.gov.in/": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://damananddiu.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://delhi.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://delhi.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://ladakh.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://ladakh.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  },
+  "http://puducherry.nalsa.gov.in": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://puducherry.nalsa.gov.in/",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": "https://nalsa.gov.in/directory/",
+   "checked_on": "2026-11-13"
+  }
+ }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "test-no-verifier",
+  "citation": "Section 8, Fictional Widget Testing Act, 2000",
+  "text": "TEST FIXTURE ONLY. Unsigned.",
+  "text_sha256": "60083ea772d60f580a9acf43049b974490c775ca801c866cdd1afeb9f3fd4e3d",
+  "kind": "STATUTE_SECTION",
+  "source_name": "TEST FIXTURE - NOT A REAL SOURCE",
+  "source_url": "https://example.com/test-fixture",
+  "version": "test-fixture-v1",
+  "verified_by": "",
+  "verified_on": "2026-01-01"
+}

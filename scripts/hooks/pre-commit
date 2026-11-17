@@ -1,0 +1,25 @@
+#!/bin/bash
+# VIDHI pre-commit: (1) refuse to commit anything that looks like a secret, (2) keep very large files out of git.
+# Install once per clone:  powershell -ExecutionPolicy Bypass -File scripts/install-hooks.ps1   (or: git config core.hooksPath scripts/hooks)
+
+PY=""
+for c in "/c/vidhi-tools/venv2/Scripts/python.exe" python3 python; do
+  if command -v "$c" >/dev/null 2>&1 && "$c" -c "import sys" >/dev/null 2>&1; then PY="$c"; break; fi
+done
+if [ -z "$PY" ]; then
+  echo "pre-commit: no working Python found, so the secret scan could not run. Commit blocked. Install Python or see docs/decisions.md." >&2
+  exit 1
+fi
+"$PY" -I scripts/secret_scan.py --staged || {
+  echo "pre-commit: possible secret in what you are committing (see above). Nothing was committed." >&2
+  exit 1
+}
+
+SIZE_THRESHOLD=90M
+large_files=$(find . -not -path "./.git/*" -not -path "*/node_modules/*" -size +${SIZE_THRESHOLD} | sed 's|^\./||')
+for file in $large_files; do
+  grep -q "^$file$" .gitignore 2>/dev/null || echo "$file" >> .gitignore
+  git rm --cached --ignore-unmatch "$file" 2>/dev/null
+done
+[ -n "$large_files" ] && git add .gitignore
+exit 0

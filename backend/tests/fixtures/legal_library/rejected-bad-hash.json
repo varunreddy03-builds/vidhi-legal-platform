@@ -1,0 +1,12 @@
+{
+  "id": "test-bad-hash",
+  "citation": "Section 9, Fictional Widget Testing Act, 2000",
+  "text": "TEST FIXTURE ONLY. Altered text.",
+  "text_sha256": "28f2e705ba0f870b3070ab6cbddcb33ad774cbdcaa8f74cced1776e271d7a3c3",
+  "kind": "STATUTE_SECTION",
+  "source_name": "TEST FIXTURE - NOT A REAL SOURCE",
+  "source_url": "https://example.com/test-fixture",
+  "version": "test-fixture-v1",
+  "verified_by": "Test Fixture (not a lawyer)",
+  "verified_on": "2026-01-01"
+}

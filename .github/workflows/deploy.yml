@@ -1,0 +1,112 @@
+name: Deploy
+
+# Deploys one release to ONE server, by hand. It does nothing until the owner has set the repository variable DEPLOY_ENABLED to "true" AND filled in the environment's secrets (docs/hosting-runbook.md).
+#
+#   * The whole CI workflow runs first (backend tests, front-end tests, browser tests, security scans, container build and the full-stack smoke test). If any job is red, nothing is deployed.
+#   * "production" should be set up in GitHub (Settings > Environments) with REQUIRED REVIEWERS, so a person approves every production deploy. "staging" needs none.
+#   * Secrets live only in the GitHub Environment (the host's secret store for this workflow). They are turned into the server's .env on the runner by deploy/render_env.py, copied over SSH with
+#     owner-only permissions, and never printed.
+#   * After the new containers start, deploy/smoke.sh checks the live address. If that fails the job is red; roll back with the steps in the runbook.
+#
+# Written but NOT yet run anywhere: the first run is a staging run, with the owner watching.
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Where to deploy"
+        type: choice
+        options: [staging, production]
+        default: staging
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ inputs.environment }}
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    if: ${{ vars.DEPLOY_ENABLED == 'true' }}
+    uses: ./.github/workflows/ci.yml
+
+  deploy:
+    needs: tests
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build the server's .env from this environment's secrets
+        env:
+          DOMAIN: ${{ secrets.DOMAIN }}
+          APP_URL: ${{ secrets.APP_URL }}
+          CORS_ORIGINS: ${{ secrets.CORS_ORIGINS }}
+          MONGO_ROOT_PASSWORD: ${{ secrets.MONGO_ROOT_PASSWORD }}
+          MONGO_APP_PASSWORD: ${{ secrets.MONGO_APP_PASSWORD }}
+          LINK_SECRET: ${{ secrets.LINK_SECRET }}
+          WEBHOOK_CRON_SECRET: ${{ secrets.WEBHOOK_CRON_SECRET }}
+          DATA_ENCRYPTION_KEY: ${{ secrets.DATA_ENCRYPTION_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_WEBHOOK_SECRET: ${{ secrets.RESEND_WEBHOOK_SECRET }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          PLATFORM_ADMIN_EMAILS: ${{ secrets.PLATFORM_ADMIN_EMAILS }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          TURNSTILE_SITE_KEY: ${{ secrets.TURNSTILE_SITE_KEY }}
+          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
+          BUSINESS_LEGAL_NAME: ${{ secrets.BUSINESS_LEGAL_NAME }}
+          GRIEVANCE_OFFICER_NAME: ${{ secrets.GRIEVANCE_OFFICER_NAME }}
+          GRIEVANCE_OFFICER_EMAIL: ${{ secrets.GRIEVANCE_OFFICER_EMAIL }}
+          SUPPORT_EMAIL: ${{ secrets.SUPPORT_EMAIL }}
+        run: python deploy/render_env.py --profile "${{ inputs.environment }}" --out server.env
+
+      - name: Set up SSH to the server
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}   # the server's host key line(s), copied once by the owner: the runner never trusts an unknown server
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      - name: Copy this release and the .env to the server
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}   # for example /srv/vidhi-staging
+        run: |
+          SSH="ssh -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=yes -o BatchMode=yes"
+          git archive --format=tar.gz HEAD -o release.tar.gz
+          $SSH "$DEPLOY_USER@$DEPLOY_HOST" "mkdir -p '$DEPLOY_PATH' && cd '$DEPLOY_PATH' && mkdir -p backups secrets"
+          scp -i "$HOME/.ssh/deploy_key" -o StrictHostKeyChecking=yes -o BatchMode=yes release.tar.gz "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/release.tar.gz"
+          $SSH "$DEPLOY_USER@$DEPLOY_HOST" "cd '$DEPLOY_PATH' && tar -xzf release.tar.gz && rm release.tar.gz"
+          scp -i "$HOME/.ssh/deploy_key" -o StrictHostKeyChecking=yes -o BatchMode=yes server.env "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/.env"
+          $SSH "$DEPLOY_USER@$DEPLOY_HOST" "chmod 600 '$DEPLOY_PATH/.env'"
+          rm -f server.env
+
+      - name: Start the new release
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          ssh -i "$HOME/.ssh/deploy_key" -o StrictHostKeyChecking=yes -o BatchMode=yes "$DEPLOY_USER@$DEPLOY_HOST" \
+            "cd '$DEPLOY_PATH' && test -s secrets/backup_passphrase && docker compose --profile https up -d --build --remove-orphans"
+
+      - name: Check the live site
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+        run: bash deploy/smoke.sh "${APP_URL%/}"

@@ -1,0 +1,19 @@
+{
+  "timeZone": "Asia/Kolkata",
+  "exceptionLogging": "NONE",
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/documents.currentonly",
+    "https://www.googleapis.com/auth/script.container.ui",
+    "https://www.googleapis.com/auth/script.external_request"
+  ],
+  "urlFetchWhitelist": ["https://YOUR-VIDHI-ADDRESS/"],
+  "addOns": {
+    "common": {
+      "name": "VIDHI AI Checker",
+      "logoUrl": "https://YOUR-VIDHI-ADDRESS/icon-80.png",
+      "layoutProperties": { "primaryColor": "#1a56db" }
+    },
+    "docs": {}
+  }
+}

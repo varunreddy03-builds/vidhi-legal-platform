@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VIDHI legal library entry",
+  "description": "Verified entries live in the library folders and need every required field plus a named reviewer. Drafts live in pending/ and can never verify a claim.",
+  "type": "object",
+  "required": ["id", "citation", "kind", "text", "text_sha256", "source_name", "source_url", "version", "verified_by", "verified_on"],
+  "properties": {
+    "id": {"type": "string"},
+    "citation": {"type": "string", "description": "How the provision is cited"},
+    "kind": {"enum": ["STATUTE_SECTION", "RULE", "CASE", "OTHER"]},
+    "jurisdiction": {"enum": ["IN", "AE", "UK", "US", "SG"], "default": "IN"},
+    "text": {"type": "string", "description": "The EXACT source text"},
+    "text_sha256": {"type": "string"},
+    "source_name": {"type": "string"},
+    "source_url": {"type": "string"},
+    "version": {"type": "string"},
+    "verified_by": {"type": "string", "description": "The reviewing lawyer (the reviewer)"},
+    "verified_on": {"type": "string", "description": "Review date, YYYY-MM-DD"},
+    "status": {"description": "Only VERIFIED entries exist in the library folders; anything marked unverified is rejected there"}
+  }
+}

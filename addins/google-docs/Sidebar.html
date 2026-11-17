@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font: 13px/1.45 Arial, sans-serif; margin: 0; padding: 12px; color: #202124; }
+    h1 { font-size: 15px; margin: 0 0 4px; }
+    h2 { font-size: 13px; margin: 14px 0 4px; }
+    p, li { margin: 0 0 4px; }
+    .muted { color: #5f6368; font-size: 12px; }
+    button { font: inherit; padding: 6px 10px; margin: 2px 4px 2px 0; border: 1px solid #5f6368; background: #fff; border-radius: 4px; cursor: pointer; }
+    button.primary { background: #1a73e8; color: #fff; border-color: #1a73e8; }
+    button:focus-visible, input:focus-visible { outline: 2px solid #1a73e8; outline-offset: 2px; }
+    input { font: inherit; width: 100%; box-sizing: border-box; padding: 6px; margin: 2px 0 8px; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li.issue { border: 1px solid #dadce0; border-radius: 6px; padding: 8px; margin-bottom: 8px; }
+    .tag { display: inline-block; border: 1px solid; border-radius: 4px; padding: 0 5px; font-size: 11px; margin-right: 6px; }
+    .VERIFIED { color: #137333; } .PARTLY_VERIFIED { color: #b06000; } .NOT_SUPPORTED { color: #c5221f; }
+    #status { margin: 8px 0; min-height: 1.4em; }
+    details { margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <h1>VIDHI AI Checker</h1>
+  <p class="muted">Points to places to look. It does not say that anything is wrong, and a lawyer decides.</p>
+
+  <details id="settings">
+    <summary>Settings</summary>
+    <label for="url">VIDHI address</label>
+    <input id="url" type="url" placeholder="https://your-vidhi-address" autocomplete="off">
+    <label for="key">Add-in key <span class="muted">(made in VIDHI; shown once there)</span></label>
+    <input id="key" type="password" placeholder="vk_..." autocomplete="off">
+    <button id="save" type="button">Save</button>
+    <button id="forget" type="button">Remove my settings</button>
+    <p class="muted" id="keystate"></p>
+  </details>
+
+  <button id="scan" class="primary" type="button">Scan document</button>
+  <button id="clear" type="button">Clear highlights</button>
+  <p id="status" role="status" aria-live="polite"></p>
+  <div id="result"></div>
+
+  <script>
+    var scanned = null;
+    var GROUPS = [
+      { key: 'authority', title: 'Authority and citations' },
+      { key: 'code_replacement', title: 'Old code to new code (IPC, CrPC, Evidence Act)' },
+      { key: 'defect', title: 'Pre-filing defects and blanks' }
+    ];
+    var LABEL = { VERIFIED: 'Verified', PARTLY_VERIFIED: 'Partly verified', NOT_SUPPORTED: 'Not supported' };
+
+    function $(id) { return document.getElementById(id); }
+    function say(text) { $('status').textContent = text || ''; }
+    function fail(e) { say(e && e.message ? e.message.replace(/^Exception: /, '') : String(e)); busy(false); }
+    function busy(on) { $('scan').disabled = on; $('scan').textContent = on ? 'Scanning…' : 'Scan document'; }
+    function run(name) {
+      var args = Array.prototype.slice.call(arguments, 1);
+      return new Promise(function (ok, no) {
+        google.script.run.withSuccessHandler(ok).withFailureHandler(no)[name].apply(null, args);
+      });
+    }
+    function el(tag, text, cls) {
+      var n = document.createElement(tag);
+      if (text !== undefined) n.textContent = text;  // document text is untrusted: always textContent, never innerHTML
+      if (cls) n.className = cls;
+      return n;
+    }
+    function index(issue) { return parseInt(issue.paragraph_id.slice(1), 10) - 1; }
+    function kind(issue) { return issue.status_label || issue.group; }
+
+    function button(label, onClick, aria) {
+      var b = el('button', label);
+      b.type = 'button';
+      if (aria) b.setAttribute('aria-label', aria);
+      b.addEventListener('click', onClick);
+      return b;
+    }
+
+    function card(issue) {
+      var li = el('li', undefined, 'issue');
+      var head = el('p');
+      if (issue.status_label) head.appendChild(el('span', LABEL[issue.status_label], 'tag ' + issue.status_label));
+      head.appendChild(el('strong', issue.text || '(empty)'));
+      li.appendChild(head);
+      li.appendChild(el('p', issue.message, 'muted'));
+      if (issue.reviewer_source_note) li.appendChild(el('p', issue.reviewer_source_note, 'muted'));
+      var row = el('p');
+      row.appendChild(button('Highlight', function () {
+        say('');
+        run('highlight', index(issue), scanned.texts[index(issue)], issue.start_index, issue.end_index, kind(issue)).then(function () { say('Highlighted in the document.'); }, fail);
+      }, 'Highlight: ' + issue.text));
+      if (issue.suggested_replacement) {
+        row.appendChild(button('Replace with ' + issue.suggested_replacement, function () {
+          if (!confirm('Replace "' + issue.text + '" with "' + issue.suggested_replacement + '"?\n\nThis edits the text directly (Google Docs cannot track it from an add-on). File > Version history can undo it.\nWhich text applies depends on the facts of the matter; a lawyer decides.')) return;
+          run('replace', index(issue), scanned.texts[index(issue)], issue.start_index, issue.end_index, issue.suggested_replacement).then(function () {
+            say('Replaced. Scan again before checking more.');
+            $('result').textContent = '';
+            scanned = null;
+          }, fail);
+        }));
+      }
+      li.appendChild(row);
+      return li;
+    }
+
+    function render(result) {
+      var root = $('result');
+      root.textContent = '';
+      Object.keys(result.checks).forEach(function (k) {
+        if (result.checks[k] !== 'ran') root.appendChild(el('p', 'The ' + k.replace('_', ' ') + ' check did not run on this server (' + result.checks[k].replace(/_/g, ' ') + '). Nothing is claimed about it.', 'muted'));
+      });
+      GROUPS.forEach(function (g) {
+        var items = result.issues.filter(function (i) { return i.group === g.key; });
+        root.appendChild(el('h2', g.title + ' (' + items.length + ')'));
+        if (!items.length) { root.appendChild(el('p', 'Nothing pointed out.', 'muted')); return; }
+        var ul = el('ul');
+        items.forEach(function (i) { ul.appendChild(card(i)); });
+        root.appendChild(ul);
+      });
+      root.appendChild(el('h2', 'List of dates (' + result.dates.length + ')'));
+      var ul = el('ul');
+      result.dates.forEach(function (d) {
+        var li = el('li');
+        li.appendChild(button((d.date || '?') + ' as written "' + d.text + '", paragraph ' + d.paragraph_id.slice(1) + (d.flags.length ? '. ' + d.flags.join(' ') : ''), function () {
+          run('highlight', index(d), scanned.texts[index(d)], d.start_index, d.end_index, 'defect').then(function () { say('Highlighted in the document.'); }, fail);
+        }));
+        ul.appendChild(li);
+      });
+      root.appendChild(ul);
+      root.appendChild(el('p', result.caveat, 'muted'));
+    }
+
+    $('scan').addEventListener('click', function () {
+      busy(true);
+      say('');
+      run('scan').then(function (r) { scanned = r; render(r); say(r.issues.length + ' places pointed out.'); busy(false); }, fail);
+    });
+    $('clear').addEventListener('click', function () { run('clearHighlights').then(function () { say('Highlights cleared.'); }, fail); });
+    $('save').addEventListener('click', function () {
+      run('saveSettings', $('url').value, $('key').value).then(function (s) { $('key').value = ''; showSettings(s); say('Saved.'); }, fail);
+    });
+    $('forget').addEventListener('click', function () { run('clearSettings').then(function (s) { $('url').value = ''; showSettings(s); say('Removed.'); }, fail); });
+    function showSettings(s) { if (s.url) $('url').value = s.url; $('keystate').textContent = s.hasKey ? 'A key is saved for you.' : 'No key saved yet.'; if (!s.url || !s.hasKey) $('settings').open = true; }
+    run('getSettings').then(showSettings, fail);
+  </script>
+</body>
+</html>

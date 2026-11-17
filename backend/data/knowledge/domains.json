@@ -1,0 +1,102 @@
+{
+ "note": "Reading lists, not content. A title here means it is registered in the knowledge registry; its text is searchable only after rights and approval (see lib/knowledge.py). Nothing is verified law.",
+ "domains": {
+  "neuroscience": {
+   "title": "Neuroscience, sleep, attention and audio-frequency claims",
+   "works": [
+    {
+     "number": 43,
+     "role": "Biology and behaviour (a popular science book)"
+    },
+    {
+     "number": 42,
+     "role": "Neuroplasticity (a popular science book)"
+    },
+    {
+     "number": 5,
+     "role": "Judgement and decision-making research"
+    },
+    {
+     "number": 7,
+     "role": "Historical: psychoanalytic theory, not current neuroscience"
+    },
+    {
+     "number": 8,
+     "role": "Historical: analytic psychology, not current neuroscience"
+    },
+    {
+     "number": 24,
+     "role": "Scientific scepticism and evaluating claims"
+    },
+    {
+     "number": 47,
+     "role": "Reasoning about extraordinary claims"
+    }
+   ],
+   "primary_literature": "Not loaded. Current neuroscience and auditory-science papers must be located, rights-checked, and reviewed by a qualified person before any finding is stated.",
+   "caveat": "Popular books are starting points, not substitutes for current primary research."
+  },
+  "philosophy": {
+   "title": "Philosophy, ethics and the history of law and politics",
+   "works": [
+    {
+     "number": 6,
+     "role": "Meaning and suffering (psychiatrist's memoir and logotherapy)"
+    },
+    {
+     "number": 11,
+     "role": "Nietzsche: critique of moral systems"
+    },
+    {
+     "number": 13,
+     "role": "Plato: justice and the state"
+    },
+    {
+     "number": 14,
+     "role": "Hobbes: authority and the social contract"
+    },
+    {
+     "number": 15,
+     "role": "Marcus Aurelius: Stoic practice"
+    },
+    {
+     "number": 22,
+     "role": "Duty, action and detachment (a religious and philosophical text)"
+    },
+    {
+     "number": 21,
+     "role": "Statecraft in the Indian tradition"
+    },
+    {
+     "number": 3,
+     "role": "Machiavelli: power and rule"
+    },
+    {
+     "number": 27,
+     "role": "Machiavelli: republics"
+    },
+    {
+     "number": 19,
+     "role": "Constitutional argument for the US Constitution"
+    },
+    {
+     "number": 18,
+     "role": "Medieval English limits on royal power"
+    },
+    {
+     "number": 16,
+     "role": "Roman law compilation"
+    },
+    {
+     "number": 17,
+     "role": "Ancient Mesopotamian law code"
+    },
+    {
+     "number": 12,
+     "role": "Fiction: a novel, not an argument or a source of fact"
+    }
+   ],
+   "caveat": "These works give historical and conceptual context. They are not current legal authority and no doctrine in them is presented as proven."
+  }
+ }
+}

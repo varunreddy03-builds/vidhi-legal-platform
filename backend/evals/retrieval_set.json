@@ -1,0 +1,632 @@
+{
+ "made": "2026-11-07",
+ "database": "vidhi_dev",
+ "questions": [
+  {
+   "id": "S01",
+   "kind": "statute",
+   "question": "What is the punishment for murder?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "302",
+     "provision_id": "de17196e-35c0-41fd-84e4-5972e8ee95e6",
+     "heading": "Punishment for murder"
+    },
+    {
+     "act": "BNS",
+     "section": "103",
+     "provision_id": "c35e7d33-da37-4d12-bbcb-47a2de8d8d8c",
+     "heading": "Punishment for murder"
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "kind": "statute",
+   "question": "What is cheating?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "415",
+     "provision_id": "99911a40-0b2f-4319-b56b-b1f36407ac86",
+     "heading": "Cheating"
+    },
+    {
+     "act": "BNS",
+     "section": "318",
+     "provision_id": "fd109025-386f-4582-9e79-58472ac1a130",
+     "heading": "Cheating"
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "kind": "statute",
+   "question": "What is the punishment for criminal breach of trust?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "406",
+     "provision_id": "2cb0c0aa-5402-4b02-9306-9bef0dd80126",
+     "heading": "Punishment for criminal breach of trust"
+    },
+    {
+     "act": "BNS",
+     "section": "316",
+     "provision_id": "fbd75adb-6fc3-4a6a-b30f-d3877e402afd",
+     "heading": "Criminal breach of trust"
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "kind": "statute",
+   "question": "What is dowry death?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "304B",
+     "provision_id": "313cf60b-7c58-471c-a526-7bc9ad318093",
+     "heading": "Dowry death"
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "kind": "statute",
+   "question": "Can a husband or his relatives be punished for cruelty to a wife?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "498A",
+     "provision_id": "5901d5c6-c47e-4cad-809c-e999c608b1be",
+     "heading": "Husband or relative of husband of a woman subjecting her to cruelty"
+    },
+    {
+     "act": "BNS",
+     "section": "85",
+     "provision_id": "c69ac7d0-75d6-4ee3-a3ba-d9fdc42916c6",
+     "heading": "Husband or relative of husband of a woman subjecting her to cruelty"
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "kind": "statute",
+   "question": "When is each person liable for an act done by several people with a common intention?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "34",
+     "provision_id": "3caf0af1-ac5f-4a01-a409-58bd35301a37",
+     "heading": "Acts done by several persons in furtherance of common intention"
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "kind": "statute",
+   "question": "Which section lets the High Court direct bail to a person who fears arrest (anticipatory bail)?",
+   "source": "BANK B2",
+   "expected": [
+    {
+     "act": "CrPC",
+     "section": "438",
+     "provision_id": "2b179802-1e86-4a51-9429-b418ea7a6f89",
+     "heading": "Direction for grant of bail to person apprehending arrest"
+    },
+    {
+     "act": "BNSS",
+     "section": "482",
+     "provision_id": "5528e261-04f6-48df-b021-35df020d39ae",
+     "heading": "Direction for grant of bail to person apprehending arrest"
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "kind": "statute",
+   "question": "How is information about a cognizable offence recorded by the police?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "CrPC",
+     "section": "154",
+     "provision_id": "54ad8e83-27ef-4385-aebe-44a1d2a30218",
+     "heading": "Information in cognizable cases"
+    },
+    {
+     "act": "BNSS",
+     "section": "173",
+     "provision_id": "9eca457b-8afb-49ee-9bb2-28f55ec89543",
+     "heading": "Information in cognizable cases"
+    }
+   ]
+  },
+  {
+   "id": "S09",
+   "kind": "statute",
+   "question": "When can the police arrest without a warrant?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "CrPC",
+     "section": "41",
+     "provision_id": "0acef006-5563-498e-946d-3b30b91e4cbe",
+     "heading": "When police may arrest without warrant"
+    },
+    {
+     "act": "BNSS",
+     "section": "35",
+     "provision_id": "0cae6a24-79b4-4ad4-bc15-23429b96ddac",
+     "heading": "When police may arrest without warrant"
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "kind": "statute",
+   "question": "Can a wife, child or parent get an order for maintenance?",
+   "source": "BANK E3",
+   "expected": [
+    {
+     "act": "CrPC",
+     "section": "125",
+     "provision_id": "b3187842-a582-4d4c-a118-a79e95ccc8cf",
+     "heading": "Order for maintenance of wives, children and parents"
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "kind": "statute",
+   "question": "Which documents need a certificate when an electronic record is used as evidence?",
+   "source": "BANK J3",
+   "expected": [
+    {
+     "act": "IEA",
+     "section": "65B",
+     "provision_id": "71b60585-eb61-40ae-abef-37bfc24997ae",
+     "heading": "Admissibility of electronic records"
+    },
+    {
+     "act": "BSA",
+     "section": "63",
+     "provision_id": "62e24a3e-e730-4079-a2b5-d333c8404a64",
+     "heading": "Admissibility of electronic records"
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "kind": "statute",
+   "question": "Is a confession made to a police officer admissible?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IEA",
+     "section": "25",
+     "provision_id": "d5f76e61-9df5-4a49-a9e0-82169fc663fa",
+     "heading": "Confession to police"
+    },
+    {
+     "act": "BSA",
+     "section": "23",
+     "provision_id": "ff25e6fb-2ff2-4df0-a061-f7b9717b8fe0",
+     "heading": "Confession to police officer"
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "kind": "statute",
+   "question": "How much of the information received from an accused person may be proved?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IEA",
+     "section": "27",
+     "provision_id": "015f0022-4c9e-4141-9085-44eb8fd23bae",
+     "heading": "How much of information received from accused may be proved"
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "kind": "statute",
+   "question": "When may a court presume that certain facts exist?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IEA",
+     "section": "114",
+     "provision_id": "3c16c8af-dfe4-487e-adcd-795edaef2334",
+     "heading": "Court may presume existence of certain facts"
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "kind": "statute",
+   "question": "What is the punishment for theft?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "379",
+     "provision_id": "f14121e6-069b-4d8a-8fbf-0bd81f77f6c9",
+     "heading": "Punishment for theft"
+    },
+    {
+     "act": "BNS",
+     "section": "303",
+     "provision_id": "df2d4c04-b8eb-4645-8d2b-1b82b4233265",
+     "heading": "Theft"
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "kind": "statute",
+   "question": "What is defamation?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "499",
+     "provision_id": "1c49bcd1-c8b9-4494-8bb7-d701117d4807",
+     "heading": "Defamation"
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "kind": "statute",
+   "question": "What is the punishment for robbery?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "392",
+     "provision_id": "0423b21d-3ff7-429c-b52d-f204a9b24a9a",
+     "heading": "Punishment for robbery"
+    },
+    {
+     "act": "BNS",
+     "section": "309",
+     "provision_id": "3e7dd7d3-04be-4792-8793-49128448cb9e",
+     "heading": "Robbery"
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "kind": "statute",
+   "question": "What is attempt to murder?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "307",
+     "provision_id": "8b92a2fa-99b0-40c0-a007-430f1405440c",
+     "heading": "Attempt to murder"
+    }
+   ]
+  },
+  {
+   "id": "S19",
+   "kind": "statute",
+   "question": "What is the punishment for culpable homicide not amounting to murder?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "304",
+     "provision_id": "e287302c-6aa7-40c2-aff2-55a9561e5cb3",
+     "heading": "Punishment for culpable homicide not amounting to murder"
+    }
+   ]
+  },
+  {
+   "id": "S20",
+   "kind": "statute",
+   "question": "What is forgery for the purpose of cheating?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IPC",
+     "section": "468",
+     "provision_id": "ea57c7a7-cef3-450b-9714-1ec0b48ef569",
+     "heading": "Forgery for purpose of cheating"
+    }
+   ]
+  },
+  {
+   "id": "S21",
+   "kind": "statute",
+   "question": "What power does a police officer have to investigate a cognizable case?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "CrPC",
+     "section": "156",
+     "provision_id": "99a16c64-13be-403c-af5a-cfcb4d4316de",
+     "heading": "Police officer’s power to investigate cognizable case"
+    }
+   ]
+  },
+  {
+   "id": "S22",
+   "kind": "statute",
+   "question": "How does a Magistrate examine the complainant?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "CrPC",
+     "section": "200",
+     "provision_id": "92969c6e-79fe-46ca-a934-91b2511f30dc",
+     "heading": "Examination of complainant"
+    }
+   ]
+  },
+  {
+   "id": "S23",
+   "kind": "statute",
+   "question": "Who has the burden of proof?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IEA",
+     "section": "101",
+     "provision_id": "44537f06-6288-4819-b1e3-f5d500c3a2e1",
+     "heading": "Burden of proof"
+    }
+   ]
+  },
+  {
+   "id": "S24",
+   "kind": "statute",
+   "question": "When are the opinions of experts relevant?",
+   "source": "DATA",
+   "expected": [
+    {
+     "act": "IEA",
+     "section": "45",
+     "provision_id": "24e9c86b-019a-4c2f-9966-2d8552972609",
+     "heading": "Opinions of experts"
+    }
+   ]
+  },
+  {
+   "id": "J2005",
+   "kind": "judgment",
+   "question": "Sri Rc Kar v The State Of Assam, Gauhati High Court, 2005",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-18_6-asghccis-GAHC010051401995_1_2020-12-04",
+     "case_title": "PIL/2454/1995 of SRI RC KAR AND ORS Vs THE STATE OF ASSAM AND ORS",
+     "court": "Gauhati High Court",
+     "year": 2005
+    }
+   ]
+  },
+  {
+   "id": "J2006",
+   "kind": "judgment",
+   "question": "Dherendra Bora v State Of Sikkim, High Court of Sikkim, 2006",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-11_24-sikkimhc_pg-SKHC010000692006_1_2006-12-29",
+     "case_title": "BAIL APPLN./4/2006 of dherendra Bora Vs State of Sikkim",
+     "court": "High Court of Sikkim",
+     "year": 2006
+    }
+   ]
+  },
+  {
+   "id": "J2007",
+   "kind": "judgment",
+   "question": "Ram Gir v State Th. Education, High Court of Jammu and Kashmir, 2007",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-1_12-jammuhc-JKHC020082212002_1_2020-08-24",
+     "case_title": "SWP/2235/2002 of RAM GIR AND ORS. Vs STATE TH. EDUCATION AND ORS.",
+     "court": "High Court of Jammu and Kashmir",
+     "year": 2007
+    }
+   ]
+  },
+  {
+   "id": "J2008",
+   "kind": "judgment",
+   "question": "Shri. Divakar A. Pagi Presently In Judicial Custody Panaji Through Best Friend Raghven Paugi v State Through Superintendent Attached To Customs And Central Excise, Bombay High Court, 2008",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-27_1-hcbgoa-HCBM050036962008_1_2008-12-31",
+     "case_title": "CRMAB/335/2008 of SHRI. DIVAKAR A. PAGI PRESENTLY IN JUDICIAL CUSTODY PANAJI THROUGH BEST FRIEND RAGHVEN PAUGI Vs STATE THROUGH SUPERINTENDENT ATTACHED TO CUSTOMS AND CENTRAL EXCISE AND ANR.,",
+     "court": "Bombay High Court",
+     "year": 2008
+    }
+   ]
+  },
+  {
+   "id": "J2009",
+   "kind": "judgment",
+   "question": "Sec Apseb Hyd And v M.D.Jayapraksh Gupta Chittoor, High Court of Andhra Pradesh, 2009",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-28_2-aphc-APHC010081761999_1_2024-06-27",
+     "case_title": "WA/257/1999 of SEC APSEB HYD AND 2 Vs M.D.JAYAPRAKSH GUPTA CHITTOOR",
+     "court": "High Court of Andhra Pradesh",
+     "year": 2009
+    }
+   ]
+  },
+  {
+   "id": "J2010",
+   "kind": "judgment",
+   "question": "Deben Saikia And   Ors v The State Of Assam, Gauhati High Court, 2010",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-18_6-asghccis-GAHC010011222010_1_2012-01-24",
+     "case_title": "WP(C)/6403/2010 of DEBEN SAIKIA and 5 ORS Vs THE STATE OF ASSAM AND ORS",
+     "court": "Gauhati High Court",
+     "year": 2010
+    }
+   ]
+  },
+  {
+   "id": "J2011",
+   "kind": "judgment",
+   "question": "Asarabai Babasaheb Patare v The State Of Maharshtra, Bombay High Court, 2011",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-27_1-hcaurdb-HCBM030386552011_1_2011-12-30",
+     "case_title": "APPLN/5328/2011 of ASARABAI BABASAHEB PATARE AND ANR Vs THE STATE OF MAHARSHTRA",
+     "court": "Bombay High Court",
+     "year": 2011
+    }
+   ]
+  },
+  {
+   "id": "J2012",
+   "kind": "judgment",
+   "question": "Mohammad Ashraf Dar v State Th.Forest Deptt.And Ors., High Court of Jammu and Kashmir, 2012",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-1_12-jammuhc-JKHC020023592012_1_2012-12-31",
+     "case_title": "OWP/1244/2012 of MOHAMMAD ASHRAF DAR Vs STATE TH.FOREST DEPTT.AND ORS.",
+     "court": "High Court of Jammu and Kashmir",
+     "year": 2012
+    }
+   ]
+  },
+  {
+   "id": "J2013",
+   "kind": "judgment",
+   "question": "Sheikhu Khan v The State Of M.P., High Court Of Chhattisgarh, 2013",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-22_18-cghccisdb-CGHC010000701997_1_2014-01-01",
+     "case_title": "CRA/440/1997 of SHEIKHU KHAN Vs THE STATE OF M.P.",
+     "court": "High Court Of Chhattisgarh",
+     "year": 2013
+    }
+   ]
+  },
+  {
+   "id": "J2014",
+   "kind": "judgment",
+   "question": "Javid Hussain Shah v State Of Jk And Others  Home Deptt, High Court of Jammu and Kashmir, 2014",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-1_12-kashmirhc-JKHC010046152007_1_2023-02-08",
+     "case_title": "SWP/1263/2007 of JAVID HUSSAIN SHAH Vs STATE OF JK AND OTHERS (HOME DEPTT)",
+     "court": "High Court of Jammu and Kashmir",
+     "year": 2014
+    }
+   ]
+  },
+  {
+   "id": "J2015",
+   "kind": "judgment",
+   "question": "Narinder Singh Jamwal v Union Of India, High Court of Jammu and Kashmir, 2015",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-1_12-jammuhc-JKHC020003252002_1_2015-12-31",
+     "case_title": "LPASW/499/2002 of NARINDER SINGH JAMWAL Vs UNION OF INDIA AND ORS.",
+     "court": "High Court of Jammu and Kashmir",
+     "year": 2015
+    }
+   ]
+  },
+  {
+   "id": "J2016",
+   "kind": "judgment",
+   "question": "Md. Kanu Khan v The State Of Assam, Gauhati High Court, 2016",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-18_6-asghccis-GAHC010048152011_1_3011-11-18",
+     "case_title": "AB/3657/2011 of MD. KANU KHAN and ANR. Vs THE STATE OF ASSAM",
+     "court": "Gauhati High Court",
+     "year": 2016
+    }
+   ]
+  },
+  {
+   "id": "J2017",
+   "kind": "judgment",
+   "question": "Kantala Prameela v The State Of Ts.  Rep. By P.P., High Court for State of Telangana, 2017",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-36_29-taphc-HBHC010330042017_1_2018-08-07",
+     "case_title": "CRLP/2031/2017 of KANTALA PRAMEELA AND ANR Vs THE STATE OF TS., REP. BY P.P. AND ANOTHER",
+     "court": "High Court for State of Telangana",
+     "year": 2017
+    }
+   ]
+  },
+  {
+   "id": "J2018",
+   "kind": "judgment",
+   "question": "Meena Sharma v State Th.Education Deptt.And Ors., High Court of Jammu and Kashmir, 2018",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-1_12-jammuhc-JKHC020001582015_1_2018-12-31",
+     "case_title": "LPASW/13/2015 of MEENA SHARMA Vs STATE TH.EDUCATION DEPTT.AND ORS.",
+     "court": "High Court of Jammu and Kashmir",
+     "year": 2018
+    }
+   ]
+  },
+  {
+   "id": "J2019",
+   "kind": "judgment",
+   "question": "Eshan Pandita v Khurshid Ahmed Shah Comm..Revenue Deptt.And Anr., High Court of Jammu and Kashmir, 2019",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-1_12-jammuhc-JKHC020003142019_1_2019-12-31",
+     "case_title": "CPSW/27/2019 of ESHAN PANDITA Vs KHURSHID AHMED SHAH COMM..REVENUE DEPTT.AND ANR.",
+     "court": "High Court of Jammu and Kashmir",
+     "year": 2019
+    }
+   ]
+  },
+  {
+   "id": "J2020",
+   "kind": "judgment",
+   "question": "Gour Chandra Sarkar v State Of West Bengal, Calcutta High Court, 2020",
+   "source": "DATA",
+   "expected": [
+    {
+     "judgment_id": "hc-19_16-calcutta_appellate_side-WBCHCA1108402020_1_2020-12-31",
+     "case_title": "CRM/10914/2020 of GOUR CHANDRA SARKAR AND ANR Vs State of West Bengal",
+     "court": "Calcutta High Court",
+     "year": 2020
+    }
+   ]
+  }
+ ]
+}

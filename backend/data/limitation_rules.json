@@ -1,0 +1,4 @@
+{
+  "_readme": "Verified limitation rules ONLY. An entry is used only if verified is true and every field is filled in: id, applies_to (plain-language kind of claim), period_years (whole number), citation, source_text (the exact words of the provision, copied from the official source), source_url, verified_by (a named lawyer), verified_on (YYYY-MM-DD). Never add an entry from memory or from an AI answer. See backend/lib/limitation.py.",
+  "rules": []
+}

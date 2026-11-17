@@ -1,0 +1,26 @@
+{
+  "kind": "deadline_rules",
+  "source_url": "REPLACE: the official https link of the source of these rules",
+  "source_checked_on": "REPLACE: YYYY-MM-DD, the day you compared this file with that link",
+  "rules": [
+    {
+      "title": "REPLACE: a short title for the rule",
+      "starts_from": "REPLACE: what the period starts from, in words",
+      "period": {
+        "amount": "REPLACE: a whole number",
+        "unit": "REPLACE: days, weeks, months or years"
+      },
+      "count_from": "REPLACE: day_after_start or start_day_included",
+      "when_not_working": "REPLACE: move_to_next_working_day or leave_as_is",
+      "month_end": "REPLACE (only when the period is in months or years): last_day_of_month or first_day_of_next_month",
+      "calendar_court": "REPLACE (only when when_not_working moves the date): the court whose calendar to use",
+      "calendar_year": "REPLACE: the year of that calendar, as a number",
+      "authorities": [
+        "REPLACE: the provision or rule this comes from, as the source writes it"
+      ],
+      "not_applied": [
+        "REPLACE (optional): a condition under which this rule does not apply"
+      ]
+    }
+  ]
+}

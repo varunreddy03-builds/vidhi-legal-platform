@@ -1,0 +1,5 @@
+# A SAMPLE, not the lawyers' set. Every case is about the invented "Fictional Widget Testing Act, 2000" of the test library (backend/tests/fixtures/legal_library): no real law.
+# The lawyers' file goes at backend/evals/lawyer_set.jsonl in the same format. See backend/evals/lawyer_set.py for every field.
+{"id": "S001", "question": "Within how many days must a borrower return a borrowed widget to the lender?", "correct_answer": "A borrower must return the widget to the lender within thirty days.", "source": "Section 1, Fictional Widget Testing Act, 2000", "must_contain": ["thirty", "lender"]}
+{"id": "S002", "question": "May a lender charge any fee for the return of a widget?", "correct_answer": "No. A lender shall not charge any fee for the return of a widget.", "source": "Section 2, Fictional Widget Testing Act, 2000"}
+{"id": "S003", "question": "What is the penalty for never returning a borrowed widget?", "correct_answer": "The materials do not say.", "source": "", "expect": "could_not_check", "note": "no source exists, so the right behaviour is to say it cannot be checked"}

@@ -1,0 +1,14 @@
+{
+  "kind": "court_calendar",
+  "court": "REPLACE: the court's name exactly as VIDHI lists it (see the Courts list in Admin > Deadline data)",
+  "year": "REPLACE: a year such as 2026, as a number",
+  "source_url": "REPLACE: the official https link where the court publishes this calendar",
+  "source_checked_on": "REPLACE: YYYY-MM-DD, the day you compared this file with that link",
+  "weekend_days": "REPLACE: a list of weekly days off, 0 = Monday ... 6 = Sunday, or [] if none",
+  "holidays": [
+    {
+      "date": "REPLACE: YYYY-MM-DD",
+      "name": "REPLACE: the holiday's name as the court writes it"
+    }
+  ]
+}

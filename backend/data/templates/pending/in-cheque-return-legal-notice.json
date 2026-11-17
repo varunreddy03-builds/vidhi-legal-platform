@@ -1,0 +1,125 @@
+{
+  "language": "en",
+  "version": 1,
+  "jurisdiction": "IN",
+  "id": "in-cheque-return-legal-notice",
+  "kind": "notice",
+  "title": "Legal notice for a cheque returned unpaid",
+  "description": "A demand notice for a cheque the bank returned unpaid. The statute, the time limits and the wording of consequences are left for a lawyer: this template states none of them.",
+  "fields": [
+    {
+      "key": "notice_date",
+      "label": "Date of the notice",
+      "type": "date",
+      "required": true,
+      "not_before": "returned_on"
+    },
+    {
+      "key": "sender_name",
+      "label": "Name of the person or business that received the cheque",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "sender_address",
+      "label": "Their address",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "advocate_name",
+      "label": "Advocate sending the notice (if any)",
+      "type": "text",
+      "required": false,
+      "flag_if_empty": true
+    },
+    {
+      "key": "recipient_name",
+      "label": "Name of the person or business that issued the cheque",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "recipient_address",
+      "label": "Their address",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "debt_description",
+      "label": "What the cheque was given for",
+      "type": "textarea",
+      "required": true,
+      "help": "State the facts neutrally: the goods, services or loan, and the dates"
+    },
+    {
+      "key": "cheque_number",
+      "label": "Cheque number",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "cheque_date",
+      "label": "Date on the cheque",
+      "type": "date",
+      "required": true
+    },
+    {
+      "key": "cheque_amount",
+      "label": "Amount of the cheque",
+      "type": "money",
+      "required": true
+    },
+    {
+      "key": "drawn_on_bank",
+      "label": "Bank and branch the cheque is drawn on",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "presented_on",
+      "label": "Date the cheque was presented to the bank",
+      "type": "date",
+      "required": true,
+      "not_before": "cheque_date"
+    },
+    {
+      "key": "returned_on",
+      "label": "Date the bank returned it (see the bank's return memo)",
+      "type": "date",
+      "required": true,
+      "not_before": "presented_on"
+    },
+    {
+      "key": "return_reason",
+      "label": "Reason the bank gave in its return memo",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "payment_period_days",
+      "label": "Days you allow for payment",
+      "type": "int",
+      "required": true,
+      "min": 1,
+      "max": 90,
+      "help": "A lawyer must confirm the period that applies"
+    }
+  ],
+  "clauses": [
+    {
+      "id": "through_advocate",
+      "label": "Sent through an advocate",
+      "default": false,
+      "text": "Sent through: {{advocate_name}}\n"
+    }
+  ],
+  "body": "LEGAL NOTICE\n\nDate: {{notice_date}}\n\nDelivery: [LAWYER TO CONFIRM: a mode of delivery that gives proof of delivery]\n\nTo: {{recipient_name}}, {{recipient_address}}\n\nFrom: {{sender_name}}, {{sender_address}}\n{{clause:through_advocate}}\nSubject: Demand for payment of {{cheque_amount}} - cheque no. {{cheque_number}} returned unpaid\n\nSir or Madam,\n\nThis notice is sent on behalf of {{sender_name}} (the \"Sender\").\n\n1. The Sender is owed {{cheque_amount}} by you in connection with the following: {{debt_description}}\n\n2. For that amount you issued cheque no. {{cheque_number}} dated {{cheque_date}} for {{cheque_amount}}, drawn on {{drawn_on_bank}}.\n\n3. The Sender presented the cheque to the bank on {{presented_on}}. The bank returned it unpaid on {{returned_on}}, giving this reason in its return memo: {{return_reason}}. A copy of the return memo is enclosed.\n\n4. You are called upon to pay {{cheque_amount}} to the Sender within {{payment_period_days}} days of receiving this notice. [LAWYER TO CONFIRM: the statutory provision that applies, the period within which this notice must be sent after the cheque was returned, and the period that must be allowed for payment]\n\n5. If the amount is not paid within that time, the Sender may pursue the remedies available in law. [LAWYER TO CONFIRM: the steps and the wording appropriate to this matter]\n\n6. This notice is sent without prejudice to the Sender's other rights.\n\nEnclosures: copy of the cheque; the bank's return memo; papers showing what the cheque was given for. [LAWYER TO CONFIRM: any other enclosure that should be listed]\n\nYours faithfully,\n\n______________________\n{{sender_name}}\n",
+  "lawyer_checks": [
+    "Which statutory provision applies and the exact time limits for sending the notice and for payment",
+    "Whether the cheque and return memo meet the conditions for this kind of notice",
+    "Whether the facts as written are accurate and neutral",
+    "Mode of delivery and keeping proof of it",
+    "Whether the notice should come from an advocate"
+  ]
+}

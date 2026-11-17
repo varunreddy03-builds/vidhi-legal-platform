@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VIDHI</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:system-ui,sans-serif;background:#0B0C0D;color:#e6edf3;text-align:center;padding:env(safe-area-inset-top) 16px env(safe-area-inset-bottom)}
+  .box{width:100%;max-width:24rem}
+  h1{margin:0 0 4px;letter-spacing:.08em}
+  p{line-height:1.5;color:#b6bcc4;margin:8px 0}
+  input{box-sizing:border-box;width:100%;padding:12px 14px;margin-top:12px;border-radius:12px;border:1px solid #2b3036;background:#15181b;color:#e6edf3;font-size:16px}
+  button{margin-top:12px;padding:12px 28px;border:0;border-radius:999px;background:#5B8CFF;color:#0B0C0D;font-size:16px;font-weight:600;width:100%}
+  .err{color:#ff9b9b;min-height:1.4em;font-size:14px}
+  .spin{width:28px;height:28px;border:3px solid #2b3036;border-top-color:#5B8CFF;border-radius:50%;margin:16px auto;animation:s 1s linear infinite}
+  @keyframes s{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>VIDHI</h1>
+  <div id="busy"><div class="spin"></div><p>Connecting to your VIDHI server…</p></div>
+  <form id="form" hidden>
+    <p>Enter the address of your VIDHI server (for example <b>https://your-name.trycloudflare.com</b>).</p>
+    <input id="url" type="url" inputmode="url" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="https://…">
+    <div class="err" id="err"></div>
+    <button type="submit">Connect</button>
+  </form>
+</div>
+<script>
+(function () {
+  // Set at build time by scripts/build-apk.ps1; the person can change it here at any time (no rebuild needed).
+  var DEFAULT_URL = "__DEFAULT_SERVER_URL__";
+  var KEY = "vidhi_server_url", LEFT = "vidhi_left_app";
+  var $ = function (id) { return document.getElementById(id); };
+  var saved = ""; try { saved = localStorage.getItem(KEY) || ""; } catch (e) {}
+  var url = saved || (DEFAULT_URL.indexOf("__") === 0 ? "" : DEFAULT_URL);
+  var cameBack = false; try { cameBack = sessionStorage.getItem(LEFT) === "1"; sessionStorage.removeItem(LEFT); } catch (e) {}
+
+  function showForm(msg) {
+    $("busy").hidden = true; $("form").hidden = false; $("url").value = url; $("err").textContent = msg || "";
+  }
+  function clean(v) {
+    v = (v || "").trim().replace(/\/+$/, "");
+    if (v && !/^https?:\/\//i.test(v)) v = "https://" + v;
+    return v;
+  }
+  function reachable(u) {
+    var ctl = new AbortController(), t = setTimeout(function () { ctl.abort(); }, 10000);
+    return fetch(u + "/", { mode: "no-cors", cache: "no-store", signal: ctl.signal })
+      .then(function () { clearTimeout(t); return true; }, function () { clearTimeout(t); return false; });
+  }
+  function go(u) {
+    try { localStorage.setItem(KEY, u); sessionStorage.setItem(LEFT, "1"); } catch (e) {}
+    location.replace(u + "/");
+  }
+  function connect(u) {
+    $("form").hidden = true; $("busy").hidden = false;
+    reachable(u).then(function (ok) {
+      if (ok) go(u); else { url = u; showForm("Cannot reach " + u + ". Check the address, that your server is running, and your internet connection."); }
+    });
+  }
+  $("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var u = clean($("url").value);
+    if (!u) { $("err").textContent = "Enter the server address."; return; }
+    connect(u);
+  });
+  if (!url) showForm("");
+  else if (cameBack) showForm("");
+  else connect(url);
+})();
+</script>
+</body>
+</html>

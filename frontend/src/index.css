@@ -1,0 +1,362 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/instrument-sans";
+@import "@fontsource-variable/sora";
+@import "@fontsource-variable/lora";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    /* The Noto families are loaded only when that language is chosen (lib/languages.ts); naming them here is what makes the browser use them for Hindi, Telugu, Tamil and the rest. */
+    --font-heading: 'Sora Variable', 'Noto Sans Devanagari Variable', 'Noto Sans Telugu Variable', 'Noto Sans Tamil Variable', 'Noto Sans Bengali Variable', 'Noto Sans Gujarati Variable', 'Noto Sans Gurmukhi Variable', 'Noto Sans Kannada Variable', 'Noto Sans Malayalam Variable', 'Noto Sans Oriya Variable', 'Noto Sans Meetei Mayek Variable', 'Noto Sans Ol Chiki Variable', 'Noto Sans Arabic Variable', sans-serif;
+    --font-sans: 'Instrument Sans Variable', 'Noto Sans Devanagari Variable', 'Noto Sans Telugu Variable', 'Noto Sans Tamil Variable', 'Noto Sans Bengali Variable', 'Noto Sans Gujarati Variable', 'Noto Sans Gurmukhi Variable', 'Noto Sans Kannada Variable', 'Noto Sans Malayalam Variable', 'Noto Sans Oriya Variable', 'Noto Sans Meetei Mayek Variable', 'Noto Sans Ol Chiki Variable', 'Noto Sans Arabic Variable', sans-serif;
+    /* Answers and reports are read, not scanned: a serif (Lora) for Latin text; Indian scripts fall through to their Noto sans. */
+    --font-serif: 'Lora Variable', 'Noto Sans Devanagari Variable', 'Noto Sans Telugu Variable', 'Noto Sans Tamil Variable', 'Noto Sans Bengali Variable', 'Noto Sans Gujarati Variable', 'Noto Sans Gurmukhi Variable', 'Noto Sans Kannada Variable', 'Noto Sans Malayalam Variable', 'Noto Sans Oriya Variable', 'Noto Sans Meetei Mayek Variable', 'Noto Sans Ol Chiki Variable', 'Noto Sans Arabic Variable', Georgia, 'Times New Roman', serif;
+    --color-neural: #5B8CFF;
+    --color-gold: #C8A96B;
+    --color-amber: #F0A63A;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root, .dark {
+    --background: #070A12;
+    --foreground: #E7E9EE;
+    --card: #0B0F1A99;
+    --card-foreground: #E7E9EE;
+    --popover: #0E121D;
+    --popover-foreground: #E7E9EE;
+    --primary: #5B8CFF;
+    --primary-foreground: #07080A;
+    --secondary: #131825;
+    --secondary-foreground: #E7E9EE;
+    --muted: #131825;
+    --muted-foreground: #A6AEC0;
+    --accent: #181E2D;
+    --accent-foreground: #E7E9EE;
+    --destructive: #E0604D;
+    --border: #8FA4D41F;
+    --input: #FFFFFF1F;
+    --ring: #5B8CFF80;
+    --chart-1: #5B8CFF;
+    --chart-2: #C8A96B;
+    --chart-3: #F0A63A;
+    --chart-4: #7C8AA5;
+    --chart-5: #3A4458;
+    --radius: 0.5rem;
+    --sidebar: #080B14;
+    --sidebar-foreground: #C9CDD6;
+    --sidebar-primary: #5B8CFF;
+    --sidebar-primary-foreground: #07080A;
+    --sidebar-accent: #131825;
+    --sidebar-accent-foreground: #E7E9EE;
+    --sidebar-border: #8FA4D41F;
+    --sidebar-ring: #5B8CFF80;
+    --focus-ring: #D9BC7E;
+    --gold-line: #C8A96B40;
+}
+
+/* The top of the screen on a phone: the status bar, a camera cut-out or a "dynamic island" can sit on top of the page. The browser reports it as
+   env(safe-area-inset-top); the Android app's WebView reports it as --safe-area-inset-top. Whichever is larger is kept clear, so the Back button,
+   sign-in links and page titles are never underneath it. On a desktop both are 0. */
+:root {
+  --safe-top: max(env(safe-area-inset-top, 0px), var(--safe-area-inset-top, 0px));
+}
+body {
+  padding-top: var(--safe-top);
+}
+body::before {
+  /* a solid strip over the inset, so scrolled content never shows through the status bar */
+  content: "";
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--safe-top);
+  background: var(--background);
+  z-index: 60;
+  pointer-events: none;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans;
+    scroll-padding-bottom: 5rem; /* a field scrolled into view stops above the phone's bottom menu */
+    }
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    text-wrap: balance;
+    }
+  h1 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); }
+  p, li { text-wrap: pretty; }
+  body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+  /* A visible, gold-tinted focus ring for keyboard users on links and custom controls (inputs and buttons draw their own). */
+  a:focus-visible, [role="button"]:focus-visible, [role="tab"]:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+    }
+}
+
+@keyframes vidhi-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.vidhi-rise { animation: vidhi-rise 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+@keyframes vidhi-sweep {
+  0% { background-position: -160% 0; }
+  100% { background-position: 260% 0; }
+}
+.vidhi-sweep {
+  background-image: linear-gradient(90deg, transparent, #5B8CFF33, transparent);
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+  animation: vidhi-sweep 1.5s linear infinite;
+}
+
+.glass {
+  background: linear-gradient(160deg, #121828cc, #090C15cc);
+  backdrop-filter: blur(12px);
+  border: 1px solid #8FA4D424;
+  box-shadow: inset 0 1px 0 #C8A96B26, 0 18px 40px -24px #000000cc;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* Light theme. Dark is the default; the user can switch (Settings or the header) or follow their device.      */
+/* ------------------------------------------------------------------------------------------ */
+:root.light {
+    color-scheme: light;
+    --background: #F5F6FA;
+    --foreground: #12141C;
+    --card: #FFFFFFCC;
+    --card-foreground: #12141C;
+    --popover: #FFFFFF;
+    --popover-foreground: #12141C;
+    --primary: #3F69E0;
+    --primary-foreground: #FFFFFF;
+    --secondary: #E9ECF4;
+    --secondary-foreground: #12141C;
+    --muted: #E9ECF4;
+    --muted-foreground: #565C6C;
+    --accent: #E2E7F3;
+    --accent-foreground: #12141C;
+    --destructive: #C23B28;
+    --border: #0F172A24;
+    --input: #0F172A33;
+    --ring: #3F69E0AA;
+    --chart-1: #3F69E0;
+    --chart-2: #9A7B2E;
+    --chart-3: #B56B00;
+    --chart-4: #5B6580;
+    --chart-5: #9AA3B8;
+    --sidebar: #FFFFFF;
+    --sidebar-foreground: #2A2F3C;
+    --sidebar-primary: #3F69E0;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #E9ECF4;
+    --sidebar-accent-foreground: #12141C;
+    --sidebar-border: #0F172A1F;
+    --sidebar-ring: #3F69E0AA;
+    --focus-ring: #8A6A1F;
+    --gold-line: #8A6A1F40;
+}
+:root { --plate: #0D111C; --plate-hover: #171D2C; --plate-edge-a: #C8A96Bcc; --plate-edge-b: #5B8CFF99; }
+:root.light { --plate: #FFFFFF; --plate-hover: #EDF1FB; --plate-edge-a: #A9873Acc; --plate-edge-b: #3F69E0AA; }
+:root.light .glass {
+  background: linear-gradient(160deg, #FFFFFFEE, #F1F4FAEE);
+  border: 1px solid #0F172A1A;
+  box-shadow: 0 10px 30px -18px #0F172A55;
+}
+:root.light canvas { opacity: 0.22; filter: invert(1) hue-rotate(180deg); }
+/* Inline accent colours were chosen for a dark page; on a light page they need a deeper tone to stay readable. */
+:root.light [style*="rgb(200, 169, 107)"] { color: #8A6A1F !important; border-color: #8A6A1F66 !important; }
+:root.light [style*="rgb(240, 166, 58)"] { color: #9A5B00 !important; border-color: #9A5B0066 !important; }
+:root.light [style*="rgb(91, 140, 255)"] { color: #2C52C8 !important; border-color: #2C52C866 !important; }
+/* The same darker colours for text set with classes (text-[#5B8CFF] and friends), which the attribute rules above do not reach: the bright blue, gold and amber are for the dark background and read at about 3:1 on white. */
+:root.light .text-\[\#5B8CFF\], :root.light .text-neural { color: #2C52C8; }
+:root.light .text-\[\#C8A96B\] { color: #8A6A1F; }
+:root.light .text-\[\#F0A63A\] { color: #9A5B00; }
+:root.light [style*="rgb(143, 168, 255)"] { color: #2C52C8 !important; } /* the lighter blue of the Legal Intelligence door */
+:root.light [style*="rgb(224, 96, 77)"], :root.light [style*="rgb(229, 100, 110)"] { color: #B02F1F !important; }
+
+/* ------------------------------------------------------------------------------------------ */
+/* Buttons: the one part of the interface that is new. Each shape tells you what a button does.   */
+/*   orbit  the main action        plate  a second action        ember  deleting        lamp  quiet action     */
+/* ------------------------------------------------------------------------------------------ */
+@property --orbit-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes orbit-turn { to { --orbit-angle: 360deg; } }
+@keyframes spinner-turn { to { transform: rotate(360deg); } }
+@keyframes vidhi-rise-soft { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.vidhi-rise-2 { animation: vidhi-rise-soft 420ms 80ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.vidhi-rise-3 { animation: vidhi-rise-soft 420ms 160ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+.btn-orbit {
+  position: relative;
+  isolation: isolate;
+  color: #06080F;
+  font-weight: 620;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(180deg, #9DBBFF 0%, #5B8CFF 52%, #3F69E0 100%) padding-box,
+    conic-gradient(from var(--orbit-angle), #E6D3A0, #5B8CFF, #C8A96B, #AFC6FF, #E6D3A0) border-box;
+  animation: orbit-turn 9s linear infinite;
+  box-shadow: 0 8px 26px -10px #5B8CFFcc, 0 0 0 1px #5B8CFF33;
+  transition: transform 0.18s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+.btn-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 32%, #FFFFFF55 50%, transparent 68%);
+  background-size: 260% 100%;
+  background-position: 160% 0;
+  transition: background-position 0.7s ease;
+}
+.btn-orbit:hover:not(:disabled):not([aria-disabled="true"]) {
+  transform: translateY(-1px);
+  filter: saturate(1.1);
+  animation-duration: 3s;
+  box-shadow: 0 14px 34px -10px #5B8CFFee, 0 0 0 1px #5B8CFF66;
+}
+.btn-orbit:hover:not(:disabled)::after { background-position: -60% 0; }
+.btn-orbit:active:not(:disabled) { transform: translateY(0) scale(0.975); }
+.btn-orbit:disabled, .btn-orbit[aria-disabled="true"] { filter: grayscale(0.7) brightness(0.8); box-shadow: none; animation: none; }
+
+.btn-plate {
+  position: relative;
+  color: var(--foreground);
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 0 !important;
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
+  background:
+    linear-gradient(var(--plate), var(--plate)) padding-box,
+    linear-gradient(135deg, var(--plate-edge-a), var(--plate-edge-b), var(--plate-edge-a)) border-box;
+  transition: background 0.25s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.25s ease;
+}
+.btn-plate:hover:not(:disabled) {
+  background:
+    linear-gradient(var(--plate-hover), var(--plate-hover)) padding-box,
+    linear-gradient(135deg, #E6D3A0, #5B8CFF, #C8A96B) border-box;
+  box-shadow: inset 0 0 22px #5B8CFF22;
+}
+.btn-plate:active:not(:disabled) { transform: scale(0.98); }
+.btn-plate:focus-visible { outline: none; box-shadow: inset 0 0 0 2px #5B8CFF, inset 0 0 18px #5B8CFF44; }
+
+.btn-ember {
+  position: relative;
+  color: #FF9D8A;
+  font-weight: 550;
+  border: 1px solid transparent;
+  border-radius: 0 !important;
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
+  background:
+    linear-gradient(#170B0A, #170B0A) padding-box,
+    linear-gradient(135deg, #FF6B4A, #E0604D, #8E1F12) border-box;
+  transition: box-shadow 0.25s ease, color 0.2s ease;
+}
+:root.light .btn-ember { color: #B02F1F; background: linear-gradient(#FFF5F3, #FFF5F3) padding-box, linear-gradient(135deg, #E0604D, #C23B28, #8E1F12) border-box; }
+.btn-ember:hover:not(:disabled) { box-shadow: inset 0 0 26px #E0604D55; }
+.btn-ember:focus-visible { outline: none; box-shadow: inset 0 0 0 2px #FF6B4A; }
+
+.btn-lamp {
+  position: relative;
+  color: var(--muted-foreground);
+  transition: color 0.2s ease, background 0.25s ease;
+}
+.btn-lamp:hover:not(:disabled) {
+  color: var(--foreground);
+  background: radial-gradient(circle at 50% 130%, #5B8CFF2B, transparent 70%);
+}
+
+.spinner-ring { display: inline-block; border-radius: 9999px; border: 2px solid currentColor; border-right-color: transparent; border-bottom-color: transparent; animation: spinner-turn 0.8s linear infinite; }
+
+/* Big "door" cards on the home screen */
+.glass-lift { transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+.glass-lift:hover { transform: translateY(-3px); border-color: #5B8CFF66; box-shadow: 0 20px 50px -24px #5B8CFF55; }
+.door { position: relative; isolation: isolate; overflow: hidden; }
+.door::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 0%), #5B8CFF22, transparent 60%);
+  transition: opacity 0.3s ease;
+}
+.door:hover::before { opacity: 1; }
+
+/* Small shared finishing touches: a fine gold rule, and a gentle lift on interactive cards. */
+.gold-rule { height: 1px; border: 0; background: linear-gradient(90deg, transparent, var(--gold-line), transparent); }
+.glass:is(a, button):hover, a.glass:hover { border-color: var(--gold-line); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; }
+  .btn-orbit, .spinner-ring, .vidhi-rise, .vidhi-rise-2, .vidhi-rise-3, .vidhi-sweep { animation: none !important; }
+  .glass-lift:hover { transform: none; }
+}
+
+/* Light theme: the animated backdrop's inline dark gradient is replaced by a soft light one. */
+:root.light [data-testid="nervous-system-background"] { background: radial-gradient(120% 90% at 50% 0%, #FFFFFF 0%, #EEF1F8 75%) !important; }
+
+/* On a phone, a text box or list under 16px makes iPhone Safari zoom the page in when it is tapped. Outside the layers so it wins over the text-sm class. */
+@media (max-width: 767px) {
+  textarea, select { font-size: 16px; }
+}
+@media (max-width: 767px) {
+  label:has(input[type="checkbox"]), label:has(input[type="radio"]) { padding-block: 0.25rem; }  /* a tick-box row is at least 28px tall to tap */
+}

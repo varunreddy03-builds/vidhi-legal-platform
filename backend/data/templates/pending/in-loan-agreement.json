@@ -1,0 +1,138 @@
+{
+  "language": "en",
+  "version": 1,
+  "jurisdiction": "IN",
+  "id": "in-loan-agreement",
+  "kind": "agreement",
+  "title": "Loan agreement",
+  "description": "A simple loan agreement between a lender and a borrower. The interest rate is whatever you enter: VIDHI does not say what rate is allowed. Stamp duty and governing law are left for a lawyer.",
+  "fields": [
+    {
+      "key": "agreement_date",
+      "label": "Date of the agreement",
+      "type": "date",
+      "required": true
+    },
+    {
+      "key": "place",
+      "label": "Place of signing (city)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "lender_name",
+      "label": "Lender's full name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "lender_address",
+      "label": "Lender's address",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "borrower_name",
+      "label": "Borrower's full name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "borrower_address",
+      "label": "Borrower's address",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "principal",
+      "label": "Amount of the loan",
+      "type": "money",
+      "required": true
+    },
+    {
+      "key": "disbursed_on",
+      "label": "Date the loan is paid to the borrower",
+      "type": "date",
+      "required": true
+    },
+    {
+      "key": "interest_rate",
+      "label": "Interest per year (per cent; enter 0 for no interest)",
+      "type": "decimal",
+      "required": true,
+      "min": 0,
+      "max": 1000
+    },
+    {
+      "key": "repayment_mode",
+      "label": "How the borrower repays",
+      "type": "choice",
+      "required": true,
+      "choices": [
+        "in one payment",
+        "in equal monthly instalments"
+      ]
+    },
+    {
+      "key": "due_date",
+      "label": "Date by which everything must be repaid",
+      "type": "date",
+      "required": true,
+      "not_before": "disbursed_on"
+    },
+    {
+      "key": "instalments",
+      "label": "Number of monthly instalments",
+      "type": "int",
+      "required": false,
+      "flag_if_empty": true,
+      "min": 1,
+      "max": 600
+    },
+    {
+      "key": "cure_days",
+      "label": "Days the borrower has to put right a missed payment after written notice",
+      "type": "int",
+      "required": true,
+      "min": 1,
+      "max": 365
+    },
+    {
+      "key": "late_rate",
+      "label": "Extra interest on late payments (per cent per year)",
+      "type": "decimal",
+      "required": false,
+      "flag_if_empty": true,
+      "min": 0,
+      "max": 1000
+    }
+  ],
+  "clauses": [
+    {
+      "id": "instalments",
+      "label": "Monthly instalments",
+      "default": false,
+      "text": "If the Borrower repays in monthly instalments, there will be {{instalments}} equal instalments, the first due one month after the date the Loan is paid and the others on the same day of each following month.\n"
+    },
+    {
+      "id": "prepayment",
+      "label": "Borrower may repay early",
+      "default": true,
+      "text": "The Borrower may repay all or part of the Loan early without any penalty, paying interest up to the date of repayment.\n"
+    },
+    {
+      "id": "late_charge",
+      "label": "Extra interest on late payments",
+      "default": false,
+      "text": "An amount not paid on time will carry additional interest of {{late_rate}} per cent per year from the due date until it is paid. [LAWYER TO CONFIRM: that this additional charge is permitted]\n"
+    }
+  ],
+  "body": "LOAN AGREEMENT\n\nThis agreement is made on {{agreement_date}} at {{place}} between:\n\n1. {{lender_name}}, of {{lender_address}} (the \"Lender\"); and\n2. {{borrower_name}}, of {{borrower_address}} (the \"Borrower\").\n\n1. The loan\nThe Lender will lend the Borrower {{principal}} (the \"Loan\"), paid by bank transfer on {{disbursed_on}}. The Borrower will confirm receipt in writing.\n\n2. Interest\nThe Loan carries interest at {{interest_rate}} per cent per year on the amount outstanding. [LAWYER TO CONFIRM: that this rate, and the way interest is charged, are permitted for these parties]\n\n3. Repayment\nThe Borrower will repay the Loan {{repayment_mode}}, and in any case will pay the whole of the Loan and the interest by {{due_date}}.\n{{clause:instalments}}{{clause:prepayment}}{{clause:late_charge}}\n4. Missed payment\nIf the Borrower does not pay an amount when due and does not put this right within {{cure_days}} days after written notice from the Lender, the Lender may demand the whole amount then outstanding.\n\n5. Records\nEach payment will be made by bank transfer or another traceable method, and each party will keep a record of it. On request, the Lender will give a written receipt.\n\n6. Stamp duty and documents\n[LAWYER TO CONFIRM: stamp duty, and any registration or documentation needed for a loan of this kind and size, and whether a promissory note or other instrument should accompany this agreement]\n\n7. Governing law and disputes\n[LAWYER TO CONFIRM: the governing law, and the courts or forum that should hear disputes about this agreement]\n\n8. Whole agreement\nThis document is the whole agreement about the Loan. Any change must be in writing and signed by both parties.\n\nSigned by the parties on the date written at the top.\n\nLender: ______________________   Name: {{lender_name}}\n\nBorrower: ______________________   Name: {{borrower_name}}\n\nWitness 1: ______________________   Name and address: ______________________\n\nWitness 2: ______________________   Name and address: ______________________\n",
+  "lawyer_checks": [
+    "Whether the interest rate and any late charge are permitted for these parties and this kind of lending",
+    "Whether a lending licence or registration is relevant to the lender",
+    "Stamp duty and any instrument that should accompany the agreement",
+    "Governing law and forum",
+    "Evidence of the money actually being paid"
+  ]
+}

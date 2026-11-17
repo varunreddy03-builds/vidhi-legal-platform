@@ -1,0 +1,21 @@
+{
+  "note": "Hindi and Telugu versions of eight statute questions already in retrieval_set.json (same expected provisions). UNREVIEWED: written by an AI assistant, not checked by anyone who reads the language. They test whether a question in another language finds an English provision; they are not a quality measure of the translations.",
+  "queries": [
+    {"qid": "S01", "lang": "hi", "text": "हत्या के लिए क्या सज़ा है?"},
+    {"qid": "S02", "lang": "hi", "text": "धोखाधड़ी क्या है?"},
+    {"qid": "S04", "lang": "hi", "text": "दहेज मृत्यु क्या है?"},
+    {"qid": "S09", "lang": "hi", "text": "पुलिस बिना वारंट के कब गिरफ्तार कर सकती है?"},
+    {"qid": "S10", "lang": "hi", "text": "क्या पत्नी, बच्चे या माता-पिता भरण-पोषण का आदेश पा सकते हैं?"},
+    {"qid": "S12", "lang": "hi", "text": "क्या पुलिस अधिकारी के सामने किया गया इकबालिया बयान स्वीकार्य है?"},
+    {"qid": "S15", "lang": "hi", "text": "चोरी के लिए क्या सज़ा है?"},
+    {"qid": "S18", "lang": "hi", "text": "हत्या का प्रयास क्या है?"},
+    {"qid": "S01", "lang": "te", "text": "హత్యకు శిక్ష ఏమిటి?"},
+    {"qid": "S02", "lang": "te", "text": "మోసం అంటే ఏమిటి?"},
+    {"qid": "S04", "lang": "te", "text": "వరకట్న మరణం అంటే ఏమిటి?"},
+    {"qid": "S09", "lang": "te", "text": "పోలీసులు వారెంట్ లేకుండా ఎప్పుడు అరెస్టు చేయవచ్చు?"},
+    {"qid": "S10", "lang": "te", "text": "భార్య, పిల్లలు లేదా తల్లిదండ్రులు భరణం ఉత్తర్వు పొందగలరా?"},
+    {"qid": "S12", "lang": "te", "text": "పోలీసు అధికారి ముందు చేసిన నేరాంగీకారం అంగీకారయోగ్యమా?"},
+    {"qid": "S15", "lang": "te", "text": "దొంగతనానికి శిక్ష ఏమిటి?"},
+    {"qid": "S18", "lang": "te", "text": "హత్యాయత్నం అంటే ఏమిటి?"}
+  ]
+}

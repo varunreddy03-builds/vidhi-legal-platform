@@ -1,0 +1,19 @@
+{
+  "name": "vidhi-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Capacitor Android shell for VIDHI (loads the web app via server.url)",
+  "scripts": {
+    "sync": "cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.5.3",
+    "@capacitor/core": "8.5.3",
+    "@capacitor/filesystem": "8.1.5",
+    "@capacitor/share": "8.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.3",
+    "typescript": "5.6.3"
+  }
+}

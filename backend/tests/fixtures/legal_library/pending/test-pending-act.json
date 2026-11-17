@@ -1,0 +1,14 @@
+{
+  "id": "test-pending-act",
+  "citation": "Section 5, Test Pending Act, 2099",
+  "kind": "STATUTE_SECTION",
+  "text": "FICTIONAL test provision that is still waiting for a lawyer: a gadget must be labelled.",
+  "text_sha256": "irrelevant",
+  "source_name": "Fictional source",
+  "source_url": "https://example.invalid/pending",
+  "version": "test",
+  "verified": true,
+  "verified_by": "Pretend Lawyer",
+  "verified_on": "2099-01-01",
+  "status": "VERIFIED"
+}

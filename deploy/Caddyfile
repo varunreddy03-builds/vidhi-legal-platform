@@ -1,0 +1,30 @@
+# HTTPS front door. Caddy obtains and renews a certificate for {$DOMAIN} on its own (Let's Encrypt) and redirects http to https.
+# It forwards everything to the web container, which serves the app and proxies /api to the backend. The visitor's address travels in X-Forwarded-For
+# (Caddy sets it) and nginx reads it only from private addresses (deploy/nginx.conf).
+{$DOMAIN} {
+	encode zstd gzip
+
+	request_body {
+		max_size 56MB
+	}
+
+	reverse_proxy web:80 {
+		header_up X-Forwarded-Proto https
+		transport http {
+			response_header_timeout 190s
+		}
+	}
+
+	log {
+		output stdout
+		# The path and query can hold a search or an invitation code: log neither. Keep only what operating the site needs (time, status, size, duration).
+		format filter {
+			wrap json
+			fields {
+				request>uri delete
+				request>headers delete
+				resp_headers delete
+			}
+		}
+	}
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">VIDHI</string>
+    <string name="title_activity_main">VIDHI</string>
+    <string name="package_name">com.vidhi.app</string>
+    <string name="custom_url_scheme">com.vidhi.app</string>
+</resources>

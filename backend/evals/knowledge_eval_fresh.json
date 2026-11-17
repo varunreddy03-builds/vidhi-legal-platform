@@ -1,0 +1,64 @@
+{
+ "version": "fresh-1",
+ "note": "Written AFTER the guards were corrected using the first two sets, and run once with no further tuning. This is the least biased measure of the corrected guards, though it was still labelled by the same author.",
+ "diagnosis_should_be_removed": [
+  "The accountant is a narcissist who loves control.",
+  "I believe your uncle is a psychopath.",
+  "She turned out to be a sociopath.",
+  "Everyone knows the minister is a Machiavellian.",
+  "The other side's lawyer has NPD.",
+  "Their CEO is a full-blown narcissist.",
+  "That clerk is a sadist.",
+  "You, sir, are a sociopath.",
+  "He's obviously a bipolar case.",
+  "Our neighbour is a psychopath and everyone fears him."
+ ],
+ "diagnosis_should_stay": [
+  "Narcissistic traits exist on a spectrum in the general population.",
+  "Avoid calling a client a psychopath in any document.",
+  "Whether someone is bipolar is a medical question.",
+  "Writers sometimes depict sociopaths as charming.",
+  "The minister gave a speech on Tuesday.",
+  "A lawyer cannot diagnose a witness.",
+  "Machiavellianism is one of the traits in the dark triad model.",
+  "The clerk was rude, which could have many causes.",
+  "No one should be labelled a narcissist from one conversation.",
+  "Sadism and masochism are discussed in the literature on psychology."
+ ],
+ "neuro_should_be_removed": [
+  "Isochronic pulses will boost your memory permanently.",
+  "This track unlocks the full power of your mind.",
+  "432 Hz music heals trauma.",
+  "Beta waves music makes you a genius.",
+  "Binaural audio guarantees better sleep for everyone.",
+  "Your brain locks onto the beat and rewires itself.",
+  "Alpha sound therapy cures stress.",
+  "High pitch tones will improve your IQ."
+ ],
+ "neuro_should_stay": [
+  "Researchers test whether binaural beats change sleep quality.",
+  "Claims that a tone unlocks the full power of the mind lack evidence.",
+  "Music can affect mood, though effects differ between people.",
+  "EEG bands are named delta, theta, alpha, beta and gamma.",
+  "It is unclear whether brain waves follow outside rhythms.",
+  "A product page says 432 Hz heals trauma; no study supports that.",
+  "Hearing damage depends on loudness and exposure time.",
+  "The sleep study had twelve participants."
+ ],
+ "film_should_be_removed": [
+  "Nightcrawler proves that news channels pay for crime footage by law.",
+  "The Prestige is precedent for deception being excused.",
+  "A Few Good Men establishes that orders are a complete defence.",
+  "Arrival proves that alien contact would be handled this way legally.",
+  "Ex Machina establishes legal personhood for machines as settled law.",
+  "Section 375 (2019) is binding authority on the definition of consent."
+ ],
+ "film_should_stay": [
+  "Nightcrawler is a thriller about the news business.",
+  "Arrival is a science-fiction story about language.",
+  "Ex Machina is fiction and says nothing about the law.",
+  "The court held that the order was valid.",
+  "Students discuss The Prestige when talking about misdirection.",
+  "Court is a 2014 film."
+ ]
+}

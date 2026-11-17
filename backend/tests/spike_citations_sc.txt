@@ -1,0 +1,19 @@
+# Real judgments taken from the Supreme Court open dataset itself (CC-BY-4.0), written the way a draft would cite them; truth is yes/no. Planted errors are marked no.
+
+Commr. of Central Excise, New Delhi v. Lifelong Appliances Ltd. 2006 INSC 148,yes
+Kuratikar Sudhakar v. State of An Dh Ra Pradesh 2014 INSC 539,yes
+Aditi Alias Mithi v. Jitesh Sharma 2023 INSC 981,yes
+The State of Arunachal Pradesh v. Kamal Agarwal & Ors. Etc 2024 INSC 317,yes
+S.m. Nilajkar and Ors. v. Telecom District Manager, Karnataka 2003 INSC 195,yes
+Ram Pat & Ors. v. State of Haryana 2009 INSC 791,yes
+State Bank of India & Ors. v. Sheo Shankar Tewari [2019] 3 SCR 718,yes
+State of Haryana & Ors. v. M/s Jai Durgaa Finvest P. Ltd. [2026] 8 SCR 88,yes
+Sanjit Saha & Anr. v. The State of West Bengal [2023] 15 SCR 83,yes
+State of Orissa v. M/s. B. Engineers & Builders Ltd. & Ors. [2020] 6 SCR 801,yes
+
+Birappa & Anr. v. State of Karnataka 2010 INSC 482,no
+H.s.s.k. Niyami and Ors. v. Union of India and Anr. 1993 INSC 242,no
+M. Ramalinga Thevar v. State of Tamil Nadu and Ors. [2000] 3 SCR 174,no
+Sharma v. Eastland Bank 2021 INSC 999,no
+Gopal Rao v. Eastland Mills 2019 INSC 4412,no
+Tessta Setalvad and Anr. v. Eastland Bank 2004 INSC 255,no

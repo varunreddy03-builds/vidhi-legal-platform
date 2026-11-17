@@ -1,0 +1,115 @@
+{
+  "language": "en",
+  "version": 1,
+  "jurisdiction": "IN",
+  "id": "in-employment-letter",
+  "kind": "letter",
+  "title": "Employment (appointment) letter",
+  "description": "A plain appointment letter for an employee: role, start date, pay, probation and notice. Statutory benefits, deductions and mandatory terms are left for a lawyer.",
+  "fields": [
+    {
+      "key": "letter_date",
+      "label": "Date of the letter",
+      "type": "date",
+      "required": true
+    },
+    {
+      "key": "employer_name",
+      "label": "Employer (company or person)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "employer_address",
+      "label": "Employer's address",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "employee_name",
+      "label": "Employee's full name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "employee_address",
+      "label": "Employee's address",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "designation",
+      "label": "Job title",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "reporting_to",
+      "label": "Reports to (optional)",
+      "type": "text",
+      "required": false
+    },
+    {
+      "key": "start_date",
+      "label": "Date of joining",
+      "type": "date",
+      "required": true
+    },
+    {
+      "key": "work_location",
+      "label": "Place of work",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "monthly_salary",
+      "label": "Gross monthly pay",
+      "type": "money",
+      "required": true
+    },
+    {
+      "key": "probation_months",
+      "label": "Probation (months, 0 for none)",
+      "type": "int",
+      "required": true,
+      "min": 0,
+      "max": 12
+    },
+    {
+      "key": "notice_months",
+      "label": "Notice either side must give to end the employment (months)",
+      "type": "int",
+      "required": true,
+      "min": 0,
+      "max": 6
+    }
+  ],
+  "clauses": [
+    {
+      "id": "probation",
+      "label": "Probation period",
+      "default": true,
+      "text": "Probation\nYour first {{probation_months}} month(s) of employment are a probation period, after which the employer will tell you in writing whether you are confirmed. [LAWYER TO CONFIRM: what the employer may do during or at the end of probation]\n"
+    },
+    {
+      "id": "confidentiality",
+      "label": "Keep the employer's information confidential",
+      "default": true,
+      "text": "Confidentiality\nYou will keep the employer's confidential business information secret during and after your employment, and use it only for your work.\n"
+    },
+    {
+      "id": "outside_work",
+      "label": "No other paid work without written consent",
+      "default": false,
+      "text": "Other work\nYou will not take other paid work while employed without the employer's written consent.\n"
+    }
+  ],
+  "body": "{{employer_name}}\n{{employer_address}}\n\nDate: {{letter_date}}\n\nTo: {{employee_name}}\n{{employee_address}}\n\nSubject: Letter of appointment\n\nDear {{employee_name}},\n\nWe are pleased to offer you employment on the following terms.\n\nPosition\nYou will work as {{designation}}, reporting to {{reporting_to}}.\n\nStart date and place of work\nYour employment starts on {{start_date}}. Your place of work is {{work_location}}.\n\nPay\nYour gross pay is {{monthly_salary}} per month, before any deduction that the law or this letter requires. Pay will be made by bank transfer.\n\n{{clause:probation}}Hours and leave\n[LAWYER TO CONFIRM: working hours, weekly off, holidays and leave entitlement that apply]\n\n{{clause:confidentiality}}{{clause:outside_work}}Ending the employment\nEither of us may end the employment by giving the other {{notice_months}} month(s) of written notice. [LAWYER TO CONFIRM: whether pay in place of notice, or other exit terms, should be included]\n\nStatutory requirements\n[LAWYER TO CONFIRM: any statutory benefits, deductions, registrations and mandatory terms that apply to this employer and this employee]\n\nPlease sign and return a copy of this letter to show that you accept these terms.\n\nFor {{employer_name}}\n\n______________________\nName and title: ______________________\n\nAcceptance\nI accept the terms of this letter.\n\n______________________   Date: ______________\n{{employee_name}}\n",
+  "lawyer_checks": [
+    "Statutory benefits, deductions, registrations and mandatory terms that apply to this employer and employee",
+    "Probation and termination terms and any rules about them",
+    "Whether the confidentiality and other-work terms are reasonable and enforceable",
+    "Hours, leave and holidays that apply to this kind of workplace",
+    "Whether pay and designation match the real role"
+  ]
+}

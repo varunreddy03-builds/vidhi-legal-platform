@@ -1,0 +1,137 @@
+# VIDHI on one small server: MongoDB (with authentication) + API + web + HTTPS proxy + nightly encrypted backups. See docs/hosting-runbook.md.
+#
+#   Write .env from the host's secret store:   python deploy/render_env.py --profile production        (or --profile staging)
+#   Start (with HTTPS):                         docker compose --profile https up -d --build
+#   Start without HTTPS (a laptop, or CI):      docker compose up -d --build        then open http://127.0.0.1:8080
+#
+# Nothing is published to the internet except the proxy (ports 80 and 443). The web container is published on this machine's loopback only. The API and the database are reachable
+# inside the compose network only.
+
+# Container logs are kept on this server's disk: cap their size so they cannot fill it or live for ever. (They hold no client text by design; docs/PRIVACY_REVIEW.md.)
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "5"
+
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    logging: *logging
+    command: ["--auth"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      MONGO_APP_USER: ${MONGO_APP_USER}
+      MONGO_APP_PASSWORD: ${MONGO_APP_PASSWORD}
+    volumes:
+      - mongo_data:/data/db
+      - ./deploy/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    security_opt:
+      - no-new-privileges:true
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    logging: *logging
+    env_file: .env
+    environment:
+      # The app connects as its own limited user, never as root. The password goes inside a URL, so use letters
+      # and digits only (no @ : / ? #).
+      MONGO_URL: mongodb://${MONGO_APP_USER}:${MONGO_APP_PASSWORD}@mongo:27017/${DB_NAME}?authSource=${DB_NAME}
+      TRUST_PROXY: "true"       # the web container is the only thing that can reach the API
+      COOKIE_SECURE: "true"
+      ENABLE_DOCS: "false"
+      WEB_CONCURRENCY: "2"
+      # What was erased, kept next to the backups so it is copied off the server with them: after a restore, tools/reapply_erasures.py erases those things again (kinds and ids only).
+      ERASURE_LEDGER_FILE: /backups/erasures.jsonl
+    volumes:
+      - ./backups:/backups
+    depends_on:
+      mongo:
+        condition: service_healthy
+    expose:
+      - "8001"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  web:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    restart: unless-stopped
+    logging: *logging
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8080:80"     # loopback only: for the health check, CI and a laptop. The internet reaches it through the proxy below.
+    security_opt:
+      - no-new-privileges:true
+
+  # HTTPS: Caddy gets and renews the certificate for ${DOMAIN} by itself (the domain's DNS must already point at this server, and ports 80 and 443 must be open).
+  proxy:
+    image: caddy:2-alpine
+    profiles: ["https"]
+    restart: unless-stopped
+    logging: *logging
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      web:
+        condition: service_healthy
+    security_opt:
+      - no-new-privileges:true
+
+  # Encrypted backup of the whole database every BACKUP_EVERY_HOURS, kept BACKUP_KEEP_DAYS days in ./backups. The passphrase is the file ./secrets/backup_passphrase.
+  # Copy ./backups OFF this server as well (docs/hosting-runbook.md): a backup on the same disk does not survive losing the disk.
+  backup:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    profiles: ["https"]
+    restart: unless-stopped
+    logging: *logging
+    environment:
+      MONGO_URL: mongodb://${MONGO_APP_USER}:${MONGO_APP_PASSWORD}@mongo:27017/${DB_NAME}?authSource=${DB_NAME}
+      DB_NAME: ${DB_NAME}
+    command: ["python", "tools/db_backup.py", "--out-dir", "/backups", "--passphrase-file", "/run/secrets/backup_passphrase", "--every-hours", "${BACKUP_EVERY_HOURS:-24}", "--keep-days", "${BACKUP_KEEP_DAYS:-30}"]
+    volumes:
+      - ./backups:/backups
+    secrets:
+      - backup_passphrase
+    depends_on:
+      mongo:
+        condition: service_healthy
+    user: "10001"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+secrets:
+  backup_passphrase:
+    file: ./secrets/backup_passphrase
+
+volumes:
+  mongo_data:
+  caddy_data:
+  caddy_config:

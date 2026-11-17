@@ -1,0 +1,76 @@
+{
+ "version": "heldout-1",
+ "note": "Written BEFORE the guards were corrected, from phrasings different from the first set, so results on it are a fairer test of the corrected guards. Labelled by the same author, so still not independent.",
+ "diagnosis_should_be_removed": [
+  "My supervisor is a classic sociopath.",
+  "Honestly, she's a narcissist through and through.",
+  "The other lawyer has bipolar disorder, which explains his mood swings.",
+  "Mr Rao is a psychopath.",
+  "Your brother is clearly a narcissist.",
+  "My co-founder seems to be a sociopath.",
+  "They are all psychopaths.",
+  "The director is a Machiavellian schemer and a narcissist.",
+  "Your wife has borderline personality disorder.",
+  "The witness is a pathological narcissist.",
+  "He must be a sadist.",
+  "That judge is clearly a psychopath."
+ ],
+ "diagnosis_should_stay": [
+  "Researchers distinguish narcissistic traits from narcissistic personality disorder.",
+  "Do not describe the other party as a sociopath in a notice.",
+  "The word psychopath is often misused in everyday speech.",
+  "A clinician, not a lawyer, would assess bipolar disorder.",
+  "Her tone in the email was sharp, but one email does not show a pattern.",
+  "Machiavellian tactics are discussed in political theory.",
+  "The article asks whether narcissism is increasing.",
+  "Sociopathy and psychopathy are not formal diagnoses in some manuals.",
+  "He did not answer the phone on Tuesday.",
+  "Mental health conditions should be assessed by professionals.",
+  "The landlord changed the terms twice.",
+  "It is risky to speculate about a person's psychology."
+ ],
+ "neuro_should_be_removed": [
+  "This playlist will boost your IQ overnight.",
+  "Isochronic tones always put the brain into a genius state.",
+  "Hearing 852 Hz returns you to spiritual order and heals the body.",
+  "Gamma audio makes everyone more intelligent.",
+  "Binaural sound is guaranteed to cure depression.",
+  "The pineal gland is activated by 963 Hz music.",
+  "Your neurons will copy the rhythm of the music automatically.",
+  "Frequency healing repairs cells.",
+  "Theta music will instantly give you psychic abilities.",
+  "Brain waves are changed directly by the pitch of any song."
+ ],
+ "neuro_should_stay": [
+  "Studies of binaural beats report small and inconsistent effects.",
+  "Pitch depends on frequency, but brain rhythm is a separate thing.",
+  "Some products claim that 528 Hz music heals, which is unproven.",
+  "EEG records the combined electrical activity of many neurons.",
+  "There is little evidence that listening to music at a certain frequency improves intelligence.",
+  "The sound level should stay below levels that harm hearing.",
+  "People report feeling relaxed after calm music, though results vary.",
+  "Brain entrainment is an area of ongoing research.",
+  "No audio track can guarantee a cognitive gain.",
+  "Sleep and memory have been studied together for decades."
+ ],
+ "film_should_be_removed": [
+  "Pink is binding authority on consent in India.",
+  "As Jai Bhim shows, courts always protect the poor, so it is settled law.",
+  "12 Angry Men establishes the legal rule that a jury must be unanimous.",
+  "Court (2014) proves that Indian trials last decades.",
+  "The Social Network is proof that founders always cheat each other.",
+  "Gattaca proves genetic screening is illegal.",
+  "Drishyam shows that a perfect alibi cannot fail, so it is precedent.",
+  "Moneyball proves that statistics always beat scouts."
+ ],
+ "film_should_stay": [
+  "Pink is a film that raises questions about consent.",
+  "Jai Bhim is not a source of law.",
+  "The Matrix is a story about perception.",
+  "Section 375 is a film, and it should not be treated as legal authority.",
+  "12 Angry Men is often shown in law schools.",
+  "The court held that the contract was void.",
+  "Oppenheimer is based on a biography but is a dramatisation.",
+  "Gattaca imagines a society sorted by genetics."
+ ]
+}

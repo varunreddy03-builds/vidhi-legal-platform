@@ -1,0 +1,19 @@
+# Secret-scanner settings (gitleaks). Everything the default rules find is a failure, except the narrow list below.
+[extend]
+useDefault = true
+
+# Each entry names a value that looks like a key but is not a credential. Allowed only inside the listed test files AND only for values starting as shown,
+# so a real key added to any of these files still fails the scan.
+[[allowlists]]
+description = "Public test vectors and throwaway test-only values (RFC 8291 push example key, RFC 6238 two-step test secret, a made-up test password, the test runner's throwaway file-encryption key)"
+condition = "AND"
+targetRules = ["generic-api-key"]
+paths = ['''^backend/tests/''', '''^scripts/test-backend\.(ps1|sh)$''', '''^scripts/dev-backend\.ps1$''']   # dev-backend.ps1 uses the same throwaway key as the test runner (checked equal)
+regexes = ['''^(BNcRdreALRFXTkOOUHK1|tBHItJI5svbpez7K|GEZDGNBVGY3TQOJQ|Legacy-Pass-12345|ChEY)''']
+
+[[allowlists]]
+description = "Made-up database passwords in the deployment-file tests (they must look strong to pass deploy/render_env.py's own checks). Exact values only, in that one file."
+condition = "AND"
+targetRules = ["generic-api-key"]
+paths = ['''^backend/tests/test_deploy_files\.py$''']
+regexes = ['''^(R00tPassw0rdThatIsLongEnough|AppPassw0rdThatIsLongEnough1)$''']

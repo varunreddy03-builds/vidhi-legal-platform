@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  VIDHI AI Checker: Word task pane add-in (Word on Windows, Mac and the web).
+  Before use: replace every  https://YOUR-VIDHI-ADDRESS  with the address where VIDHI is served over https (the same address people sign in at), and replace the Id with a new GUID.
+  The task pane page is  /addin/word  of the VIDHI app itself, so the sign-in cookie applies and no other server is called.
+  See addins/README.md for the server settings this needs (page headers) and how to try it.
+-->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>00000000-0000-0000-0000-000000000000</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>VIDHI</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="VIDHI AI Checker"/>
+  <Description DefaultValue="Checks citations, old criminal-code references and blanks in a draft, and lists its dates. Points to places to look; a lawyer decides."/>
+  <IconUrl DefaultValue="https://YOUR-VIDHI-ADDRESS/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://YOUR-VIDHI-ADDRESS/icon-80.png"/>
+  <SupportUrl DefaultValue="https://YOUR-VIDHI-ADDRESS/help"/>
+  <AppDomains>
+    <AppDomain>https://YOUR-VIDHI-ADDRESS</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="WordApi" MinVersion="1.4"/>
+    </Sets>
+  </Requirements>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://YOUR-VIDHI-ADDRESS/addin/word"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="Help.Url"/>
+          </GetStarted>
+          <FunctionFile resid="Taskpane.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="VidhiGroup">
+                <Label resid="Group.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16"/>
+                  <bt:Image size="32" resid="Icon.32"/>
+                  <bt:Image size="80" resid="Icon.80"/>
+                </Icon>
+                <Control xsi:type="Button" id="VidhiOpenPane">
+                  <Label resid="Button.Label"/>
+                  <Supertip>
+                    <Title resid="Button.Label"/>
+                    <Description resid="Button.Tip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16"/>
+                    <bt:Image size="32" resid="Icon.32"/>
+                    <bt:Image size="80" resid="Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>VidhiPane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16" DefaultValue="https://YOUR-VIDHI-ADDRESS/icon-16.png"/>
+        <bt:Image id="Icon.32" DefaultValue="https://YOUR-VIDHI-ADDRESS/icon-32.png"/>
+        <bt:Image id="Icon.80" DefaultValue="https://YOUR-VIDHI-ADDRESS/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://YOUR-VIDHI-ADDRESS/addin/word"/>
+        <bt:Url id="Help.Url" DefaultValue="https://YOUR-VIDHI-ADDRESS/help"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="VIDHI AI Checker"/>
+        <bt:String id="Group.Label" DefaultValue="VIDHI"/>
+        <bt:String id="Button.Label" DefaultValue="VIDHI AI Checker"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Open the VIDHI AI Checker from the Home tab, then press Scan document."/>
+        <bt:String id="Button.Tip" DefaultValue="Check citations, old criminal-code references, blanks and dates in this draft."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

@@ -1,0 +1,171 @@
+{
+  "language": "en",
+  "version": 1,
+  "jurisdiction": "IN",
+  "id": "in-residential-rent-agreement",
+  "kind": "agreement",
+  "title": "Residential rent agreement",
+  "description": "A plain-language agreement between a landlord and a tenant for a residential property. Stamp duty, registration and governing law are left for a lawyer.",
+  "fields": [
+    {
+      "key": "agreement_date",
+      "label": "Date of the agreement",
+      "type": "date",
+      "required": true
+    },
+    {
+      "key": "place",
+      "label": "Place of signing (city)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "landlord_name",
+      "label": "Landlord's full name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "landlord_address",
+      "label": "Landlord's address",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "tenant_name",
+      "label": "Tenant's full name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "tenant_address",
+      "label": "Tenant's current address",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "property_address",
+      "label": "Address of the rented property",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "property_description",
+      "label": "Short description of the property (optional)",
+      "type": "text",
+      "required": false,
+      "help": "For example: 2-bedroom flat on the third floor"
+    },
+    {
+      "key": "start_date",
+      "label": "Date the tenancy starts",
+      "type": "date",
+      "required": true
+    },
+    {
+      "key": "term_months",
+      "label": "Length of the tenancy (months)",
+      "type": "int",
+      "required": true,
+      "min": 1,
+      "max": 600
+    },
+    {
+      "key": "monthly_rent",
+      "label": "Monthly rent",
+      "type": "money",
+      "required": true
+    },
+    {
+      "key": "rent_due_day",
+      "label": "Rent is due by this day of each month",
+      "type": "int",
+      "required": true,
+      "min": 1,
+      "max": 28
+    },
+    {
+      "key": "security_deposit",
+      "label": "Security deposit",
+      "type": "money",
+      "required": true
+    },
+    {
+      "key": "notice_months",
+      "label": "Notice either side must give to end the tenancy (months)",
+      "type": "int",
+      "required": true,
+      "min": 0,
+      "max": 12
+    },
+    {
+      "key": "maintenance_by",
+      "label": "Who pays society or maintenance charges",
+      "type": "choice",
+      "required": true,
+      "choices": [
+        "the Tenant",
+        "the Landlord",
+        "shared as the parties agree in writing"
+      ]
+    },
+    {
+      "key": "lock_in_months",
+      "label": "Lock-in period (months)",
+      "type": "int",
+      "required": false,
+      "flag_if_empty": true,
+      "min": 1,
+      "max": 600
+    },
+    {
+      "key": "escalation_percent",
+      "label": "Yearly rent increase (per cent)",
+      "type": "decimal",
+      "required": false,
+      "flag_if_empty": true,
+      "min": 0,
+      "max": 100
+    }
+  ],
+  "clauses": [
+    {
+      "id": "lock_in",
+      "label": "Lock-in period (neither side may leave early)",
+      "default": false,
+      "text": "Lock-in period\nNeither party will end the tenancy during the first {{lock_in_months}} months from the start date, except for a serious breach of this agreement by the other party. [LAWYER TO CONFIRM: what happens if a party leaves during the lock-in period]\n"
+    },
+    {
+      "id": "escalation",
+      "label": "Yearly rent increase",
+      "default": false,
+      "text": "The monthly rent will increase by {{escalation_percent}} per cent on each anniversary of the start date.\n"
+    },
+    {
+      "id": "no_subletting",
+      "label": "No sub-letting without written consent",
+      "default": true,
+      "text": "The Tenant will not sub-let, share or hand over the Property to anyone else without the Landlord's written consent."
+    },
+    {
+      "id": "utilities_tenant",
+      "label": "Tenant pays electricity, water and similar services",
+      "default": true,
+      "text": "The Tenant will pay for electricity, water, gas, internet and similar services used at the Property."
+    },
+    {
+      "id": "entry_inspection",
+      "label": "Landlord may inspect with reasonable notice",
+      "default": true,
+      "text": "The Landlord may enter the Property to inspect it or to carry out repairs after giving the Tenant reasonable notice, at a reasonable time.\n"
+    }
+  ],
+  "body": "RESIDENTIAL RENT AGREEMENT\n\nThis agreement is made on {{agreement_date}} at {{place}} between:\n\n1. {{landlord_name}}, of {{landlord_address}} (the \"Landlord\"); and\n2. {{tenant_name}}, of {{tenant_address}} (the \"Tenant\").\n\nThe Landlord is the owner of, or is otherwise entitled to let, the property at {{property_address}} {{property_description}} (the \"Property\"). The Tenant wishes to take the Property on rent for residential use. The parties agree as follows.\n\n1. Term\nThe tenancy starts on {{start_date}} and continues for {{term_months}} months, unless it ends earlier under this agreement. Any extension must be agreed in writing by both parties.\n\n2. Rent\nThe Tenant will pay rent of {{monthly_rent}} per month, in advance, on or before day {{rent_due_day}} of each month, by bank transfer or another method the parties agree in writing. The Landlord will give a written receipt on request.\n{{clause:escalation}}\n3. Security deposit\nThe Tenant will pay the Landlord a refundable security deposit of {{security_deposit}} on or before the start date. The deposit carries no interest unless the parties agree otherwise in writing. When the Tenant hands back vacant possession, the Landlord will return the deposit after deducting only amounts the Tenant owes under this agreement (such as unpaid rent, or the cost of damage beyond normal wear and tear), and will give the Tenant a written list of any deductions.\n\n{{clause:lock_in}}\n4. Use of the Property\nThe Property is let for residential use only. {{clause:no_subletting}}\n\n5. Maintenance and utilities\nSociety or maintenance charges are to be paid by {{maintenance_by}}. {{clause:utilities_tenant}}\nMinor repairs arising from the Tenant's use are the Tenant's responsibility. Structural repairs, and major repairs not caused by the Tenant, are the Landlord's responsibility.\n{{clause:entry_inspection}}\n6. Ending the tenancy\nEither party may end the tenancy by giving the other {{notice_months}} month(s) of written notice. When the tenancy ends, the Tenant will hand back vacant possession in the condition received, apart from normal wear and tear, together with all keys.\n\n7. Registration, stamp duty and legal requirements\n[LAWYER TO CONFIRM: whether this agreement must be stamped and registered for this state and term, who bears the cost, and any other legal requirement for letting a residential property here]\n\n8. Governing law and disputes\n[LAWYER TO CONFIRM: the governing law, and the courts or forum that should hear disputes about this agreement]\n\n9. Whole agreement\nThis document is the whole agreement about the Property. Any change must be in writing and signed by both parties.\n\nSigned by the parties on the date written at the top.\n\nLandlord: ______________________   Name: {{landlord_name}}\n\nTenant: ______________________   Name: {{tenant_name}}\n\nWitness 1: ______________________   Name and address: ______________________\n\nWitness 2: ______________________   Name and address: ______________________\n",
+  "lawyer_checks": [
+    "Stamp duty and registration for this state and tenancy length",
+    "Any rent-control or tenancy rules that apply to this property",
+    "Governing law and forum",
+    "Whether the lock-in, rent increase and deposit terms are permitted and enforceable",
+    "Whether the landlord's title or authority needs to be evidenced"
+  ]
+}

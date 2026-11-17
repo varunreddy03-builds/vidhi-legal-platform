@@ -1,0 +1,94 @@
+{
+  "language": "en",
+  "version": 1,
+  "jurisdiction": "IN",
+  "id": "in-nda",
+  "kind": "agreement",
+  "title": "Non-disclosure agreement (NDA)",
+  "description": "An agreement to keep shared business information confidential, either one-way or mutual. Remedies, governing law and any statutory points are left for a lawyer.",
+  "fields": [
+    {
+      "key": "agreement_date",
+      "label": "Date of the agreement",
+      "type": "date",
+      "required": true
+    },
+    {
+      "key": "place",
+      "label": "Place of signing (city)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "party1_name",
+      "label": "Party 1: full name or company name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "party1_address",
+      "label": "Party 1: address",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "party2_name",
+      "label": "Party 2: full name or company name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "party2_address",
+      "label": "Party 2: address",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "key": "disclosure",
+      "label": "Who shares confidential information",
+      "type": "choice",
+      "required": true,
+      "choices": [
+        "Both parties may share confidential information with each other (mutual).",
+        "Only Party 1 will share confidential information with Party 2 (one-way)."
+      ]
+    },
+    {
+      "key": "purpose",
+      "label": "Why the information is being shared",
+      "type": "textarea",
+      "required": true,
+      "help": "For example: to discuss a possible joint venture"
+    },
+    {
+      "key": "term_years",
+      "label": "Years the duty to keep information confidential lasts",
+      "type": "int",
+      "required": true,
+      "min": 1,
+      "max": 20
+    }
+  ],
+  "clauses": [
+    {
+      "id": "return_destroy",
+      "label": "Return or destroy information on request",
+      "default": true,
+      "text": "Return of information\nOn written request, the Receiving Party will return or securely destroy the Confidential Information and confirm in writing that it has done so, except for copies it must keep for a reason it explains to the Disclosing Party.\n"
+    },
+    {
+      "id": "no_licence",
+      "label": "No licence or ownership passes",
+      "default": true,
+      "text": "No licence\nSharing Confidential Information does not give the Receiving Party any ownership of, or right to use, it other than for the Purpose.\n"
+    }
+  ],
+  "body": "NON-DISCLOSURE AGREEMENT\n\nThis agreement is made on {{agreement_date}} at {{place}} between:\n\n1. {{party1_name}}, of {{party1_address}} (\"Party 1\"); and\n2. {{party2_name}}, of {{party2_address}} (\"Party 2\").\n\n{{disclosure}} In this agreement, the \"Disclosing Party\" is the party sharing information and the \"Receiving Party\" is the party receiving it (for a one-way arrangement, Party 1 is the Disclosing Party and Party 2 is the Receiving Party).\n\n1. Purpose\nThe information is shared only for this purpose: {{purpose}} (the \"Purpose\").\n\n2. Confidential Information\n\"Confidential Information\" means information the Disclosing Party shares for the Purpose, in any form, that is marked confidential or that a reasonable person would understand to be confidential.\n\n3. What the Receiving Party must do\nThe Receiving Party will keep the Confidential Information secret, use it only for the Purpose, and share it only with its own people and advisers who need it for the Purpose and who are bound to keep it confidential.\n\n4. What is not covered\nThis agreement does not apply to information that: (a) is or becomes public without a breach of this agreement; (b) the Receiving Party already knew without a duty of confidence; (c) the Receiving Party receives from someone else who is free to share it; or (d) the Receiving Party develops on its own without using the Confidential Information. The Receiving Party may also disclose information where a law, court or authority requires it, after telling the Disclosing Party first where that is allowed.\n\n5. How long it lasts\nThe duty to keep the Confidential Information confidential lasts for {{term_years}} years from the date of this agreement.\n\n{{clause:return_destroy}}{{clause:no_licence}}6. Remedies\n[LAWYER TO CONFIRM: what remedies and enforcement wording are appropriate, and whether any statutory point applies]\n\n7. Governing law and disputes\n[LAWYER TO CONFIRM: the governing law, and the courts or forum that should hear disputes about this agreement]\n\n8. Whole agreement\nThis document is the whole agreement about confidentiality between the parties. Any change must be in writing and signed by both parties.\n\nSigned by the parties on the date written at the top.\n\nParty 1: ______________________   Name: {{party1_name}}\n\nParty 2: ______________________   Name: {{party2_name}}\n",
+  "lawyer_checks": [
+    "Whether the definition of confidential information and the duration suit the real relationship",
+    "Remedies and enforceability",
+    "Whether personal data will be shared and needs further terms",
+    "Governing law and forum",
+    "Whether the signatories have authority for each party"
+  ]
+}
