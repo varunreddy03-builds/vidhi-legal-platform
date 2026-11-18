@@ -114,6 +114,15 @@ services:
     environment:
       MONGO_URL: mongodb://${MONGO_APP_USER}:${MONGO_APP_PASSWORD}@mongo:27017/${DB_NAME}?authSource=${DB_NAME}
       DB_NAME: ${DB_NAME}
+      BACKUP_EVERY_HOURS: ${BACKUP_EVERY_HOURS:-24}
+    # The image's own health check asks the API on port 8001, which this container does not run, so it was "unhealthy" for ever and a real failure looked the same. This one is healthy only while the newest
+    # backup file is younger than two backup periods (and fails, by design, if there is no backup at all after the first five minutes).
+    healthcheck:
+      test: ["CMD", "python", "-c", "import glob, os, sys, time; hours = float(os.environ.get('BACKUP_EVERY_HOURS') or 24); files = glob.glob('/backups/vidhi-*.gpg'); sys.exit(0 if files and time.time() - max(os.path.getmtime(f) for f in files) < hours * 7200 else 1)"]
+      interval: 10m
+      timeout: 10s
+      start_period: 5m
+      retries: 1
     command: ["python", "tools/db_backup.py", "--out-dir", "/backups", "--passphrase-file", "/run/secrets/backup_passphrase", "--every-hours", "${BACKUP_EVERY_HOURS:-24}", "--keep-days", "${BACKUP_KEEP_DAYS:-30}"]
     volumes:
       - ./backups:/backups

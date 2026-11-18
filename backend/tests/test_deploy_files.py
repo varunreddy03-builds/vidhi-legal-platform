@@ -168,6 +168,15 @@ def test_the_web_container_restarts_whenever_the_api_container_is_replaced():
     assert re.search(r"depends_on:\n      backend:\n        condition: service_healthy\n        restart: true", web.group(1))
 
 
+def test_the_backup_container_has_its_own_health_check_that_looks_at_the_newest_backup():
+    """It reuses the API's image, whose built-in check asks a web server this container does not run: it was 'unhealthy' for ever, so a real backup failure looked the same."""
+    backup = re.search(r"\n  backup:\n(.*?)\nsecrets:", COMPOSE, re.S)
+    assert backup, "the backup service should be the last service"
+    block = backup.group(1)
+    assert "healthcheck:" in block and "/backups/vidhi-*.gpg" in block and "getmtime" in block and "BACKUP_EVERY_HOURS: ${BACKUP_EVERY_HOURS:-24}" in block
+    assert "8001" not in block.split("healthcheck:")[1].split("command:")[0]  # it does not ask the API
+
+
 def test_unset_settings_are_left_out_of_the_env_file_and_never_written_as_empty_values(tmp_path):
     """An empty `NAME=` is a real, empty value to the app and to Docker. A number read from one crashed every AI call on the first live deployment (AI_USD_INR=)."""
     values, problems = build()
