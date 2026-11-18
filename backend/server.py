@@ -262,7 +262,6 @@ api_router.include_router(judgments_router.router)
 api_router.include_router(legal_directory_router.router)
 api_router.include_router(vault_router.router)
 api_router.include_router(reviewers_router.router)
-api_router.include_router(reviewers_router.admin_router)
 api_router.include_router(research_router.router)
 _RECOVERY_ON = [Depends(recovery_mode.require_enabled)]  # every Legal Recovery route answers 404 while RECOVERY_ENABLED is off
 api_router.include_router(recovery_router.router, dependencies=_RECOVERY_ON)

@@ -38,6 +38,9 @@ router.routes.extend(_legal_admin.routes)
 router.routes.extend(_legal_links_admin.routes)  # added directly (not nested) so the one guard on this router covers them and the guard test can see them
 router.routes.extend(_judgments_admin.routes)  # judgment relations: review by a named person
 router.routes.extend(_deadline_rules_admin.routes)
+from routers.reviewers import admin_router as _reviewers_admin  # noqa: E402  (advocate register and recording their confirmations: same guard)
+
+router.routes.extend(_reviewers_admin.routes)
 
 WATCHLIST = ("AUTH_2FA_FAILED", "DOCUMENT_INSTRUCTION_LIKE_TEXT", "PRIVACY_REQUEST", "ADMIN_BLOCK", "IMAGE_GENERATED", "VOICE_TRANSCRIBE")
 
