@@ -115,7 +115,12 @@ jobs:
       - name: Backend dependencies (pip-audit on the pinned versions)
         run: |
           pip install pip-audit
-          pip-audit -r backend/requirements.lock --no-deps --disable-pip
+          # The audit asks pypi.org's vulnerability database over the network. A brief outage once failed a whole run ("read timed out"), so it is tried up to 3 times; a REAL vulnerability fails all 3.
+          for attempt in 1 2 3; do
+            pip-audit -r backend/requirements.lock --no-deps --disable-pip && exit 0
+            echo "pip-audit attempt $attempt failed; waiting before the next one"; sleep 30
+          done
+          exit 1
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
