@@ -160,6 +160,14 @@ def test_the_env_file_is_written_for_its_owner_only_and_only_known_names_are_wri
         render_env.write_env({"X_KEY": "line\nbreak"}, tmp_path / "bad.env")
 
 
+def test_the_web_container_restarts_whenever_the_api_container_is_replaced():
+    """nginx resolves the API's address once, at start. A deploy that replaced only the API (new code or new settings) left the web container pointing at the old address: every /api call was a 502
+    (found on the first live deployment). `restart: true` under depends_on makes Compose restart the web container together with the API container."""
+    web = re.search(r"\n  web:\n(.*?)\n  # HTTPS:", COMPOSE, re.S)
+    assert web, "the web service should come before the HTTPS proxy"
+    assert re.search(r"depends_on:\n      backend:\n        condition: service_healthy\n        restart: true", web.group(1))
+
+
 def test_unset_settings_are_left_out_of_the_env_file_and_never_written_as_empty_values(tmp_path):
     """An empty `NAME=` is a real, empty value to the app and to Docker. A number read from one crashed every AI call on the first live deployment (AI_USD_INR=)."""
     values, problems = build()

@@ -75,6 +75,7 @@ services:
     depends_on:
       backend:
         condition: service_healthy
+        restart: true   # nginx looks the API's address up once, when it starts: when `docker compose up` REPLACES the API container (new code or new settings) it must restart too, or every /api request is a 502
     ports:
       - "127.0.0.1:8080:80"     # loopback only: for the health check, CI and a laptop. The internet reaches it through the proxy below.
     security_opt:
