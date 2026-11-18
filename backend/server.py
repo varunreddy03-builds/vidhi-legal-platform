@@ -135,6 +135,10 @@ from routers import library as library_router  # noqa: E402
 from routers import judgments as judgments_router  # noqa: E402
 from routers import legal_directory as legal_directory_router  # noqa: E402
 from routers import vault as vault_router  # noqa: E402
+from routers import connectors as connectors_router  # noqa: E402
+from routers import graph_share as graph_share_router  # noqa: E402
+from routers import translate as translate_router  # noqa: E402
+from routers import reviews as reviews_router  # noqa: E402
 from routers import reviewers as reviewers_router  # noqa: E402
 from routers import matters as matters_router  # noqa: E402
 from routers import org as org_router  # noqa: E402
@@ -261,6 +265,11 @@ api_router.include_router(library_router.router)
 api_router.include_router(judgments_router.router)
 api_router.include_router(legal_directory_router.router)
 api_router.include_router(vault_router.router)
+api_router.include_router(connectors_router.router)
+api_router.include_router(connectors_router.MATTER_ROUTER)
+api_router.include_router(graph_share_router.router)
+api_router.include_router(translate_router.router)
+api_router.include_router(reviews_router.router)
 api_router.include_router(reviewers_router.router)
 api_router.include_router(research_router.router)
 _RECOVERY_ON = [Depends(recovery_mode.require_enabled)]  # every Legal Recovery route answers 404 while RECOVERY_ENABLED is off

@@ -7,6 +7,6 @@ describe("legal placeholders", () => {
   });
   it("keeps every legal document marked as a draft until a lawyer has reviewed it", () => {
     // Changing a flag to true is a deliberate act that must follow a real review: see LEGAL_REVIEWED in legal.tsx.
-    expect(LEGAL_REVIEWED).toEqual({ terms: false, privacy: false, cookies: false });
+    expect(LEGAL_REVIEWED).toEqual({ terms: false, privacy: false, cookies: false, security: false });
   });
 });

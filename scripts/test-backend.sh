@@ -26,7 +26,7 @@ export BCRYPT_COST="4"                        # fast hashing in tests only
 export RATE_LIMIT_SIGNUP="100000" RATE_LIMIT_LOGIN_IP="100000" RATE_LIMIT_EMAIL="100000"
 export RATE_LIMIT_VERIFY_EMAIL="10000" RATE_LIMIT_CONSENT_ACT="10000" RATE_LIMIT_CONSENT_VIEW="10000"
 export RAZORPAY_KEY_ID="rzp_test_dummy" RAZORPAY_KEY_SECRET="dummy-not-real" RAZORPAY_WEBHOOK_SECRET="razorpay-test-webhook-secret-not-real"  # secret-scan: ok (fake test value)
-export GOOGLE_STUB="true" GOOGLE_CLIENT_ID="stub-client"
+export GOOGLE_STUB="true" GOOGLE_CLIENT_ID="stub-client" MS_STUB="true"
 export VOICE_STUB="true"
 export SENDGRID_WEBHOOK_PUBLIC_KEY="MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZMxiznS2kKf0XNyPGKhz7///7DvF9XUH9Cp/Y24GpHvVNRc6h1br1cmHMebYtJNtDCZNIkvOFcA48v7hYV4UxA=="
 export DIRECTORY_ENABLED="true" WEBPUSH_STUB="true" TWILIO_STUB="true" TWILIO_AUTH_TOKEN="twilio-test-token-not-real" TWILIO_WEBHOOK_URL="http://twilio.test/api/webhooks/twilio"

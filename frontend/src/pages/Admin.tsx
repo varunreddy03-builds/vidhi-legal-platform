@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import AppShell from "@/components/AppShell";
@@ -40,10 +40,13 @@ export default function Admin() {
     <AppShell title="Admin console">
       <div className="mx-auto max-w-5xl space-y-4" data-testid="admin-console">
         {!me.two_factor && <p className="rounded-md border border-border p-3 text-sm" style={{ color: "#F0A63A" }}>Turn on two-step sign-in in Settings to use the admin console.</p>}
-        <div className="flex flex-wrap gap-2" role="tablist">
-          {TABS.map(([id, label]) => (
-            <Button key={id} variant={tab === id ? "default" : "outline"} size="sm" role="tab" aria-selected={tab === id} onClick={() => setTab(id)} data-testid={`admin-tab-${id}`}>{label}</Button>
-          ))}
+        <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2" role="tablist">
+            {TABS.map(([id, label]) => (
+              <Button key={id} variant={tab === id ? "default" : "outline"} size="sm" role="tab" aria-selected={tab === id} onClick={() => setTab(id)} data-testid={`admin-tab-${id}`}>{label}</Button>
+            ))}
+          </div>
+          <Link to="/sign-off" className="inline-flex h-7 items-center rounded-lg border border-border px-2.5 text-[0.8rem] hover:bg-muted" data-testid="admin-signoff-link">Reviewer sign-off</Link>
         </div>
         {tab === "overview" && <Overview />}
         {tab === "weekly" && <WeeklyView />}

@@ -196,3 +196,16 @@ def test_the_real_data_files_load_and_nothing_unchecked_is_ever_shown():
         assert len(aid["states"]) >= 36 and D.legal_aid("Telangana")["state"]["name"] == "Telangana State Legal Services Authority"
     finally:
         D.reset()
+
+
+def test_law_commission_reports_are_listed_as_recommendations_with_checked_official_links(user_a):
+    got = user_a.get("/legal-directory", params={"section": "law_commission"}).json()
+    items = got["items"]
+    assert len(items) >= 25 and all(i["section"] == "law_commission" for i in items)
+    assert {"lci-278", "lci-279", "lci-289"} <= {i["id"] for i in items}
+    for i in items:
+        assert "is not law" in i["what"] and "does not copy the report's text" in (i.get("note") or ""), i["id"]  # a recommendation, never a statement of the law
+        assert i["link_status"] == "ok" and i["url"].startswith("https://") and i["government_domain"] is True, i["id"]  # shown only because the app's own check found it working
+    scans = [i for i in items if "could not be read by the program" in i["what"]]
+    assert {i["id"] for i in scans} == {"lci-265", "lci-278"}  # a title that is only what the file name says is marked as such, not dressed up
+    assert not re.search(r"\b(section|s\.)\s*\d", json.dumps(items), re.I)

@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { apiDelete, apiGet, apiPost } from "@/lib/api";
+import { apiDelete, apiGet, apiPost, apiPut } from "@/lib/api";
+import SharedGraph, { type SharedGraphData } from "@/components/SharedGraph";
 import { formatDateTime } from "@/lib/format";
 import { describe } from "@/lib/interaction";
 
@@ -16,6 +17,8 @@ interface State {
   notice: string;
 }
 
+interface GraphState { preview: SharedGraphData; shared: (SharedGraphData & { shared_at: string; shared_by: string }) | null; note: string }
+
 /** The firm's side of the client portal for one matter: who can see it, what was written for them, which documents are shared. */
 export default function ClientPortalPanel({ matterId, docs }: { matterId: string; docs: { id: string; filename: string }[] }) {
   const qc = useQueryClient();
@@ -24,6 +27,10 @@ export default function ClientPortalPanel({ matterId, docs }: { matterId: string
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
   const refresh = () => qc.invalidateQueries({ queryKey: key });
+  const gkey = ["portal-graph", matterId];
+  const graph = useQuery({ queryKey: gkey, queryFn: () => apiGet<GraphState>(`/matters/${matterId}/portal/graph`) });
+  const publish = useMutation({ mutationFn: () => apiPut(`/matters/${matterId}/portal/graph`, {}), onSuccess: () => { toast.success("Graph shared with clients"); void qc.invalidateQueries({ queryKey: gkey }); }, onError: (e) => toast.error(describe(e)) });
+  const withdraw = useMutation({ mutationFn: () => apiDelete(`/matters/${matterId}/portal/graph`), onSuccess: () => { toast.success("Graph withdrawn"); void qc.invalidateQueries({ queryKey: gkey }); }, onError: (e) => toast.error(describe(e)) });
   const fail = (e: unknown) => toast.error(describe(e));
 
   const invite = useMutation({
@@ -103,6 +110,18 @@ export default function ClientPortalPanel({ matterId, docs }: { matterId: string
           </label>
         ))}
         {docs.length === 0 && <p className="text-sm text-muted-foreground">Upload documents on the Documents tab first.</p>}
+      </section>
+
+      <section className="glass space-y-2 rounded-lg p-4" data-testid="portal-graph-panel">
+        <h3 className="text-lg">Graph shared with clients</h3>
+        <p className="text-xs text-muted-foreground">{graph.data?.note ?? "A client sees only the documents you have shared and the people and dates found in them."}</p>
+        <p className="text-sm font-medium">What clients would see now</p>
+        {graph.data && <SharedGraph graph={graph.data.preview} testId="portal-graph-preview" />}
+        <div className="flex flex-wrap items-center gap-2">
+          <Button type="button" onClick={() => publish.mutate()} loading={publish.isPending} data-testid="portal-graph-publish">{graph.data?.shared ? "Update what clients see" : "Share this with clients"}</Button>
+          {graph.data?.shared && <Button type="button" variant="outline" onClick={() => withdraw.mutate()} data-testid="portal-graph-withdraw">Stop sharing</Button>}
+          <span className="text-xs text-muted-foreground" data-testid="portal-graph-state">{graph.data?.shared ? `Shared ${formatDateTime(graph.data.shared.shared_at)}. Clients see that snapshot until you update it.` : "Not shared."}</span>
+        </div>
       </section>
     </div>
   );

@@ -27,6 +27,7 @@ import type {
 import { describe } from "@/lib/interaction";
 import DocumentCard from "@/components/matter/DocumentCard";
 import EvidenceTab from "@/components/matter/EvidenceTab";
+import ReviewsTab from "@/components/matter/ReviewsTab";
 import MatterLifecycle from "@/components/matter/MatterLifecycle";
 import MatterDetailsEditor from "@/components/matter/MatterDetailsEditor";
 import ClientPortalPanel from "@/components/matter/ClientPortalPanel";
@@ -165,7 +166,7 @@ export default function MatterDetail() {
 
         <Tabs defaultValue="overview" className="mt-6">
           <TabsList variant="line" className="flex-wrap">
-            {["overview", "documents", "evidence", "facts", "timeline", "graph", ...(canShare ? ["client"] : []), "activity"].map((t) => (
+            {["overview", "documents", "evidence", "facts", "timeline", "graph", "reviews", ...(canShare ? ["client"] : []), "activity"].map((t) => (
               <TabsTrigger key={t} value={t} data-testid={`tab-${t}`} className="capitalize">
                 {t}
               </TabsTrigger>
@@ -440,6 +441,10 @@ export default function MatterDetail() {
                 </div>
               )}
             </div>
+          </TabsContent>
+
+          <TabsContent value="reviews" className="mt-6">
+            <ReviewsTab matterId={matterId} />
           </TabsContent>
 
           {canShare && (

@@ -20,13 +20,13 @@ from lib.db import db
 
 MATTER_COLLECTIONS = (
     "documents", "facts", "timeline_events", "research_results", "drafts",
-    "evidence_items", "entities", "inconsistencies", "portal_access", "portal_updates", "portal_shares", "vault_rows",
+    "evidence_items", "entities", "inconsistencies", "portal_access", "portal_updates", "portal_shares", "vault_rows", "reviews", "portal_graphs",
 )
 
 
 # Collections whose rows carry the organisation's id: erasing the organisation deletes them, and tests/test_org_export.py makes sure the export covers each of them (or says why not).
 ORG_TAGGED = (
-    "vault_rows", "clients", "addin_keys", "doc_notes", "documents", "research_results", "drafts", "recovery_proofs", "email_log", "email_confirmations",
+    "connector_tokens", "portal_graphs", "reviews", "vault_rows", "clients", "addin_keys", "doc_notes", "documents", "research_results", "drafts", "recovery_proofs", "email_log", "email_confirmations",
     "audit_events", "org_branding", "invites", "answer_feedback", "portal_access", "portal_updates", "portal_shares", "deadlines", "push_subscriptions", "directory_profiles", "booking_requests", "authority_reports", "date_lists", "defect_checks", "old_code_checks", "pilot_feedback", "draft_comments",
 )
 

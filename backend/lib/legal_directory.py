@@ -25,7 +25,7 @@ STALE_DAYS = 90
 SECTIONS = (
     ("courts", "Courts"), ("revenue", "Revenue courts"), ("tribunals", "Tribunals and commissions"), ("high_court_websites", "High Court websites"), ("portals", "Official portals"),
     ("legislation", "Acts, rules and gazettes"), ("judgments_and_reporters", "Judgments and law reports"), ("rules_and_formats", "Court rules and filing formats"),
-    ("legal_aid", "Legal aid"), ("reference_works", "Books and databases"),
+    ("legal_aid", "Legal aid"), ("reference_works", "Books and databases"), ("law_commission", "Law Commission of India reports"),
 )
 NOT_REVIEWED = "These descriptions were written for VIDHI and have not been reviewed by a lawyer. Names, powers and money limits of subordinate and revenue courts differ from State to State. This is a directory, not legal advice."
 LEGAL_AID_NOTE = "VIDHI is a tool for lawyers. It does not represent anyone or give legal advice. A person who needs a lawyer and cannot afford one can apply to the legal services authorities below."

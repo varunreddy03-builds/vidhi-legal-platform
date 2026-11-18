@@ -15,6 +15,7 @@ import { useI18n, useT } from "@/lib/i18n/I18nProvider";
 import { firstName } from "@/lib/plain";
 import type { Matter } from "@/lib/types";
 import { useMe } from "@/lib/useMe";
+import { GROUPS } from "@/lib/everything";
 
 /** Three small links under the search box: the tour, a fictional sample matter to practise on, and the help centre (in the person's language where there is help text). */
 function StartHelp() {
@@ -101,6 +102,23 @@ export default function Start() {
             New here? Try Authority Check on a made-up sample draft →
           </Link>
         </p>
+
+        <section className="glass mt-8 rounded-xl p-5" aria-labelledby="start-all-h" data-testid="start-everything">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 id="start-all-h" className="text-lg font-medium">Everything in VIDHI</h3>
+            <Link to="/about" className="inline-flex min-h-7 items-center text-sm underline underline-offset-4" data-testid="start-about-link">Read what each part does and cannot do yet →</Link>
+          </div>
+          <div className="mt-3 grid gap-4 sm:grid-cols-2">
+            {GROUPS.filter((g) => g.id !== "trust").map((g) => (
+              <div key={g.id}>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground">{g.title}</p>
+                <ul className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+                  {g.parts.map((p) => <li key={p.id}><Link to={p.to} className="inline-flex min-h-7 min-w-7 items-center justify-center px-1 underline-offset-4 hover:underline" data-testid={`start-part-${p.id}`}>{p.name}</Link></li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <section className="mt-8">
           <InlineSearch />

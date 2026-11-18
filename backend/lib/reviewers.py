@@ -81,6 +81,16 @@ async def confirm_act(reviewer: dict, instrument_id: str, on: str, *, compared_w
             "note": "Skipped provisions need a person to compare them one by one (machine-read scan, a second source worded differently, or a text problem)."}
 
 
+async def acts() -> list[dict]:
+    """The Acts in the library with how much of each has been reviewed (what a reviewer chooses from)."""
+    out = []
+    async for i in db.instruments.find({}).sort("title_norm", 1):
+        total = await db.provisions.count_documents({"instrument_id": i["id"]})
+        reviewed = await db.provisions.count_documents({"instrument_id": i["id"], "review_status": "reviewed"})
+        out.append({"id": i["id"], "title": i.get("title", ""), "provisions": total, "reviewed": reviewed, "waiting": total - reviewed})
+    return out
+
+
 async def public_list() -> list[dict]:
     out = []
     async for r in db.legal_reviewers.find({"active": True}).sort("label", 1):

@@ -4,6 +4,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import {
   Archive,
+  Info,
+  Plug,
+  Languages,
   Receipt,
   ArrowLeft,
   Bell,
@@ -63,6 +66,7 @@ const NAV_CLUSTERS: Cluster[] = [
       { id: "judgments", key: "nav.judgments", to: "/judgments", icon: Landmark },
       { id: "vault", key: "nav.vault", to: "/vault", icon: Archive },
       { id: "tax", key: "nav.tax", to: "/tax", icon: Receipt },
+      { id: "translate", key: "nav.translate", to: "/translate", icon: Languages },
       { id: "legaldir", key: "nav.legaldir", to: "/legal-directory", icon: Landmark },
     ],
   },
@@ -81,7 +85,9 @@ const NAV_CLUSTERS: Cluster[] = [
   {
     group: "grp.system",
     items: [
+      { id: "about", key: "nav.about", to: "/about", icon: Info },
       { id: "support", key: "nav.support", to: "/support", icon: LifeBuoy },
+      { id: "connections", key: "nav.connections", to: "/connections", icon: Plug },
       { id: "settings", key: "nav.settings", to: "/settings", icon: Settings },
     ],
   },

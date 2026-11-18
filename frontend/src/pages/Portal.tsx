@@ -9,6 +9,7 @@ import { formatDateTime } from "@/lib/format";
 import { useMe } from "@/lib/useMe";
 import { LanguageMenu, ThemeToggle } from "@/components/AppearanceControls";
 import { LegalLinks } from "@/lib/legal";
+import SharedGraph, { type SharedGraphData } from "@/components/SharedGraph";
 
 interface Item { id: string; title: string; status: string; updates: number; documents: number }
 interface Detail {
@@ -41,6 +42,8 @@ export default function Portal() {
     enabled: me?.role === "CLIENT" && !!chosen,
     retry: (n, e) => !(e instanceof ApiError && e.status === 404) && n < 1,
   });
+
+  const { data: graphData } = useQuery({ queryKey: ["portal-graph", chosen], queryFn: () => apiGet<{ graph: SharedGraphData | null }>(`/portal/matters/${chosen}/graph`), enabled: me?.role === "CLIENT" && !!chosen && !!detail.data });
 
   const out = async () => {
     await endSession();
@@ -106,6 +109,12 @@ export default function Portal() {
                     </div>
                   ))}
                 </section>
+                {graphData?.graph && (
+                  <section className="space-y-2" data-testid="portal-graph">
+                    <h3 className="text-lg">How the documents connect</h3>
+                    <SharedGraph graph={graphData.graph} testId="portal-graph-view" />
+                  </section>
+                )}
                 <p className="text-xs text-muted-foreground">{detail.data.notice}</p>
               </>
             )}

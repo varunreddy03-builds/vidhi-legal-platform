@@ -64,7 +64,10 @@ def decrypt(blob: bytes, aad: bytes = b"", *, fallback: bool = False) -> bytes:
     nonce, ct = body[:NONCE], body[NONCE:]
     keys = configured_keys()
     if fallback:
-        keys = keys + [_derived_key()]
+        try:  # a site with DATA_ENCRYPTION_KEY but no LINK_SECRET (a laptop) simply has no derived key to try
+            keys = keys + [_derived_key()]
+        except RuntimeError:
+            pass
     for k in keys:
         try:
             return AESGCM(k).decrypt(nonce, ct, aad)

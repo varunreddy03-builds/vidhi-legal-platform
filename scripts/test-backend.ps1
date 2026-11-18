@@ -32,7 +32,7 @@ $env:STRIPE_WEBHOOK_SECRET = "whsec_stripe_test_secret_not_real"  # secret-scan:
 $env:RESEND_WEBHOOK_SECRET = "whsec_" + [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("resend-test-secret-not-real-0000"))
 $env:RAZORPAY_KEY_ID = "rzp_test_dummy"; $env:RAZORPAY_KEY_SECRET = "dummy-not-real"   # never used: the stub replaces Razorpay in tests
 $env:RAZORPAY_WEBHOOK_SECRET = "razorpay-test-webhook-secret-not-real"  # secret-scan: ok (fake test value)
-$env:GOOGLE_STUB = "true"; $env:GOOGLE_CLIENT_ID = "stub-client"
+$env:GOOGLE_STUB = "true"; $env:GOOGLE_CLIENT_ID = "stub-client"; $env:MS_STUB = "true"
 $env:VOICE_STUB = "true"
 $env:SENDGRID_WEBHOOK_PUBLIC_KEY = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZMxiznS2kKf0XNyPGKhz7///7DvF9XUH9Cp/Y24GpHvVNRc6h1br1cmHMebYtJNtDCZNIkvOFcA48v7hYV4UxA=="   # throwaway test key (its private half is in tests/test_sendgrid.py)
 $env:DIRECTORY_ENABLED = "true"; $env:WEBPUSH_STUB = "true"; $env:TWILIO_STUB = "true"; $env:TWILIO_AUTH_TOKEN = "twilio-test-token-not-real"; $env:TWILIO_WEBHOOK_URL = "http://twilio.test/api/webhooks/twilio"

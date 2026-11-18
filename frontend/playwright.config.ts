@@ -16,7 +16,7 @@ const backendEnv = {
   PLATFORM_ADMIN_EMAILS: "platform-admin-test@example.com", // the e2e operator account (e2e/legal-review.e2e.ts seeds it straight in the database)
   AUTHORITY_SOURCE_DISABLED: "true", // e2e never calls the paid case source, whatever tokens backend/.env holds
   AI_DAILY_CAP_INR: "100000", AI_FREE_DAILY_CAP_INR: "100000", AI_USER_DAILY_CAP_INR: "100000", AI_FREE_USER_DAILY_CAP_INR: "100000", AI_USER_WINDOW_CAP_INR: "100000", AI_USER_WEEKLY_CAP_INR: "100000", AI_USER_MONTHLY_CAP_INR: "100000", // browser tests make many scripted AI calls on one persistent database
-  AI_STUB: "true", PAYMENTS_STUB: "true", EMAIL_DRY_RUN: "true", VOICE_STUB: "true", TWILIO_STUB: "true", WEBPUSH_STUB: "true", GOOGLE_STUB: "true", IMAGEGEN_STUB: "true",
+  AI_STUB: "true", PAYMENTS_STUB: "true", EMAIL_DRY_RUN: "true", VOICE_STUB: "true", TWILIO_STUB: "true", WEBPUSH_STUB: "true", GOOGLE_STUB: "true", MS_STUB: "true", IMAGEGEN_STUB: "true",
   DATA_ENCRYPTION_KEY: "ChEYHyYtNDtCSVBXXmVsc3qBiI-WnaSrsrnAx87V3OM=", // a throwaway key, the same as the backend tests: uploads and their extracted text are encrypted in browser tests too
   GEMINI_API_KEY: "dummy-not-real", RESEND_API_KEY: "re_dummy_not_real", EMAIL_FROM: "VIDHI Test <test@example.com>",
   RECOVERY_ENABLED: "true", // Legal Recovery is off by default; the older tests still cover it, legal-recovery-off.e2e.ts covers the default

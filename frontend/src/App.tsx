@@ -18,6 +18,10 @@ const Judgments = lazy(() => import("@/pages/Judgments"));
 const LegalDirectory = lazy(() => import("@/pages/LegalDirectory"));
 const Vault = lazy(() => import("@/pages/Vault"));
 const Tax = lazy(() => import("@/pages/Tax"));
+const Translate = lazy(() => import("@/pages/Translate"));
+const Connections = lazy(() => import("@/pages/Connections"));
+const About = lazy(() => import("@/pages/About"));
+const SignOff = lazy(() => import("@/pages/SignOff"));
 const Law = lazy(() => import("@/pages/Law"));
 import RecoveryOnly from "@/components/recovery/RecoveryOnly";
 const RecoveryGuide = lazy(() => import("@/pages/RecoveryGuide"));
@@ -48,6 +52,7 @@ const AcceptInvite = lazy(() => import("@/pages/AcceptInvite"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
 const Terms = lazy(() => import("@/pages/Terms"));
 const Cookies = lazy(() => import("@/pages/Cookies"));
+const Security = lazy(() => import("@/pages/Security"));
 const DataRights = lazy(() => import("@/pages/DataRights"));
 const Support = lazy(() => import("@/pages/Support"));
 const Admin = lazy(() => import("@/pages/Admin"));
@@ -116,6 +121,10 @@ export default function App() {
           <Route path="/judgments" element={<Judgments />} />
           <Route path="/legal-directory" element={<LegalDirectory />} />
           <Route path="/tax" element={<Tax />} />
+          <Route path="/translate" element={<Translate />} />
+          <Route path="/connections" element={<Connections />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/sign-off" element={<SignOff />} />
           <Route path="/vault" element={<Vault />} />
           <Route path="/vault/:id" element={<Vault />} />
           <Route element={<RecoveryOnly />}>
@@ -136,6 +145,7 @@ export default function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/cookies" element={<Cookies />} />
+          <Route path="/security" element={<Security />} />
           <Route path="/data-rights" element={<DataRights />} />
           <Route path="/support" element={<Support />} />
           <Route path="/admin" element={<Admin />} />

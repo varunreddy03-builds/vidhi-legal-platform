@@ -32,7 +32,7 @@ if sys.platform == "win32":  # a few Telangana file names push the full path pas
 META = RAW / "07_Source_Manifest_and_Metadata"
 PENDING = DEFAULT_DIR / "pending"
 
-CENTRAL_FOLDERS = ("01_", "02_", "03_", "04_", "05_", "08_", "09_", "10_")
+CENTRAL_FOLDERS = ("01_", "02_", "03_", "04_", "05_", "08_", "09_", "10_", "12_")
 # Short ids kept stable for the first batch; every other file gets an id from its own name.
 KNOWN_IDS = {
     "BNS_2023_Official.pdf": "bns", "BNSS_2023_Official.pdf": "bnss", "BSA_2023_Official.pdf": "bsa", "IPC_1860_Official_Repealed.pdf": "ipc",
@@ -63,6 +63,14 @@ def sources() -> list[dict]:
                         "url": r["Official source webpage URL"], "version": r["Version or publication date"], "commencement": r["Commencement status"],
                         "currency": r["Legal currency"], "cut": cut, "id": KNOWN_IDS.get(name) or slug(name.rsplit(".", 1)[0].replace("_Official", "")),
                         "unit": "Article" if name.startswith("Constitution") else "Section"})
+    other = META / "VIDHI_Other_Official_Manifest.csv"  # Acts and regulations from other official sites (CBIC, SEBI, Labour Ministry, CIC, CCI, IP India), each under its own publisher's name
+    if other.exists():
+        with open(other, encoding="utf-8-sig", newline="") as f:
+            for r in csv.DictReader(f):
+                name = r["File name"]
+                out.append({"file": f"{r['Folder']}/{name}", "sha": r["SHA-256 checksum"], "title": r["Document name"], "number": r["Act number and year"], "url": r["Official source webpage URL"],
+                            "version": r["Version or publication date"], "commencement": r["Commencement status"], "currency": r["Legal currency"], "cut": name.lower().endswith(".pdf") and (r.get("Extract") or "yes") == "yes",  # "no: <reason>" holds a file back when the cut found too few sections to trust
+                            "id": slug(name.rsplit(".", 1)[0]), "unit": r.get("Unit") or "Section", "org": r["Official source organisation"]})
     tg = META / "VIDHI_Telangana_Manifest.csv"
     if tg.exists():
         with open(tg, encoding="utf-8-sig", newline="") as f:
@@ -212,12 +220,12 @@ def build(s: dict) -> tuple[list[dict], list[str]]:
         entries.append({
             "id": f"{s['id']}-{label.lower()}",
             "citation": f"{s['unit']} {label}, {s['title']}",
-            "kind": "STATUTE_SECTION" if s["unit"] != "Rule" else "RULE",
+            "kind": "STATUTE_SECTION" if s["unit"] not in ("Rule", "Regulation") else "RULE",
             "jurisdiction": "IN",
             "heading": head,
             "text": body,
             "text_sha256": sha256_text(body),
-            "source_name": f"India Code (Legislative Department): {s['number']}, file {s['file'].rsplit('/', 1)[-1]}",
+            "source_name": f"{s['org']}: {s['number']}, file {s['file'].rsplit('/', 1)[-1]}" if s.get("org") else f"India Code (Legislative Department): {s['number']}, file {s['file'].rsplit('/', 1)[-1]}",
             "source_url": s["url"],
             "version": s["version"],
             "commencement": s["commencement"],
@@ -235,6 +243,10 @@ def build(s: dict) -> tuple[list[dict], list[str]]:
         })
     nums = sorted({key(e["id"].rsplit("-", 1)[1].upper())[0] for e in entries})
     gaps = [str(n) for n in range(nums[0], nums[-1] + 1) if n not in nums] if nums else []
+    if gaps:  # say so on every entry: a missing number is a section this draft does not have, not a repealed one
+        note = f"Section numbers between the first and last found that this draft does not have: {', '.join(gaps[:40])}{' and more' if len(gaps) > 40 else ''}. They were not found in the file; that does not mean they were repealed."
+        for e in entries:
+            e["coverage_note"] = e["coverage_note"] or note
     return entries, gaps
 
 

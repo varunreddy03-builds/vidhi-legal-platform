@@ -57,6 +57,11 @@ async def operator_list():
     return {"reviewers": [reviewers.operator_view(r) async for r in db.legal_reviewers.find({}).sort("label", 1)], "note": "Real names and enrolment numbers are shown here only."}
 
 
+@admin_router.get("/acts")
+async def operator_acts():
+    return {"acts": await reviewers.acts()}
+
+
 @admin_router.post("/{reviewer_id}/record-confirmation")
 async def record(reviewer_id: str, body: RecordIn, admin: dict = Depends(require_platform_admin)):
     r = await db.legal_reviewers.find_one({"id": reviewer_id})
@@ -74,6 +79,22 @@ async def record(reviewer_id: str, body: RecordIn, admin: dict = Depends(require
 async def public_reviewers(user: dict = Depends(current_user)):
     """Who has compared the library with the official text, and how much: labels and counts only."""
     return {"reviewers": await reviewers.public_list(), "note": "Reviewers other than those named are shown by code; their identities are kept on file by VIDHI. A confirmation means the reviewer compared the text with the official source; it is not legal advice."}
+
+
+@router.get("/reviewer/me")
+async def reviewer_me(user: dict = Depends(current_user)):
+    """404 for everyone who is not a registered reviewer, so the page can tell. Nothing private is returned: the label only."""
+    r = await db.legal_reviewers.find_one({"user_id": user["id"], "active": True})
+    if not r:
+        raise HTTPException(status_code=404, detail="Not found")
+    return {"label": r["label"], "named": bool(r["named_publicly"])}
+
+
+@router.get("/reviewer/acts")
+async def reviewer_acts(user: dict = Depends(current_user)):
+    if not await db.legal_reviewers.find_one({"user_id": user["id"], "active": True}):
+        raise HTTPException(status_code=404, detail="Not found")
+    return {"acts": await reviewers.acts()}
 
 
 @router.post("/reviewer/confirm-act")

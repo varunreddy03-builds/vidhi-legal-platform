@@ -3,6 +3,9 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import {
   Archive,
+  Info,
+  Plug,
+  Languages,
   Receipt,
   BookOpen,
   Bell,
@@ -103,6 +106,9 @@ export default function MoreSheet({
           {go("/templates", t("more.templates"), Scroll, "templates")}
           {go("/vault", t("nav.vault"), Archive, "vault")}
           {go("/tax", t("nav.tax"), Receipt, "tax")}
+          {go("/translate", t("nav.translate"), Languages, "translate")}
+          {go("/connections", t("nav.connections"), Plug, "connections")}
+          {go("/about", t("nav.about"), Info, "about")}
           {go("/clients", t("more.clients"), Users, "clients")}
           {go("/conflicts", t("more.conflicts"), Users, "conflicts")}
           {go("/legal", t("more.legal"), Scale, "legal")}

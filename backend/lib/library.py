@@ -116,12 +116,15 @@ def validate_pending(e: object) -> list[str]:
 
 
 # Sources whose own terms forbid storing or republishing their text without written permission (docs/legal-sources-terms.md). lib/legal_store.py applies the same names to registered sources.
-PERMISSION_REQUIRED_NAMES = ("india code", "indiacode", "legislative department", "ncrb sankalan", "crpc_1973_as_amended_clean")
+PERMISSION_REQUIRED_NAMES = ("india code", "indiacode", "legislative department", "ncrb sankalan", "crpc_1973_as_amended_clean",
+                             "cbic", "sebi", "ministry of labour", "central information commission", "competition commission", "ip india")  # the last six: official sites whose terms have not been read (added 2026-11-18)
 
 
 # Each source has its own switch, so turning one on never turns on another (India Code stays off while the Ministry portal text is on).
 PERMISSION_ENV = {
     "ncrb sankalan": "NCRB_PORTAL_USE_REF",
+    # Other official sites: terms not read yet. Each has its own switch, off until the operator writes down what the site's terms allow (who decided, when).
+    "cbic": "CBIC_USE_REF", "sebi": "SEBI_USE_REF", "ministry of labour": "LABOUR_MINISTRY_USE_REF", "central information commission": "CIC_USE_REF", "competition commission": "CCI_USE_REF", "ip india": "IPINDIA_USE_REF",
     # Only the three repealed codes (IPC, CrPC, Evidence Act), identified by their file names; the rest of India Code stays under INDIA_CODE_PERMISSION_REF.
     "ipc_1860_official_repealed": "OLD_CODES_USE_REF", "crpc_1973_official_repealed": "OLD_CODES_USE_REF", "indian_evidence_act_1872_official_repealed": "OLD_CODES_USE_REF", "crpc_1973_as_amended_clean": "OLD_CODES_USE_REF",
 }

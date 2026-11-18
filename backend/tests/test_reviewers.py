@@ -74,3 +74,19 @@ def test_a_reviewer_with_an_account_confirms_for_themselves_and_nobody_else_can(
     assert ok.status_code == 200 and ok.json()["confirmed"] == 6
     assert {r["reviewed_by"] for r in mongo().provisions.find({"instrument_id": iid})} == {rev["label"]}
     assert mongo().legal_review_log.find_one({"reviewer_id": rev["id"]})["mode"] == "SELF"
+
+
+def test_the_acts_list_and_who_am_i_work_only_for_the_right_people(admin, user_a, user_b):  # noqa: F811
+    t = load(admin)
+    iid = instrument_of(t)
+    acts = admin.get("/admin/legal/reviewers/acts").json()["acts"]
+    mine = next(a for a in acts if a["id"] == iid)
+    assert mine["provisions"] == 6 and mine["reviewed"] == 0 and mine["waiting"] == 6
+    assert user_a.get("/admin/legal/reviewers/acts").status_code in (403, 404)
+    assert user_a.get("/reviewer/me").status_code == 404 and user_a.get("/reviewer/acts").status_code == 404  # not a reviewer
+    rev = register(admin, private_name="Invented Reviewer Two", enrolment_no="Q/2/2002", account_email=user_a.user["email"])
+    me = user_a.get("/reviewer/me")
+    assert me.status_code == 200 and me.json() == {"label": rev["label"], "named": False}
+    assert any(a["id"] == iid for a in user_a.get("/reviewer/acts").json()["acts"])
+    assert user_b.get("/reviewer/me").status_code == 404
+    assert "Invented Reviewer Two" not in me.text

@@ -30,3 +30,22 @@ Its certificate could not be validated from the build machine, and its search is
 4. **Buy or license** a commercial legal database under a licence that permits this use.
 
 Until one of these is settled, the law library has no Acts, and every statute reference in Authority Check says "Not in reviewed library".
+
+## Other official sites: added 2026-11-18 (terms NOT read)
+
+The owner supplied official PDFs from six more publishers. Their terms of use have not been read, so under the rule above each stays **off** until the operator records what that site's terms allow (who decided, when) in its own setting. Each switch is separate; none turns on another, and the India Code switch turns on none of them (tested in `backend/tests/test_library_gate.py`).
+
+| Publisher | Setting | Drafts made (unreviewed, mechanical cut, missing section numbers noted on each entry) |
+|---|---|---|
+| CBIC (Central Board of Indirect Taxes and Customs) | `CBIC_USE_REF` | CGST Act 2017, CBIC copy "as on 01.01.2022": 174 sections, section 151 not found. **Out of date** (amended since). |
+| SEBI | `SEBI_USE_REF` | SEBI Act 1992, SEBI copy of January 2020: 83 sections. May be out of date. |
+| Ministry of Labour and Employment | `LABOUR_MINISTRY_USE_REF` | none yet (see held back) |
+| Central Information Commission | `CIC_USE_REF` | RTI Act 2005, CIC consolidated "as on 18 November 2025": 31 sections. |
+| Competition Commission of India | `CCI_USE_REF` | Competition Act 2002, CCI compilation: 70 sections, eight numbers not found (23, 24, 25, 28, 34, 37, 40, 41). Appears older than the 2023 amendment. |
+| IP India | `IPINDIA_USE_REF` | Patents Act 1970, consolidated to 1 August 2024: 165 sections, seven numbers not found (5, 95 to 98, 116, 121). |
+
+**Held back, not loaded (the cut found too few sections to trust; the PDFs are kept in `data/legal_sources_raw/.../12_Other_Official_Sources/` and listed in `VIDHI_Other_Official_Manifest.csv` with `Extract = no: <reason>`):** IGST Act 2017 (5 of about 25 found), UTGST Act 2017 (4 of about 25), GST (Compensation to States) Act 2017 (none), CGST Rules 2017 Part A, September 2021 (7 of over 100), SEBI Insider Trading Regulations 2015 (8), SEBI LODR Regulations 2015, original Gazette text (15), Industrial Relations Code 2020 (10 of over 100), Code on Wages 2019 (none). These need a better cutting rule for Acts whose margin headings come before the section numbers, or OCR, or a person to cut them.
+
+**Not copied, because already in the library or not sections:** NCRB Sankalan BNS, BNSS, BSA; IBC 2016 (IBBI copy of 2021); IT Act 2000 "as passed" (superseded by the loaded India Code text); DPDP Act 2023 (already loaded from India Code); the older CGST Rules compilation of November 2020 (the 2021 one is newer); the CGST Rules forms volume of August 2020 (forms, not sections). The "master" and "for review" PDFs are bundles of the same files.
+
+Every draft is `UNVERIFIED - pending lawyer review`. Nothing here was compared with the official page, and a draft can never make a claim verified.

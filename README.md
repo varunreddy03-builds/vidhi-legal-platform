@@ -6,7 +6,7 @@ VIDHI is an AI legal workflow platform for India, written as a prototype. It is 
 
 ## What it is
 
-* **Legal Intelligence**: matters and documents, research with source-checked answers, drafting, a Word-style editor and a PDF reader, judgments search, and a directory of courts, official portals and legal aid bodies.
+* **Legal Intelligence**: matters and documents, research with source-checked answers, drafting, a Word-style editor and a PDF reader, judgments search, and a directory of courts, official portals, legal aid bodies and Law Commission reports. Also: a **Vault** (many documents at once, a summary of each and one review table with a checked quote and page for every answer), a **Tax** workspace that carries no tax law of its own, **Translate and transcribe** (a program check that every number survived), **review requests** between colleagues, a **client portal** that can show a client a filtered graph of the documents shared with them, a read-only **Microsoft 365** connection (not yet run against a live tenant; iManage is not built), and a reviewer sign-off register in which advocates are shown only by code.
 * **VIDHI Legal Katalyst**: five checks written as plain code (no AI decides them): Authority Check, Deadline engine, Old-code to new-code checker, Pre-filing defect check, and List of dates with page references. Add-ins for Word and Google Docs are in `addins/`.
 * **Legal Recovery**: a small free helper for people owed money. It is in the code but **switched off by default** (`RECOVERY_ENABLED`).
 
@@ -25,7 +25,7 @@ VIDHI is an AI legal workflow platform for India, written as a prototype. It is 
 
 ## Status, honestly
 
-* The backend test suite of this very copy passes (about 11,600 tests; a few tests of private data and recorded evaluation runs were left out with that data), and the front end type-checks, lints, passes its 193 unit tests and builds. But **the AI answers have never been measured with a real AI key on real questions**, and the Hindi and Telugu answers are untested. The Old-code to New-code checker has no mapping tables here (they contain Act text), so it starts empty.
+* The backend test suite of this very copy passes (about 11,700 tests; a few tests of private data and recorded evaluation runs were left out with that data), and the front end type-checks, lints, passes its 196 unit tests and builds. But **the AI answers have never been measured with a real AI key on real questions**, and the Hindi and Telugu answers are untested. The Old-code to New-code checker has no mapping tables here (they contain Act text), so it starts empty.
 * The law library has **no reviewed entries**; legal statements therefore come out `UNSUPPORTED` or "No supporting authority found" until a named advocate reviews sources.
 * The server package (`docker-compose.yml`, `deploy/`) has never been run on a real server.
 * Optional meaning-based search (`backend/lib/embeddings.py`) and re-ranker are off by default.

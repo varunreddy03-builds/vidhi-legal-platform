@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(os.path.abspath(__file__)).parents[2]
 BACKEND = ROOT / "backend"
 # Set by the platform or only for tests/development: not something an operator fills in.
-INTERNAL = {"PATH", "HOME", "PYTHONPATH", "PYTEST_CURRENT_TEST", "AI_STUB", "PAYMENTS_STUB", "EMAIL_DRY_RUN", "VOICE_STUB", "TWILIO_STUB", "WEBPUSH_STUB", "GOOGLE_STUB", "IMAGEGEN_STUB",
+INTERNAL = {"PATH", "HOME", "PYTHONPATH", "PYTEST_CURRENT_TEST", "AI_STUB", "PAYMENTS_STUB", "EMAIL_DRY_RUN", "VOICE_STUB", "TWILIO_STUB", "WEBPUSH_STUB", "GOOGLE_STUB", "MS_STUB", "IMAGEGEN_STUB",
             "LIBRARY_DIR", "TEMPLATES_DIR", "WEB_CONCURRENCY", "TRUST_PROXY", "ENABLE_DOCS", "MONGO_URL", "DB_NAME", "COOKIE_SECURE", "BCRYPT_COST", "AI_TIMEOUT_SECONDS", "AI_MAX_OUTPUT_TOKENS",
             "MAX_CONTEXT_CHARS", "FREE_CONTEXT_CHARS", "AI_ROUTE"}
 READ = re.compile(r"""os\.environ(?:\.get\(|\[)\s*["']([A-Z][A-Z0-9_]+)["']""")

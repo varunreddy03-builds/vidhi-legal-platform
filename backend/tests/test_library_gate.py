@@ -190,3 +190,29 @@ def test_the_old_codes_switch_turns_on_only_the_three_repealed_codes(tmp_path, m
     assert library.load_pending(tmp_path) == []
     monkeypatch.setenv("OLD_CODES_USE_REF", "Owner decision in chat, 2026-11-03: use the three repealed codes, unreviewed")
     assert [d["id"] for d in library.load_pending(tmp_path)] == ["IPC_1860_Official_Repealed.pdf-1"]  # the other India Code Act is still off
+
+
+def test_each_other_official_site_has_its_own_switch_and_none_turns_on_another(tmp_path, monkeypatch):
+    """CBIC, SEBI, the Labour Ministry, the CIC, the CCI and IP India: terms not read, so each stays off until its own written decision is recorded."""
+    (tmp_path / "pending").mkdir()
+    sites = {"cbic": ("CBIC (Central Board of Indirect Taxes and Customs)", "CBIC_USE_REF"), "sebi": ("SEBI (Securities and Exchange Board of India)", "SEBI_USE_REF"),
+             "labour": ("Ministry of Labour and Employment", "LABOUR_MINISTRY_USE_REF"), "cic": ("Central Information Commission (CIC)", "CIC_USE_REF"),
+             "cci": ("Competition Commission of India (CCI)", "CCI_USE_REF"), "ipi": ("IP India (Office of the Controller General of Patents, Designs and Trade Marks)", "IPINDIA_USE_REF")}
+    entries = []
+    for key, (org, _env) in sites.items():
+        text = f"{key}. Fictional words."
+        entries.append({"id": f"{key}-fict-1", "citation": f"Section 1, The Fictional {key} Act", "kind": "STATUTE_SECTION", "jurisdiction": "IN", "text": text, "text_sha256": library.sha256_text(text),
+                        "source_name": f"{org}: Act No. 1 of 2000, file x.pdf", "source_url": "https://example.invalid/x", "version": "test", "status": library.PENDING_STATUS})
+    (tmp_path / "pending" / "sites.json").write_text(json.dumps({"entries": entries}), encoding="utf-8")
+    for _org, env in sites.values():
+        monkeypatch.delenv(env, raising=False)
+    monkeypatch.delenv("INDIA_CODE_PERMISSION_REF", raising=False)
+    assert library.load_pending(tmp_path) == []
+    for key, (_org, env) in sites.items():
+        monkeypatch.setenv(env, "Short")  # too short to say who decided and when
+        assert library.load_pending(tmp_path) == []
+        monkeypatch.setenv(env, "Owner decision recorded in the legal folder, 2026-12-01")
+        assert [d["id"] for d in library.load_pending(tmp_path)] == [f"{key}-fict-1"]  # only that site's drafts
+        monkeypatch.delenv(env)
+    monkeypatch.setenv("INDIA_CODE_PERMISSION_REF", "Letter from the Legislative Department dated 2026-12-01, kept in the legal folder")
+    assert library.load_pending(tmp_path) == []  # India Code's switch turns on none of them

@@ -21,6 +21,12 @@ const ALSO: { to: string; icon: typeof Gavel; label: string; id: string }[] = [
   { to: "/lawyers", icon: UserSearch, label: "Lawyer directory", id: "lawyers" },
   { to: "/portal", icon: Users, label: "Client portal", id: "portal" },
   { to: "/templates", icon: FileStack, label: "Templates", id: "templates" },
+  { to: "/vault", icon: FileStack, label: "Vault", id: "vault" },
+  { to: "/tax", icon: FileText, label: "Tax", id: "tax" },
+  { to: "/translate", icon: Globe, label: "Translate", id: "translate" },
+  { to: "/legal-directory", icon: Landmark, label: "Courts and legal directory", id: "directory" },
+  { to: "/connections", icon: Users, label: "Connections", id: "connections" },
+  { to: "/about", icon: CircleHelp, label: "Everything in VIDHI", id: "about" },
 ];
 
 const STATUSES = [

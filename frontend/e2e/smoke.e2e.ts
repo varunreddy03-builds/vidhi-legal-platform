@@ -6,7 +6,7 @@ import { signUp } from "./helpers";
 const SCREENS = [
   "/start", "/intelligence", "/ask", "/research", "/matters", "/drafts", "/templates", "/deadlines", "/dashboard", "/activity", "/conflicts", "/lawyers", "/legal",
   "/katalyst", "/katalyst/authority", "/katalyst/dates", "/katalyst/defects", "/katalyst/oldcode", "/katalyst/deadlines",
-  "/recovery", "/recovery/guide", "/settings", "/help", "/support", "/privacy", "/terms", "/cookies", "/data-rights",
+  "/recovery", "/recovery/guide", "/settings", "/help", "/support", "/privacy", "/terms", "/cookies", "/security", "/data-rights", "/vault", "/tax", "/translate", "/connections", "/about",
 ];
 
 // A server error that is expected on a fresh account is listed here with the reason; anything else fails the test.

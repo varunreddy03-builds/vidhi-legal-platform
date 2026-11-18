@@ -846,6 +846,258 @@
    "government_domain": true,
    "listed_on_official_page": "https://nalsa.gov.in/directory/",
    "checked_on": "2026-11-13"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081679.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081679.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081632-1.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081632-1.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081686.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081686.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081654.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081654.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081654-1.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081654-1.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081637-1.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081637-1.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081626-1.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081626-1.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081640-1.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081640-1.pdf",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081616.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081616.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081632-2.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081632-2.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081620.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081620.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081672.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081672.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081687.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081687.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081655-1.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081655-1.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081613.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081613.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/03/2023032990.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/03/2023032990.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/06/2023060150.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/06/2023060150.pdf",
+   "expected_words_found": true,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/06/2023060190.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/06/2023060190.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/06/2023060174.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/06/2023060174.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/06/2023060185.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/06/2023060185.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/08/2023081169.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/08/2023081169.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/09/202309291744842452.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/09/202309291744842452.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/09/20230929466194485.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2023/09/20230929466194485.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2024/02/202402021628716189.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2024/02/202402021628716189.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2024/02/202402021139959703.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2024/02/202402021139959703.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2024/02/20240212724768593.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2024/02/20240212724768593.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2024/02/20240216739162193.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2024/02/20240216739162193.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
+  },
+  "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2024/03/202403061982318841.pdf": {
+   "ok": true,
+   "status": 200,
+   "final_url": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2024/03/202403061982318841.pdf",
+   "expected_words_found": false,
+   "government_domain": true,
+   "listed_on_official_page": null,
+   "checked_on": "2026-11-18"
   }
  }
 }

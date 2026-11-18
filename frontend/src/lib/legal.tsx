@@ -9,7 +9,7 @@ import { apiGet } from "@/lib/api";
  * Until then the page shows a visible "draft" note. Reviewing means more than reading: the lawyer confirms the business details, the
  * processors listed and the rights described, and the operator then sets the real business details in the server settings.
  */
-export const LEGAL_REVIEWED = { terms: false, privacy: false, cookies: false } as const;
+export const LEGAL_REVIEWED = { terms: false, privacy: false, cookies: false, security: false } as const;
 
 export type LegalConfig = { config: Record<string, string | null>; missing: string[]; response_days: number };
 
@@ -73,6 +73,7 @@ export function LegalLinks({ className = "" }: { className?: string }) {
       <Link to="/terms" className={link}>Terms</Link>
       <Link to="/privacy" className={link}>Privacy</Link>
       <Link to="/cookies" className={link}>Cookies</Link>
+      <Link to="/security" className={link}>Security</Link>
       <Link to="/data-rights" className={link}>Your data rights</Link>
       <Link to="/support" className={link}>Contact support</Link>
     </nav>

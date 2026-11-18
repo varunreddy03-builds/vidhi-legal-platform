@@ -94,7 +94,9 @@ POLICY: list[tuple[str, str, str | None]] = [
     ("GET", r"^/api/org/(branding|logo)$", "read"),  # everyone needs the letterhead
     # ---- AI ----
     ("POST", r"^/api/research$", "ai"),
-    ("POST", r"^/api/reviewer/confirm-act$", "read"),  # only an account linked to a registered reviewer gets past the handler (404 for everyone else)
+    ("*", r"^/api/connectors(/|$)", "write"),  # a connection reads the person's own account and copies into matters: staff only, never a client
+    ("POST", r"^/api/translate$", "ai"),
+    ("POST", r"^/api/reviewer/(confirm-act|me|acts)$", "read"),  # only an account linked to a registered reviewer gets past the handler (404 for everyone else)
     ("POST", r"^/api/matters/\{matter_id\}/vault/rows$", "ai"),  # one AI question per document of a matter
     ("POST", r"^/api/analysis/\{kind\}$", "ai"),
     ("POST", r"^/api/legal-reasoning$", "ai"),
@@ -110,6 +112,7 @@ POLICY: list[tuple[str, str, str | None]] = [
     ("POST", r"^/api/recovery/cases/\{case_id\}/notice/(approve|mark|postal|postal/[^/]+/update)$", "send_mail"),
     ("POST", r"^/api/recovery/cases/\{case_id\}/notice/review$", "advocate_review"),
     ("POST", r"^/api/drafts/\{draft_id\}/review$", "approve_draft"),
+    ("POST", r"^/api/reviews/\{review_id\}/decision$", "approve_draft"),
     # ---- billing ----
     ("*", r"^/api/payments/(checkout|history|receipt/|subscription/)", "billing"),
     # ---- organisation administration ----
