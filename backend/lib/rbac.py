@@ -94,6 +94,8 @@ POLICY: list[tuple[str, str, str | None]] = [
     ("GET", r"^/api/org/(branding|logo)$", "read"),  # everyone needs the letterhead
     # ---- AI ----
     ("POST", r"^/api/research$", "ai"),
+    ("POST", r"^/api/reviewer/confirm-act$", "read"),  # only an account linked to a registered reviewer gets past the handler (404 for everyone else)
+    ("POST", r"^/api/matters/\{matter_id\}/vault/rows$", "ai"),  # one AI question per document of a matter
     ("POST", r"^/api/analysis/\{kind\}$", "ai"),
     ("POST", r"^/api/legal-reasoning$", "ai"),
     ("POST", r"^/api/evidence/classify$", "read"),  # a code-only screen of pasted text; no AI, nothing stored

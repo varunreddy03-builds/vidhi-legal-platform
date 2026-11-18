@@ -237,6 +237,8 @@ export const en = {
   "nav.law": "Law library",
   "nav.judgments": "High Court judgments",
   "nav.legaldir": "Courts and legal directory",
+  "nav.vault": "Vault",
+  "nav.tax": "Tax",
   "grp.more": "More",
   "start.tk.tag": "For lawyers",
   "start.tk.title": "Legal Katalyst",

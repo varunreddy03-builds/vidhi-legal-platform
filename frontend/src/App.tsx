@@ -16,6 +16,8 @@ const Toolkit = lazy(() => import("@/pages/Toolkit"));
 const Ask = lazy(() => import("@/pages/Ask"));
 const Judgments = lazy(() => import("@/pages/Judgments"));
 const LegalDirectory = lazy(() => import("@/pages/LegalDirectory"));
+const Vault = lazy(() => import("@/pages/Vault"));
+const Tax = lazy(() => import("@/pages/Tax"));
 const Law = lazy(() => import("@/pages/Law"));
 import RecoveryOnly from "@/components/recovery/RecoveryOnly";
 const RecoveryGuide = lazy(() => import("@/pages/RecoveryGuide"));
@@ -113,6 +115,9 @@ export default function App() {
           <Route path="/law" element={<Law />} />
           <Route path="/judgments" element={<Judgments />} />
           <Route path="/legal-directory" element={<LegalDirectory />} />
+          <Route path="/tax" element={<Tax />} />
+          <Route path="/vault" element={<Vault />} />
+          <Route path="/vault/:id" element={<Vault />} />
           <Route element={<RecoveryOnly />}>
             <Route path="/recovery" element={<RecoveryDashboard />} />
             <Route path="/recovery/guide" element={<RecoveryGuide />} />

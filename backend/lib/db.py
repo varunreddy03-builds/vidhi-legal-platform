@@ -209,6 +209,7 @@ INDEXES: dict[str, list[IndexModel]] = {
     "decisions": [IndexModel([("id", ASCENDING)], name="id", unique=True), IndexModel([("citation_norm", ASCENDING)], name="citation", unique=True)],
     "treatments": [IndexModel([("id", ASCENDING)], name="id", unique=True), IndexModel([("to_decision_id", ASCENDING)], name="to_decision"), IndexModel([("from_decision_id", ASCENDING)], name="from_decision")],
     "code_mappings": [IndexModel([("id", ASCENDING)], name="id", unique=True), IndexModel([("legacy.provision_id", ASCENDING)], name="legacy_prov"), IndexModel([("new.provision_id", ASCENDING)], name="new_prov")],
+    "vault_rows": [IndexModel([("organization_id", ASCENDING), ("matter_id", ASCENDING), ("document_id", ASCENDING)], name="org_matter_doc", unique=True)],
     "addin_keys": [IndexModel([("token_hash", ASCENDING)], name="token_hash", unique=True), IndexModel([("user_id", ASCENDING)], name="user")],
     "portal_updates": [IndexModel([("matter_id", ASCENDING), ("created_at", DESCENDING)], name="matter_created")],
     "portal_shares": [IndexModel([("matter_id", ASCENDING), ("document_id", ASCENDING)], name="matter_doc", unique=True)],

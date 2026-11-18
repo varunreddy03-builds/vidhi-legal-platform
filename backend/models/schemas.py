@@ -114,6 +114,8 @@ class MatterCreate(BaseModel):
     description: str = Field(default="", max_length=20000)
     jurisdiction_id: str = Field(default="IN", max_length=10)
     parties: str = Field(default="", max_length=5000)
+    kind: Literal["MATTER", "VAULT"] = "MATTER"  # a Vault is a matter that holds many documents for bulk work (routers/vault.py)
+    area: Literal["", "tax"] = ""  # the practice area shown with the matter (the tax workspace)
 
 
 class Matter(BaseModel):
@@ -126,6 +128,8 @@ class Matter(BaseModel):
     parties: str = ""
     client_id: str | None = None  # the firm's client record this matter belongs to (routers/clients.py)
     status: Literal["OPEN", "ON_HOLD", "CLOSED"] = "OPEN"
+    kind: Literal["MATTER", "VAULT"] = "MATTER"
+    area: Literal["", "tax"] = ""
     legal_hold: bool = False
     closed_at: datetime | None = None
     deletion_notice_at: datetime | None = None

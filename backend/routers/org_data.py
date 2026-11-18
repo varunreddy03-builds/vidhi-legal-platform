@@ -75,7 +75,7 @@ async def set_retention(body: RetentionIn, user: dict = Depends(current_user)):
 
 
 EXPORT_COLLECTIONS = (  # everything the organisation owns, filtered by organization_id
-    "matters", "clients", "addin_keys", "doc_notes", "documents", "facts", "timeline_events", "evidence_items", "entities", "inconsistencies",
+    "vault_rows", "matters", "clients", "addin_keys", "doc_notes", "documents", "facts", "timeline_events", "evidence_items", "entities", "inconsistencies",
     "research_results", "drafts", "recovery_cases", "recovery_proofs", "notice_versions", "notice_translations", "case_correspondence", "audit_events", "email_log", "generated_images", "answer_feedback",
     "deadlines", "portal_access", "portal_shares", "portal_updates", "authority_reports", "date_lists", "defect_checks", "old_code_checks",
     "support_tickets", "data_requests", "invites", "directory_profiles", "booking_requests", "org_branding", "email_confirmations", "pilot_feedback", "draft_comments",

@@ -2,6 +2,8 @@ import { useRecoveryEnabled } from "@/lib/recovery/useRecoveryEnabled";
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import {
+  Archive,
+  Receipt,
   BookOpen,
   Bell,
   FlaskConical,
@@ -99,6 +101,8 @@ export default function MoreSheet({
           {go("/dashboard", t("nav.dashboard"), LayoutDashboard, "dashboard")}
           {go("/activity", t("nav.activity"), Bell, "activity")}
           {go("/templates", t("more.templates"), Scroll, "templates")}
+          {go("/vault", t("nav.vault"), Archive, "vault")}
+          {go("/tax", t("nav.tax"), Receipt, "tax")}
           {go("/clients", t("more.clients"), Users, "clients")}
           {go("/conflicts", t("more.conflicts"), Users, "conflicts")}
           {go("/legal", t("more.legal"), Scale, "legal")}

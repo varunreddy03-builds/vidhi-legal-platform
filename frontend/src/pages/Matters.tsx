@@ -125,7 +125,7 @@ export default function Matters() {
               Could not load matters. Reload to retry.
             </p>
           )}
-          {(matters.data ?? []).map((m) => (
+          {(matters.data ?? []).filter((m) => m.kind !== "VAULT").map((m) => (
             <Link
               key={m.id}
               to={`/matters/${m.id}`}

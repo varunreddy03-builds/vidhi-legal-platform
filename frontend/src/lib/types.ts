@@ -30,6 +30,8 @@ export interface Matter {
   parties: string;
   client_id?: string | null;
   status: "OPEN" | "ON_HOLD" | "CLOSED";
+  kind?: "MATTER" | "VAULT";
+  area?: "" | "tax";
   legal_hold: boolean;
   closed_at: string | null;
   deletion_notice_at: string | null;

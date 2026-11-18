@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useLawDrafts } from "@/lib/useLawDrafts";
 import AppShell from "@/components/AppShell";
 import { DraftLawCard } from "@/components/DraftLaw";
+import ReviewedBy from "@/components/ReviewedBy";
 import UnifiedSearchResults from "@/components/UnifiedSearchResults";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -54,6 +55,7 @@ export default function Law() {
         <p className="mt-2 text-sm text-muted-foreground" data-testid="law-note">
           {acts.data?.note ?? "Official texts cut into provisions."} Reviewed law is what can make an answer verified; this list is for looking things up.
         </p>
+        <ReviewedBy />
         <form
           className="mt-4 flex flex-wrap gap-2"
           onSubmit={(e) => {

@@ -3,6 +3,8 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import {
+  Archive,
+  Receipt,
   ArrowLeft,
   Bell,
   FileText,
@@ -59,6 +61,8 @@ const NAV_CLUSTERS: Cluster[] = [
       { id: "drafts", key: "nav.drafts", to: "/drafts", icon: FileText },
       { id: "law", key: "nav.law", to: "/law", icon: Library },
       { id: "judgments", key: "nav.judgments", to: "/judgments", icon: Landmark },
+      { id: "vault", key: "nav.vault", to: "/vault", icon: Archive },
+      { id: "tax", key: "nav.tax", to: "/tax", icon: Receipt },
       { id: "legaldir", key: "nav.legaldir", to: "/legal-directory", icon: Landmark },
     ],
   },
