@@ -160,6 +160,20 @@ def test_the_env_file_is_written_for_its_owner_only_and_only_known_names_are_wri
         render_env.write_env({"X_KEY": "line\nbreak"}, tmp_path / "bad.env")
 
 
+def test_unset_settings_are_left_out_of_the_env_file_and_never_written_as_empty_values(tmp_path):
+    """An empty `NAME=` is a real, empty value to the app and to Docker. A number read from one crashed every AI call on the first live deployment (AI_USD_INR=)."""
+    values, problems = build()
+    assert not problems
+    empty = [n for n, v in values.items() if v == ""]
+    assert "AI_USD_INR" in empty and "AI_PRICES_JSON" in empty and len(empty) > 20  # the builder does hold many unset names
+    out = tmp_path / ".env"
+    render_env.write_env(values, out)
+    text = out.read_text(encoding="utf-8")
+    assert not re.search(r"^[A-Z][A-Z0-9_]*=\s*$", text, re.M)
+    assert not any(re.search(rf"^{n}=", text, re.M) for n in empty)
+    assert "SIGNUP_MODE=invite" in text  # settings that have a value are still written
+
+
 # ---------- CI and the deploy workflow ----------
 
 def test_deploy_runs_the_whole_ci_first_is_inert_until_enabled_and_never_trusts_an_unknown_server():

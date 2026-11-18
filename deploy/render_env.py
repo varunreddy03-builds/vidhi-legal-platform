@@ -97,6 +97,8 @@ def write_env(values: dict[str, str], out: Path) -> None:
     for name, v in values.items():
         if "\n" in v or "\r" in v:
             raise ValueError(f"{name} has a line break in it")
+        if v == "":
+            continue  # an unset setting is left OUT: "NAME=" is a real, empty value to the app and to Docker (a number read from it crashed every AI call), and the code's own default applies only when the name is absent
         lines.append(f"{name}={v}\n")
     flags = os.O_WRONLY | os.O_CREAT | os.O_TRUNC
     fd = os.open(out, flags, stat.S_IRUSR | stat.S_IWUSR)

@@ -298,7 +298,7 @@ def route_for(purpose: str, prompt_chars: int = 0, tier: str | None = None) -> l
         return chain
     raw = os.environ.get("AI_ROUTE_" + purpose.upper().replace("-", "_")) or os.environ.get("AI_ROUTE")
     names = [n.strip().lower() for n in raw.split(",")] if raw else list(DEFAULT_ROUTES.get(purpose, DEFAULT_ROUTE))
-    if not raw and prompt_chars > int(os.environ.get("AI_LONG_PROMPT_CHARS", LONG_PROMPT_CHARS)) and "gemini" in names:
+    if not raw and prompt_chars > int(os.environ.get("AI_LONG_PROMPT_CHARS") or LONG_PROMPT_CHARS) and "gemini" in names:
         names.remove("gemini")
         names.insert(0, "gemini")  # a very long input: use the model with the longest context first
     chain = _local_first([n for n in names if n in PROVIDERS and provider_configured(n) and (n != "ollama" or purpose in LOCAL_TASKS)], purpose)

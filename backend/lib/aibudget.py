@@ -267,7 +267,7 @@ def alert_percent() -> float:
 def usd_inr() -> float:
     """Rupees per US dollar. Default 97: just above the highest rate found for the 52 weeks to 22 July 2026 (96.96; the rate that day was about 96.5).
     UNVERIFIED for today: set AI_USD_INR to the current RBI reference rate. A higher number only makes the cap stricter, never looser."""
-    return float(os.environ.get("AI_USD_INR", "97"))
+    return float(os.environ.get("AI_USD_INR") or "97")  # an empty value means "not set"
 
 
 def prices() -> dict:
@@ -332,9 +332,9 @@ def cost_inr(provider: str, tokens_in: int, tokens_out: int, model: str | None =
 def fixed_cost_inr(kind: str, amount: float = 1.0) -> float:
     """Services priced by something other than tokens. kind: tts (characters), stt (bytes of audio), image (pictures)."""
     usd = {
-        "tts": float(os.environ.get("AI_PRICE_TTS_PER_1K_CHARS_USD", "0.30")) * amount / 1000,
-        "stt": float(os.environ.get("AI_PRICE_STT_PER_MIN_USD", "0.40")) * max(1.0, amount / 1_000_000),  # about a megabyte of audio a minute
-        "image": float(os.environ.get("AI_PRICE_IMAGE_USD", "0.08")) * amount,
+        "tts": float(os.environ.get("AI_PRICE_TTS_PER_1K_CHARS_USD") or "0.30") * amount / 1000,
+        "stt": float(os.environ.get("AI_PRICE_STT_PER_MIN_USD") or "0.40") * max(1.0, amount / 1_000_000),  # about a megabyte of audio a minute
+        "image": float(os.environ.get("AI_PRICE_IMAGE_USD") or "0.08") * amount,
     }[kind]
     return usd * usd_inr()
 
