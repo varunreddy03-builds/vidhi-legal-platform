@@ -61,7 +61,7 @@ export default {
   "login.org.hint": "শুধু আপনি হলে নিজের নাম লিখুন",
   "login.email": "ইমেইল",
   "login.password": "পাসওয়ার্ড",
-  "login.password.hint": "কমপক্ষে ৮ অক্ষর, এবং আপনার ইমেইল ঠিকানা নয়।",
+  "login.password.hint": "কমপক্ষে ১০ অক্ষর, এবং আপনার ইমেইল ঠিকানা নয়।",
   "login.forgot": "পাসওয়ার্ড ভুলে গেছেন?",
   "login.privacy.pre": "আমি পড়েছি",
   "login.privacy.link": "VIDHI কীভাবে তথ্য সামলায়",

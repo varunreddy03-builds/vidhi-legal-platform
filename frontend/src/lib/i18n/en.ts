@@ -69,7 +69,7 @@ export const en = {
   "login.org.hint": "If it is just you, use your own name",
   "login.email": "Email",
   "login.password": "Password",
-  "login.password.hint": "At least 8 characters, and not your email address.",
+  "login.password.hint": "At least 10 characters, and not your email address.",
   "login.forgot": "Forgot your password?",
   "login.privacy.pre": "I have read",
   "login.privacy.link": "how VIDHI handles data",

@@ -61,7 +61,7 @@ export default {
   "login.org.hint": "আপুনি অকলে হ'লে নিজৰ নাম লিখক",
   "login.email": "ইমেইল",
   "login.password": "পাছৱৰ্ড",
-  "login.password.hint": "কমেও ৮টা আখৰ, আৰু আপোনাৰ ইমেইল ঠিকনা নহয়।",
+  "login.password.hint": "কমেও ১০টা আখৰ, আৰু আপোনাৰ ইমেইল ঠিকনা নহয়।",
   "login.forgot": "পাছৱৰ্ড পাহৰিলে?",
   "login.privacy.pre": "মই পঢ়িছো",
   "login.privacy.link": "VIDHI-এ তথ্য কেনেকৈ চম্ভালে",

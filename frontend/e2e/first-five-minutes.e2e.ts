@@ -35,7 +35,7 @@ test("a new lawyer reaches an Authority Check result on a phone in a few steps, 
   await expect(page.getByTestId("authority-title-input")).toHaveValue(/SAMPLE/);
   await page.getByTestId("authority-run").click();
   actions++;
-  await expect(page.getByTestId("authority-report")).toBeVisible();
+  await expect(page.getByTestId("authority-report")).toBeVisible({ timeout: 30_000 }); // the very first check after the server starts is slower; the whole journey must still finish inside 60 s (below)
   await expect(page.getByTestId("authority-summary")).toContainText("references");
   const doneMs = Date.now() - t0;
 

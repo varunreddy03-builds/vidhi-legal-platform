@@ -91,13 +91,13 @@ export default function AcceptInvite() {
           <Input
             id="pw"
             type="password"
-            minLength={8}
+            minLength={10}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             data-testid="invite-password-input"
           />
-          <p className="text-xs text-muted-foreground">At least 8 characters; not your email address.</p>
+          <p className="text-xs text-muted-foreground">At least 10 characters; not your email address.</p>
         </div>
         <label className="flex items-start gap-2 text-xs text-muted-foreground">
           <input

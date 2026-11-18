@@ -52,13 +52,13 @@ export default function ResetPassword() {
           <Input
             id="pw"
             type="password"
-            minLength={8}
+            minLength={10}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             data-testid="reset-password-input"
           />
-          <p className="text-xs text-muted-foreground">At least 8 characters; not your email address.</p>
+          <p className="text-xs text-muted-foreground">At least 10 characters; not your email address.</p>
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="pw2">Type it again</Label>

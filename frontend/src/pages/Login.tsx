@@ -188,7 +188,7 @@ export default function Login() {
               id="password"
               type="password"
               autoComplete={mode === "signup" ? "new-password" : "current-password"}
-              minLength={8}
+              minLength={mode === "signup" ? 10 : undefined}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

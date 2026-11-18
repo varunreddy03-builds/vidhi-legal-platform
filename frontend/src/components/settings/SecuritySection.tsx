@@ -50,8 +50,8 @@ export default function SecuritySection() {
           <Input type="password" aria-label="Current password" autoComplete="current-password" value={current} onChange={(e) => setCurrent(e.target.value)} className="mt-1" required data-testid="pw-current" />
         </div>
         <div>
-          <label className="text-xs text-muted-foreground">New password (at least 8 characters)</label>
-          <Input type="password" aria-label="New password" autoComplete="new-password" minLength={8} value={next} onChange={(e) => setNext(e.target.value)} className="mt-1" required data-testid="pw-new" />
+          <label className="text-xs text-muted-foreground">New password (at least 10 characters)</label>
+          <Input type="password" aria-label="New password" autoComplete="new-password" minLength={10} value={next} onChange={(e) => setNext(e.target.value)} className="mt-1" required data-testid="pw-new" />
         </div>
         <div>
           <label className="text-xs text-muted-foreground">New password again</label>
