@@ -2,6 +2,8 @@
 
 **AI assists. Sources support. Graphs connect. Logic verifies. Lawyers decide.**
 
+**Try it (demo):** https://macintosh-acids-touch-chan.trycloudflare.com . It runs on the owner's own computer through a free Cloudflare tunnel, so it is only there while that computer is on, the address changes when it restarts, sign-up is by invitation, and it holds no real client data. Use invented documents only.
+
 VIDHI is an AI legal workflow platform for India, written as a prototype. It is **not** legal advice, it is **not** a lawyer, and it has **not** been tried with real clients.
 
 ## What it is
